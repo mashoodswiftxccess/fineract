@@ -16,18 +16,20 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package org.apache.fineract.portfolio.client.domain;
+package org.apache.fineract.gatway.weaver.handler;
 
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
-import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.query.Param;
+import org.apache.fineract.commands.annotation.CommandType;
+import org.apache.fineract.commands.handler.NewCommandSourceHandler;
+import org.apache.fineract.infrastructure.core.api.JsonCommand;
+import org.apache.fineract.infrastructure.core.data.CommandProcessingResult;
+import org.springframework.stereotype.Service;
 
-interface ClientRepository extends JpaRepository<Client, Long>, JpaSpecificationExecutor<Client> {
+@Service
+@CommandType(entity = "LOGIN", action = "CREATE")
+public class CreateUserLoginHandler implements NewCommandSourceHandler {
 
-    String FIND_CLIENT_BY_ACCOUNT_NUMBER = "select client from Client client where client.accountNumber = :accountNumber";
-
-    @Query(FIND_CLIENT_BY_ACCOUNT_NUMBER)
-    Client getClientByAccountNumber(@Param("accountNumber") String accountNumber);
-
+    @Override
+    public CommandProcessingResult processCommand(JsonCommand command) {
+        return null;
+    }
 }

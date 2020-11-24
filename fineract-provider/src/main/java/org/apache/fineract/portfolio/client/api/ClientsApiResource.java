@@ -105,7 +105,8 @@ public class ClientsApiResource {
             final AccountDetailsReadPlatformService accountDetailsReadPlatformService,
             final SavingsAccountReadPlatformService savingsAccountReadPlatformService,
             final BulkImportWorkbookPopulatorService bulkImportWorkbookPopulatorService,
-            final BulkImportWorkbookService bulkImportWorkbookService, final GuarantorReadPlatformService guarantorReadPlatformService) {
+            final BulkImportWorkbookService bulkImportWorkbookService, final GuarantorReadPlatformService guarantorReadPlatformService,
+            GuarantorReadPlatformService guarantorReadPlatformService1) {
         this.context = context;
         this.clientReadPlatformService = readPlatformService;
         this.toApiJsonSerializer = toApiJsonSerializer;
@@ -116,7 +117,8 @@ public class ClientsApiResource {
         this.savingsAccountReadPlatformService = savingsAccountReadPlatformService;
         this.bulkImportWorkbookPopulatorService = bulkImportWorkbookPopulatorService;
         this.bulkImportWorkbookService = bulkImportWorkbookService;
-        this.guarantorReadPlatformService = guarantorReadPlatformService;
+
+        this.guarantorReadPlatformService = guarantorReadPlatformService1;
     }
 
     @GET

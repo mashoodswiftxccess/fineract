@@ -16,18 +16,16 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package org.apache.fineract.portfolio.client.domain;
 
+package org.apache.fineract.gatway.weaver.domain;
+
+import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.query.Param;
 
-interface ClientRepository extends JpaRepository<Client, Long>, JpaSpecificationExecutor<Client> {
+public interface NaturalPersonRepository extends JpaRepository<NaturalPerson, Long> {
 
-    String FIND_CLIENT_BY_ACCOUNT_NUMBER = "select client from Client client where client.accountNumber = :accountNumber";
-
-    @Query(FIND_CLIENT_BY_ACCOUNT_NUMBER)
-    Client getClientByAccountNumber(@Param("accountNumber") String accountNumber);
+    @Query(value = "SELECT * FROM m_client left join swx_natural_person  ON id=client_id UNION SELECT * FROM m_client right join swx_natural_person  ON id=client_id", nativeQuery = true)
+    public List<String> getClientNaturalPersonJoin();
 
 }

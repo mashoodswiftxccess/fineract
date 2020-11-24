@@ -16,18 +16,18 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package org.apache.fineract.portfolio.client.domain;
+package org.apache.fineract.gatway.weaver.exception;
 
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
-import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.query.Param;
+import org.apache.fineract.infrastructure.core.exception.AbstractPlatformResourceNotFoundException;
+import org.springframework.dao.EmptyResultDataAccessException;
 
-interface ClientRepository extends JpaRepository<Client, Long>, JpaSpecificationExecutor<Client> {
+public class LoginUserNotFoundException extends AbstractPlatformResourceNotFoundException {
 
-    String FIND_CLIENT_BY_ACCOUNT_NUMBER = "select client from Client client where client.accountNumber = :accountNumber";
+    public LoginUserNotFoundException(final Long id) {
+        super("error.msg.fund.id.invalid", "login user with identifier " + id + " does not exist", id);
+    }
 
-    @Query(FIND_CLIENT_BY_ACCOUNT_NUMBER)
-    Client getClientByAccountNumber(@Param("accountNumber") String accountNumber);
-
+    public LoginUserNotFoundException(Long id, EmptyResultDataAccessException e) {
+        super("error.msg.fund.id.invalid", "login with identifier " + id + " does not exist", id, e);
+    }
 }

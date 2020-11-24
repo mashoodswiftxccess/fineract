@@ -148,8 +148,8 @@ modernizer {
 }
 
 compileJava {
-    dependsOn rat
-    finalizedBy resolve
+    //dependsOn rat
+    //finalizedBy resolve
 }
 
 war {

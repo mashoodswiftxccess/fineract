@@ -3295,4 +3295,12 @@ public class CommandWrapperBuilder {
         return this;
     }
 
+    public CommandWrapperBuilder createVuser() {
+        this.actionName = "CREATE";
+        this.entityName = "LOGIN";
+        this.entityId = null;
+        this.href = "/login/template";
+        return this;
+    }
+
 }
