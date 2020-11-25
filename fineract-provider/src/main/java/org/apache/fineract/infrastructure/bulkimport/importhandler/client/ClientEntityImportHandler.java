@@ -134,7 +134,13 @@ public class ClientEntityImportHandler implements ImportHandler {
         String remarks = ImportHandlerUtils.readAsString(ClientEntityConstants.REMARKS_COL, row);
 
         ClientNonPersonData clientNonPersonData = ClientNonPersonData.importInstance(incorporationNo, incorporationTill, remarks,
-                mainBusinessId, constitutionId, locale, dateFormat);
+                mainBusinessId, constitutionId, locale, dateFormat,incorpCountry, companyNumber, incorpDate, incorpName, incorpEntityType, incorpTaxDec, incorpPorS,
+                incorpInvestment, incorpTurnover, incorpSof, uboRoleInBusiness, ubiVotingOwnerShip, uboSharePersentage, incorpLa1,
+                incorpLa2, incorpLa3, incorpLa4, incorpLa5, incorpLa6, incorpLa7, incorpLa8, incorpLaPosCode, incorpLaphone, incorpLaEmail,
+                baAddress1, baAddress2, baAddress3, baAddress4, baAddress5, baAddress6, baAddress7, baAddress8, baAddress9, baPostCode,
+                baCity, baCountry, crAddress1, crAddress2, crAddress3, crAddress4, crAddress5, crAddress6, crAddress7, crAddress8,
+                crAddress9, crAddress10, nameswx, fullname, address1, address2, address3, address4, address5, address6, address7, address8,
+                address9, address10, cvd1, cvd2, cvd3, cvd4, cvd5, cvd6, cvd7, cvd8, cvd9, cvd10, cvd11);
 
         String externalId = ImportHandlerUtils.readAsString(ClientEntityConstants.EXTERNAL_ID_COL, row);
 
