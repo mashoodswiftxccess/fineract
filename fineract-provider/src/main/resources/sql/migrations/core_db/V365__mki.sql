@@ -16,6 +16,7 @@
 -- specific language governing permissions and limitations
 -- under the License.
 --
+
 DROP TABLE IF EXISTS `v_weaver_login`;
 
 CREATE TABLE `v_weaver_login` (

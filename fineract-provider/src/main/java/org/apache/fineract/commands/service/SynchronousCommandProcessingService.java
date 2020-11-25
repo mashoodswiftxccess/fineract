@@ -91,7 +91,7 @@ public class SynchronousCommandProcessingService implements CommandProcessingSer
         final NewCommandSourceHandler handler = findCommandHandler(wrapper);
 
         final CommandProcessingResult result;
-        try {
+        try { // MASHOOD: here it access the command layer to pass the commands
             result = handler.processCommand(command);
         } catch (Throwable t) {
             // publish error event
