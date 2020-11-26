@@ -107,6 +107,7 @@ public class ClientsApiResource {
             final BulkImportWorkbookPopulatorService bulkImportWorkbookPopulatorService,
             final BulkImportWorkbookService bulkImportWorkbookService, final GuarantorReadPlatformService guarantorReadPlatformService,
             GuarantorReadPlatformService guarantorReadPlatformService1) {
+
         this.context = context;
         this.clientReadPlatformService = readPlatformService;
         this.toApiJsonSerializer = toApiJsonSerializer;
@@ -117,8 +118,8 @@ public class ClientsApiResource {
         this.savingsAccountReadPlatformService = savingsAccountReadPlatformService;
         this.bulkImportWorkbookPopulatorService = bulkImportWorkbookPopulatorService;
         this.bulkImportWorkbookService = bulkImportWorkbookService;
-
         this.guarantorReadPlatformService = guarantorReadPlatformService1;
+
     }
 
     @GET
@@ -248,6 +249,7 @@ public class ClientsApiResource {
         final CommandProcessingResult result = this.commandsSourceWritePlatformService.logCommandSource(commandRequest);
 
         return this.toApiJsonSerializer.serialize(result);
+
     }
 
     @PUT

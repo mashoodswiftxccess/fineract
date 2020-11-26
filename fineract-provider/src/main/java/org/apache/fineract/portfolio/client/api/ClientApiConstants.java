@@ -131,7 +131,7 @@ public class ClientApiConstants {
     public static final String constitutionIdParamName = "constitutionId";
     public static final String mainBusinessLineIdParamName = "mainBusinessLineId";
 
-    // swx our data
+    // request parameters for client non person swx our data
     public static final String incorpCountry = "incorpCountry";
     public static final String companyNumber = "companyNumber";
     public static final String incorpDate = "incorpDate";
@@ -200,6 +200,42 @@ public class ClientApiConstants {
     public static final String cvd9 = "cvd9";
     public static final String cvd10 = "cvd10";
     public static final String cvd11 = "cvd11";
+
+    //swx client additionals fields
+    public static final String swVProfileId = "swVProfileId";
+    public static final String swVCorporateId = "swVCorporateId";
+    public static final String swVManagedAccountId = "swVManagedAccountId";
+    public static final String swTeleno = "swTeleno";
+    public static final String swVClientType = "swVClientType";
+    public static final String swCountryOfBirth = "swCountryOfBirth";
+    public static final String swOuntryOfPr = "swOuntryOfPr";
+    public static final String swOccupation = "swOccupation";
+    public static final String swEmployer = "swEmployer";
+    public static final String swEmployerBusinessType = "swEmployerBusinessType";
+    public static final String swTaxresIdency = "swTaxresIdency";
+    public static final String swPaAddress1 = "swPaAddress1";
+    public static final String swPaAddress2 = "swPaAddress2";
+    public static final String swPaAddress3 = "swPaAddress3";
+    public static final String swPaAddress4 = "swPaAddress4";
+    public static final String swPaAddress5 = "swPaAddress5";
+    public static final String swPaAddress6 = "swPaAddress6";
+    public static final String swPaAddress7 = "swPaAddress7";
+    public static final String swPaAddress8 = "swPaAddress8";
+    public static final String swPaAddress9 = "swPaAddress9";
+    public static final String swPaPostCode = "swPaPostCode";
+    public static final String swPaCountry = "swPaCountry";
+    public static final String swPadateSince = "swPadateSince";
+    public static final String swCaAddress1 = "swCaAddress1";
+    public static final String swCaAddress2 = "swCaAddress2";
+    public static final String swCaAddress3 = "swCaAddress3";
+    public static final String swCaAddress4 = "swCaAddress4";
+    public static final String swCaAddress5 = "swCaAddress5";
+    public static final String swCaAddress6 = "swCaAddress6";
+    public static final String swCaAddress7 = "swCaAddress7";
+    public static final String swCaAddress8 = "swCaAddress8";
+    public static final String swCaAddress9 = "swCaAddress9";
+    public static final String swCaPostCode = "swCaPostCode";
+    public static final String swCaCountry = "swCaCountry";
 
     // response parameters
     public static final String statusParamName = "status";

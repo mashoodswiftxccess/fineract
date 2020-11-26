@@ -886,7 +886,7 @@ public class ClientWritePlatformServiceJpaRepositoryImpl implements ClientWriteP
     }
 
     /*
-     * To become a part of a group, group may have set of criteria to be m et before client can become member of it.
+     * To become a part of a group, group may have set of criteria to be met before client can become member of it.
      */
     private void validateParentGroupRulesBeforeClientActivation(Client client) {
         Integer minNumberOfClients = configurationDomainService.retrieveMinAllowedClientsInGroup();

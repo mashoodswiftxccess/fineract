@@ -64,9 +64,11 @@ public final class ClientDataValidator {
 
         final Type typeOfMap = new TypeToken<Map<String, Object>>() {}.getType();
         this.fromApiJsonHelper.checkForUnsupportedParameters(typeOfMap, json,
-                ClientApiCollectionConstants.CLIENT_CREATE_REQUEST_DATA_PARAMETERS);
+                ClientApiCollectionConstants.CLIENT_CREATE_REQUEST_DATA_PARAMETERS); // here i have to make new request
+                                                                                     // data parameters
         final JsonElement element = this.fromApiJsonHelper.parse(json);
 
+        // this part is for non person
         if (this.fromApiJsonHelper.parameterExists(ClientApiConstants.clientNonPersonDetailsParamName, element)) {
             final String clientNonPersonJson = this.fromApiJsonHelper
                     .toJson(element.getAsJsonObject().get(ClientApiConstants.clientNonPersonDetailsParamName));

@@ -95,7 +95,7 @@ public class PortfolioCommandSourceWritePlatformServiceImpl implements Portfolio
                 wrapper.getTransactionId(), wrapper.getHref(), wrapper.getProductId(), wrapper.getCreditBureauId(),
                 wrapper.getOrganisationCreditBureauId());
         while (numberOfRetries <= maxNumberOfRetries) {
-            try {
+            try { // this is the place where all the client stuff is beign handled
                 result = this.processAndLogCommandService.processAndLogCommand(wrapper, command, isApprovedByChecker);
                 numberOfRetries = maxNumberOfRetries + 1;
             } catch (CannotAcquireLockException | ObjectOptimisticLockingFailureException exception) {
