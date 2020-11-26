@@ -73,7 +73,7 @@ public class ClientNonPersonData implements Serializable {
     private String BaAddress6;
     private String BaAddress7;
     private String BaAddress8;
-    private String BaAddress9;
+
     private String BaPostCode;
     private String BaCity;
     private String BaCountry;
@@ -111,128 +111,132 @@ public class ClientNonPersonData implements Serializable {
     private String cvd10;
     private String cvd11;
 
-    public static ClientNonPersonData importInstance(String incorporationNo, LocalDate incorpValidityTillDate, String remarks,
-            Long mainBusinessLineId, Long constitutionId, String locale, String dateFormat, String incorpCountry, String companyNumber,
-            String incorpDate, String incorpName, String incorpEntityType, String incorpTaxDec, String incorpPorS, String incorpInvestment,
-            String incorpTurnover, String incorpSof, String uboRoleInBusiness, String ubiVotingOwnerShip, String uboSharePersentage,
-            String incorpLa1, String incorpLa2, String incorpLa3, String incorpLa4, String incorpLa5, String incorpLa6, String incorpLa7,
-            String incorpLa8, String incorpLaPosCode, String incorpLaphone, String incorpLaEmail, String baAddress1, String baAddress2,
-            String baAddress3, String baAddress4, String baAddress5, String baAddress6, String baAddress7, String baAddress8,
-            String baAddress9, String baPostCode, String baCity, String baCountry, String crAddress1, String crAddress2, String crAddress3,
-            String crAddress4, String crAddress5, String crAddress6, String crAddress7, String crAddress8, String crAddress9,
-            String crAddress10, String name, String fullname, String address1, String address2, String address3, String address4,
-            String address5, String address6, String address7, String address8, String address9, String address10, String cvd1, String cvd2,
-            String cvd3, String cvd4, String cvd5, String cvd6, String cvd7, String cvd8, String cvd9, String cvd10, String cvd11) {
-        return new ClientNonPersonData(incorporationNo, incorpValidityTillDate, remarks, mainBusinessLineId, constitutionId, locale,
-                dateFormat, incorpCountry, companyNumber, incorpDate, incorpName, incorpEntityType, incorpTaxDec, incorpPorS,
-                incorpInvestment, incorpTurnover, incorpSof, uboRoleInBusiness, ubiVotingOwnerShip, uboSharePersentage, incorpLa1,
-                incorpLa2, incorpLa3, incorpLa4, incorpLa5, incorpLa6, incorpLa7, incorpLa8, incorpLaPosCode, incorpLaphone, incorpLaEmail,
-                baAddress1, baAddress2, baAddress3, baAddress4, baAddress5, baAddress6, baAddress7, baAddress8, baAddress9, baPostCode,
-                baCity, baCountry, crAddress1, crAddress2, crAddress3, crAddress4, crAddress5, crAddress6, crAddress7, crAddress8,
-                crAddress9, crAddress10, name, fullname, address1, address2, address3, address4, address5, address6, address7, address8,
-                address9, address10, cvd1, cvd2, cvd3, cvd4, cvd5, cvd6, cvd7, cvd8, cvd9, cvd10, cvd11);
+    public static ClientNonPersonData importInstance(String AincorporationNo, LocalDate AincorpValidityTillDate, String Aremarks,
+            Long AmainBusinessLineId, Long AconstitutionId, String Alocale, String AdateFormat, String AincorpCountry,
+            String AcompanyNumber, String AincorpDate, String AincorpName, String AincorpEntityType, String AincorpTaxDec,
+            String AincorpPorS, String AincorpInvestment, String AincorpTurnover, String AincorpSof, String AuboRBusiness,
+            String AubiOwnerShip, String AuboPersentage, String AincorpLa1, String AincorpLa2, String AincorpLa3, String AincorpLa4,
+            String AincorpLa5, String AincorpLa6, String AincorpLa7, String AincorpLa8, String AincorpLaPosCode, String AincorpLaphone,
+            String AincorpLaEmail, String AbaAddressA1, String AbaAddressA2, String AbaAddressA3, String AbaAddressA4, String AbaAddressA5,
+            String AbaAddressA6, String AbaAddressA7, String AbaAddressA8, String AbaPostCodeA, String AbaCitAy, String AbaCountrAy,
+            String AcrAddressA1, String AcrAddressA2, String AcrAddressA3, String AcrAddressA4, String AcrAddressA5, String AcrAddressA6,
+            String AcrAddressA7, String AcrAddressA8, String AcrAddressA9, String AcrAddress1A0, String AnamAe, String AfullnamAe,
+            String AaddressA1, String AaddressA2, String AaddressA3, String AaddressA4, String AaddressA5, String AaddressA6,
+            String AaddressA7, String AaddressA8, String AaddressA9, String Aaddress1A0, String AcvdA1, String AcvdA2, String AcvdA3,
+            String AcvdA4, String AcvdA5, String AcvdA6, String AcvdA7, String AcvdA8, String AcvdA9, String Acvd1A0, String Acvd1A1) {
+        return new ClientNonPersonData(AincorporationNo, AincorpValidityTillDate, Aremarks, AmainBusinessLineId, AconstitutionId, Alocale,
+                AdateFormat, AincorpCountry, AcompanyNumber, AincorpDate, AincorpName, AincorpEntityType, AincorpTaxDec, AincorpPorS,
+                AincorpInvestment, AincorpTurnover, AincorpSof, AuboRBusiness, AubiOwnerShip, AuboPersentage, AincorpLa1, AincorpLa2,
+                AincorpLa3, AincorpLa4, AincorpLa5, AincorpLa6, AincorpLa7, AincorpLa8, AincorpLaPosCode, AincorpLaphone, AincorpLaEmail,
+                AbaAddressA1, AbaAddressA2, AbaAddressA3, AbaAddressA4, AbaAddressA5, AbaAddressA6, AbaAddressA7, AbaAddressA8,
+                AbaPostCodeA, AbaCitAy, AbaCountrAy, AcrAddressA1, AcrAddressA2, AcrAddressA3, AcrAddressA4, AcrAddressA5, AcrAddressA6,
+                AcrAddressA7, AcrAddressA8, AcrAddressA9, AcrAddress1A0, AnamAe, AfullnamAe, AaddressA1, AaddressA2, AaddressA3, AaddressA4,
+                AaddressA5, AaddressA6, AaddressA7, AaddressA8, AaddressA9, Aaddress1A0, AcvdA1, AcvdA2, AcvdA3, AcvdA4, AcvdA5, AcvdA6,
+                AcvdA7, AcvdA8, AcvdA9, Acvd1A0, Acvd1A1);
     }
 
     private ClientNonPersonData(String incorpNumber, LocalDate incorpValidityTillDate, String remarks, Long mainBusinessLineId,
             Long constitutionId, String locale, String dateFormat, String incorpCountry, String companyNumber, String incorpDate,
             String incorpName, String incorpEntityType, String incorpTaxDec, String incorpPorS, String incorpInvestment,
-            String incorpTurnover, String incorpSof, String uboRoleInBusiness, String ubiVotingOwnerShip, String uboSharePersentage,
-            String incorpLa1, String incorpLa2, String incorpLa3, String incorpLa4, String incorpLa5, String incorpLa6, String incorpLa7,
-            String incorpLa8, String incorpLaPosCode, String incorpLaphone, String incorpLaEmail, String baAddress1, String baAddress2,
-            String baAddress3, String baAddress4, String baAddress5, String baAddress6, String baAddress7, String baAddress8,
-            String baAddress9, String baPostCode, String baCity, String baCountry, String crAddress1, String crAddress2, String crAddress3,
-            String crAddress4, String crAddress5, String crAddress6, String crAddress7, String crAddress8, String crAddress9,
-            String crAddress10, String name, String fullname, String address1, String address2, String address3, String address4,
-            String address5, String address6, String address7, String address8, String address9, String address10, String cvd1, String cvd2,
-            String cvd3, String cvd4, String cvd5, String cvd6, String cvd7, String cvd8, String cvd9, String cvd10, String cvd11) {
+            String incorpTurnover, String incorpSof, String AuboRoleInBusiness, String AubiVotingOwnerShip, String AuboSharePersentage,
+            String AincorpLa1, String AincorpLa2, String AincorpLa3, String AincorpLa4, String AincorpLa5, String AincorpLa6,
+            String AincorpLa7, String AincorpLa8, String AincorpLaPosCode, String AincorpLaphone, String AincorpLaEmail, String AbaAddress1,
+            String AbaAddress2, String AbaAddress3, String AbaAddress4, String AbaAddress5, String AbaAddress6, String AbaAddress7,
+            String AbaAddress8, String AbaPostCode, String AbaCity, String AbaCountry, String AcrAddress1, String AcrAddress2,
+            String AcrAddress3, String AcrAddress4, String AcrAddress5, String AcrAddress6, String AcrAddress7, String AcrAddress8,
+            String AcrAddress9, String AcrAddress10, String Aname, String Afullname, String Aaddress1, String Aaddress2, String Aaddress3,
+            String Aaddress4, String Aaddress5, String Aaddress6, String Aaddress7, String Aaddress8, String Aaddress9, String Aaddress10,
+            String Acvd1, String Acvd2, String Acvd3, String Acvd4, String Acvd5, String Acvd6, String Acvd7, String Acvd8, String Acvd9,
+            String Acvd10, String Acvd11) {
 
-    this.incorpNumber = incorpNumber;
-    this.incorpValidityTillDate = incorpValidityTillDate;
-    this.remarks = remarks;
-    this.mainBusinessLineId = mainBusinessLineId;
-    this.constitutionId = constitutionId;
-    this.dateFormat = dateFormat;
-    this.locale = locale;
-    this.constitution = null;
-    this.mainBusinessLine = null;
-    this.incorpCountry = incorpCountry;
-    this.companyNumber = companyNumber;
-    this.incorpDate = incorpDate;
-    this.incorpName = incorpName;
-    this.incorpEntityType = incorpEntityType;
-    this.incorpTaxDec = incorpTaxDec;
-    this.incorpPorS = incorpPorS;
-    this.incorpInvestment = incorpInvestment;
-    this.incorpTurnover = incorpTurnover;
-    this.incorpSof = incorpSof;
-    UboRoleInBusiness = uboRoleInBusiness;
-    UbiVotingOwnerShip = ubiVotingOwnerShip;
-    UboSharePersentage = uboSharePersentage;
-    this.incorpLa1 = incorpLa1;
-    this.incorpLa2 = incorpLa2;
-    this.incorpLa3 = incorpLa3;
-    this.incorpLa4 = incorpLa4;
-    this.incorpLa5 = incorpLa5;
-    this.incorpLa6 = incorpLa6;
-    this.incorpLa7 = incorpLa7;
-    this.incorpLa8 = incorpLa8;
-    this.incorpLaPosCode = incorpLaPosCode;
-    this.incorpLaphone = incorpLaphone;
-    this.incorpLaEmail = incorpLaEmail;
-    BaAddress1 = baAddress1;
-    BaAddress2 = baAddress2;
-    BaAddress3 = baAddress3;
-    BaAddress4 = baAddress4;
-    BaAddress5 = baAddress5;
-    BaAddress6 = baAddress6;
-    BaAddress7 = baAddress7;
-    BaAddress8 = baAddress8;
-    BaAddress9 = baAddress9;
-    BaPostCode = baPostCode;
-    BaCity = baCity;
-    BaCountry = baCountry;
-    CrAddress1 = crAddress1;
-    CrAddress2 = crAddress2;
-    CrAddress3 = crAddress3;
-    CrAddress4 = crAddress4;
-    CrAddress5 = crAddress5;
-    CrAddress6 = crAddress6;
-    CrAddress7 = crAddress7;
-    CrAddress8 = crAddress8;
-    CrAddress9 = crAddress9;
-    CrAddress10 = crAddress10;
-    this.name = name;
-    this.fullname = fullname;
-    this.address1 = address1;
-    this.address2 = address2;
-    this.address3 = address3;
-    this.address4 = address4;
-    this.address5 = address5;
-    this.address6 = address6;
-    this.address7 = address7;
-    this.address8 = address8;
-    this.address9 = address9;
-    this.address10 = address10;
-    this.cvd1 = cvd1;
-    this.cvd2 = cvd2;
-    this.cvd3 = cvd3;
-    this.cvd4 = cvd4;
-    this.cvd5 = cvd5;
-    this.cvd6 = cvd6;
-    this.cvd7 = cvd7;
-    this.cvd8 = cvd8;
-    this.cvd9 = cvd9;
-    this.cvd10 = cvd10;
-    this.cvd11 = cvd11;
+        this.incorpNumber = incorpNumber;
+        this.incorpValidityTillDate = incorpValidityTillDate;
+        this.remarks = remarks;
+        this.mainBusinessLineId = mainBusinessLineId;
+        this.constitutionId = constitutionId;
+        this.dateFormat = dateFormat;
+        this.locale = locale;
+        this.constitution = null;
+        this.mainBusinessLine = null;
+        this.incorpCountry = incorpCountry;
+        this.companyNumber = companyNumber;
+        this.incorpDate = incorpDate;
+        this.incorpName = incorpName;
+        this.incorpEntityType = incorpEntityType;
+        this.incorpTaxDec = incorpTaxDec;
+        this.incorpPorS = incorpPorS;
+        this.incorpInvestment = incorpInvestment;
+        this.incorpTurnover = incorpTurnover;
+        this.incorpSof = incorpSof;
+        this.UboRoleInBusiness = AuboRoleInBusiness;
+        this.UbiVotingOwnerShip = AubiVotingOwnerShip;
+        this.UboSharePersentage = AuboSharePersentage;
+        this.incorpLa1 = AincorpLa1;
+        this.incorpLa2 = AincorpLa2;
+        this.incorpLa3 = AincorpLa3;
+        this.incorpLa4 = AincorpLa4;
+        this.incorpLa5 = AincorpLa5;
+        this.incorpLa6 = AincorpLa6;
+        this.incorpLa7 = AincorpLa7;
+        this.incorpLa8 = AincorpLa8;
+        this.incorpLaPosCode = AincorpLaPosCode;
+        this.incorpLaphone = AincorpLaphone;
+        this.incorpLaEmail = AincorpLaEmail;
+        this.BaAddress1 = AbaAddress1;
+        this.BaAddress2 = AbaAddress2;
+        this.BaAddress3 = AbaAddress3;
+        this.BaAddress4 = AbaAddress4;
+        this.BaAddress5 = AbaAddress5;
+        this.BaAddress6 = AbaAddress6;
+        this.BaAddress7 = AbaAddress7;
+        this.BaAddress8 = AbaAddress8;
+
+        this.BaPostCode = AbaPostCode;
+        this.BaCity = AbaCity;
+        this.BaCountry = AbaCountry;
+        this.CrAddress1 = AcrAddress1;
+        this.CrAddress2 = AcrAddress2;
+        this.CrAddress3 = AcrAddress3;
+        this.CrAddress4 = AcrAddress4;
+        this.CrAddress5 = AcrAddress5;
+        this.CrAddress6 = AcrAddress6;
+        this.CrAddress7 = AcrAddress7;
+        this.CrAddress8 = AcrAddress8;
+        this.CrAddress9 = AcrAddress9;
+        this.CrAddress10 = AcrAddress10;
+        this.name = Aname;
+        this.fullname = Afullname;
+        this.address1 = Aaddress1;
+        this.address2 = Aaddress2;
+        this.address3 = Aaddress3;
+        this.address4 = Aaddress4;
+        this.address5 = Aaddress5;
+        this.address6 = Aaddress6;
+        this.address7 = Aaddress7;
+        this.address8 = Aaddress8;
+        this.address9 = Aaddress9;
+        this.address10 = Aaddress10;
+        this.cvd1 = Acvd1;
+        this.cvd2 = Acvd2;
+        this.cvd3 = Acvd3;
+        this.cvd4 = Acvd4;
+        this.cvd5 = Acvd5;
+        this.cvd6 = Acvd6;
+        this.cvd7 = Acvd7;
+        this.cvd8 = Acvd8;
+        this.cvd9 = Acvd9;
+        this.cvd10 = Acvd10;
+        this.cvd11 = Acvd11;
     }
 
     public ClientNonPersonData(CodeValueData constitution, String incorpNo, LocalDate incorpValidityTillDate,
-            CodeValueData mainBusinessLine, String remarks) {
+            CodeValueData mainBusinessLine, String remarks, String incorporationCountry) {
 
         this.constitution = constitution;
         this.incorpNumber = incorpNo;
         this.incorpValidityTillDate = incorpValidityTillDate;
         this.mainBusinessLine = mainBusinessLine;
         this.remarks = remarks;
+        this.incorpCountry = incorporationCountry;
     }
 }

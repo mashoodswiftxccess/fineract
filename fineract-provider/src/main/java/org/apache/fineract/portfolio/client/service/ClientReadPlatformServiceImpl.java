@@ -371,6 +371,7 @@ public class ClientReadPlatformServiceImpl implements ClientReadPlatformService 
                 new Object[] { hierarchySearchString, groupId, ClientStatus.ACTIVE.getValue() });
     }
 
+    // if i want to change the responce paraments about non person
     private static final class ClientMembersOfGroupMapper implements RowMapper<ClientData> {
 
         private final String schema;
@@ -415,6 +416,7 @@ public class ClientReadPlatformServiceImpl implements ClientReadPlatformService 
             sqlBuilder.append("acu.firstname as activatedByFirstname, ");
             sqlBuilder.append("acu.lastname as activatedByLastname, ");
 
+            // non person table stuff 
             sqlBuilder.append("cnp.constitution_cv_id as constitutionId, ");
             sqlBuilder.append("cvConstitution.code_value as constitutionValue, ");
             sqlBuilder.append("cnp.incorp_no as incorpNo, ");
@@ -422,6 +424,84 @@ public class ClientReadPlatformServiceImpl implements ClientReadPlatformService 
             sqlBuilder.append("cnp.main_business_line_cv_id as mainBusinessLineId, ");
             sqlBuilder.append("cvMainBusinessLine.code_value as mainBusinessLineValue, ");
             sqlBuilder.append("cnp.remarks as remarks ");
+            sqlBuilder.append("cnp.incorpCountry as incorporationCountry, ");
+            sqlBuilder.append("cnp.companyNumber as incorporationCountry, ");
+            sqlBuilder.append("cnp.incorpDate as incorporationCountry, ");
+            sqlBuilder.append("cnp.incorpCountry, ");
+            sqlBuilder.append("cnp.companyNumber, ");
+            sqlBuilder.append("cnp.incorpDate, ");
+            sqlBuilder.append("cnp.incorpName, ");
+            sqlBuilder.append("cnp.incorpEntityType, ");
+            sqlBuilder.append("cnp.incorpTaxDec, ");
+            sqlBuilder.append("cnp.incorpTradingS, ");
+            sqlBuilder.append("cnp.incorpBusinessActivity, ");
+            sqlBuilder.append("cnp.incorpPorS, ");
+            sqlBuilder.append("cnp.incorpInvestment, ");
+            sqlBuilder.append("cnp.incorpTurnover, ");
+            sqlBuilder.append("cnp.incorpSof, ");
+            sqlBuilder.append("cnp.UboRoleInBusiness, ");
+            sqlBuilder.append("cnp.UboVotingOwnerShip, ");
+            sqlBuilder.append("cnp.UboSharePercentage, ");
+            sqlBuilder.append("cnp.incorpLa1, ");
+            sqlBuilder.append("cnp.incorpLa2, ");
+            sqlBuilder.append("cnp.incorpLa3, ");
+            sqlBuilder.append("cnp.incorpLa4, ");
+            sqlBuilder.append("cnp.incorpLa5, ");
+            sqlBuilder.append("cnp.incorpLa6, ");
+            sqlBuilder.append("cnp.incorpLa7, ");
+            sqlBuilder.append("cnp.incorpLa8, ");
+            sqlBuilder.append("cnp.incorpLaPosCode, ");
+            sqlBuilder.append("cnp.incorpLaEmail, ");
+            sqlBuilder.append("cnp.BaAddress1, ");
+            sqlBuilder.append("cnp.BaAddress2, ");
+            sqlBuilder.append("cnp.BaAddress3, ");
+            sqlBuilder.append("cnp.BaAddress4, ");
+            sqlBuilder.append("cnp.BaAddress5, ");
+            sqlBuilder.append("cnp.BaAddress6, ");
+            sqlBuilder.append("cnp.BaAddress7, ");
+            sqlBuilder.append("cnp.BaAddress8, ");
+            sqlBuilder.append("cnp.BaPostCode, ");
+            sqlBuilder.append("cnp.BaCity, ");
+            sqlBuilder.append("cnp.BaCountry, ");
+            sqlBuilder.append("cnp.CrAddress1, ");
+            sqlBuilder.append("cnp.CrAddress2, ");
+            sqlBuilder.append("cnp.CrAddress3, ");
+            sqlBuilder.append("cnp.CrAddress4, ");
+            sqlBuilder.append("cnp.CrAddress5, ");
+            sqlBuilder.append("cnp.CrAddress6, ");
+            sqlBuilder.append("cnp.CrAddress7, ");
+            sqlBuilder.append("cnp.CrAddress8, ");
+            sqlBuilder.append("cnp.CrAddress9, ");
+            sqlBuilder.append("cnp.CrAddress10, ");
+            sqlBuilder.append("cnp.name, ");
+            sqlBuilder.append("cnp.fullname, ");
+            sqlBuilder.append("cnp.address1, ");
+            sqlBuilder.append("cnp.address2, ");
+            sqlBuilder.append("cnp.address3, ");
+            sqlBuilder.append("cnp.address4, ");
+            sqlBuilder.append("cnp.address5, ");
+            sqlBuilder.append("cnp.address6, ");
+            sqlBuilder.append("cnp.address7, ");
+            sqlBuilder.append("cnp.address8, ");
+            sqlBuilder.append("cnp.address9, ");
+            sqlBuilder.append("cnp.address10, ");
+            sqlBuilder.append("cnp.cvd1, ");
+            sqlBuilder.append("cnp.cvd2, ");
+            sqlBuilder.append("cnp.cvd3, ");
+            sqlBuilder.append("cnp.cvd4, ");
+            sqlBuilder.append("cnp.cvd5, ");
+            sqlBuilder.append("cnp.cvd6, ");
+            sqlBuilder.append("cnp.cvd7, ");
+            sqlBuilder.append("cnp.cvd8, ");
+            sqlBuilder.append("cnp.cvd9, ");
+            sqlBuilder.append("cnp.cvd10, ");
+            sqlBuilder.append("cnp.cvd11, ");
+
+
+
+
+
+
 
             sqlBuilder.append("from m_client c ");
             sqlBuilder.append("join m_office o on o.id = c.office_id ");
@@ -530,9 +610,10 @@ public class ClientReadPlatformServiceImpl implements ClientReadPlatformService 
             final String mainBusinessLineValue = rs.getString("mainBusinessLineValue");
             final CodeValueData mainBusinessLine = CodeValueData.instance(mainBusinessLineId, mainBusinessLineValue);
             final String remarks = rs.getString("remarks");
+            final String incorporationCountry = rs.getString("incorporationCountry");
 
             final ClientNonPersonData clientNonPerson = new ClientNonPersonData(constitution, incorpNo, incorpValidityTill,
-                    mainBusinessLine, remarks);
+                    mainBusinessLine, remarks, incorporationCountry);
 
             final ClientTimelineData timeline = new ClientTimelineData(submittedOnDate, submittedByUsername, submittedByFirstname,
                     submittedByLastname, activationDate, activatedByUsername, activatedByFirstname, activatedByLastname, closedOnDate,
@@ -545,6 +626,7 @@ public class ClientReadPlatformServiceImpl implements ClientReadPlatformService 
 
         }
     }
+
 
     @Override
     public Collection<ClientData> retrieveActiveClientMembersOfCenter(final Long centerId) {
@@ -560,12 +642,13 @@ public class ClientReadPlatformServiceImpl implements ClientReadPlatformService 
                 new Object[] { hierarchySearchString, centerId, ClientStatus.ACTIVE.getValue() });
     }
 
+    // if i want to change the responce paraments about non person
     private static final class ClientMapper implements RowMapper<ClientData> {
 
         private final String schema;
 
         ClientMapper() {
-            final StringBuilder builder = new StringBuilder(400);
+            final StringBuilder builder = new StringBuilder(500);
 
             builder.append(
                     "c.id as id, c.account_no as accountNo, c.external_id as externalId, c.status_enum as statusEnum,c.sub_status as subStatus, ");
@@ -601,6 +684,7 @@ public class ClientReadPlatformServiceImpl implements ClientReadPlatformService 
             builder.append("acu.firstname as activatedByFirstname, ");
             builder.append("acu.lastname as activatedByLastname, ");
 
+            // business non-person entity hander strings queries
             builder.append("cnp.constitution_cv_id as constitutionId, ");
             builder.append("cvConstitution.code_value as constitutionValue, ");
             builder.append("cnp.incorp_no as incorpNo, ");
@@ -608,6 +692,7 @@ public class ClientReadPlatformServiceImpl implements ClientReadPlatformService 
             builder.append("cnp.main_business_line_cv_id as mainBusinessLineId, ");
             builder.append("cvMainBusinessLine.code_value as mainBusinessLineValue, ");
             builder.append("cnp.remarks as remarks, ");
+            builder.append("cnp.incorpCountry as incorporationCountry, ");
 
             builder.append("c.activation_date as activationDate, c.image_id as imageId, ");
             builder.append("c.staff_id as staffId, s.display_name as staffName, ");
@@ -708,6 +793,7 @@ public class ClientReadPlatformServiceImpl implements ClientReadPlatformService 
                 legalForm = ClientEnumerations.legalForm(legalFormEnum);
             }
 
+            // non person immutable object handling stuuf it is kinda responce object prepration
             final Long constitutionId = JdbcSupport.getLong(rs, "constitutionId");
             final String constitutionValue = rs.getString("constitutionValue");
             final CodeValueData constitution = CodeValueData.instance(constitutionId, constitutionValue);
@@ -717,9 +803,10 @@ public class ClientReadPlatformServiceImpl implements ClientReadPlatformService 
             final String mainBusinessLineValue = rs.getString("mainBusinessLineValue");
             final CodeValueData mainBusinessLine = CodeValueData.instance(mainBusinessLineId, mainBusinessLineValue);
             final String remarks = rs.getString("remarks");
+            final String incorporationCountry = rs.getString("incorporationCountry");
 
             final ClientNonPersonData clientNonPerson = new ClientNonPersonData(constitution, incorpNo, incorpValidityTill,
-                    mainBusinessLine, remarks);
+                    mainBusinessLine, remarks, incorporationCountry);
 
             final ClientTimelineData timeline = new ClientTimelineData(submittedOnDate, submittedByUsername, submittedByFirstname,
                     submittedByLastname, activationDate, activatedByUsername, activatedByFirstname, activatedByLastname, closedOnDate,
