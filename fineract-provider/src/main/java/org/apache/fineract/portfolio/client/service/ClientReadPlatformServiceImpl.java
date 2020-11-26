@@ -377,7 +377,7 @@ public class ClientReadPlatformServiceImpl implements ClientReadPlatformService 
         private final String schema;
 
         ClientMembersOfGroupMapper() {
-            final StringBuilder sqlBuilder = new StringBuilder(200);
+            final StringBuilder sqlBuilder = new StringBuilder(600);
 
             sqlBuilder.append(
                     "c.id as id, c.account_no as accountNo, c.external_id as externalId, c.status_enum as statusEnum,c.sub_status as subStatus, ");
@@ -416,92 +416,87 @@ public class ClientReadPlatformServiceImpl implements ClientReadPlatformService 
             sqlBuilder.append("acu.firstname as activatedByFirstname, ");
             sqlBuilder.append("acu.lastname as activatedByLastname, ");
 
-            // non person table stuff 
+            // non person table stuff
             sqlBuilder.append("cnp.constitution_cv_id as constitutionId, ");
             sqlBuilder.append("cvConstitution.code_value as constitutionValue, ");
             sqlBuilder.append("cnp.incorp_no as incorpNo, ");
             sqlBuilder.append("cnp.incorp_validity_till as incorpValidityTill, ");
             sqlBuilder.append("cnp.main_business_line_cv_id as mainBusinessLineId, ");
             sqlBuilder.append("cvMainBusinessLine.code_value as mainBusinessLineValue, ");
-            sqlBuilder.append("cnp.remarks as remarks ");
+            sqlBuilder.append("cnp.remarks as remarks, ");
             sqlBuilder.append("cnp.incorpCountry as incorporationCountry, ");
-            sqlBuilder.append("cnp.companyNumber as incorporationCountry, ");
-            sqlBuilder.append("cnp.incorpDate as incorporationCountry, ");
-            sqlBuilder.append("cnp.incorpCountry, ");
-            sqlBuilder.append("cnp.companyNumber, ");
-            sqlBuilder.append("cnp.incorpDate, ");
-            sqlBuilder.append("cnp.incorpName, ");
-            sqlBuilder.append("cnp.incorpEntityType, ");
-            sqlBuilder.append("cnp.incorpTaxDec, ");
-            sqlBuilder.append("cnp.incorpTradingS, ");
-            sqlBuilder.append("cnp.incorpBusinessActivity, ");
-            sqlBuilder.append("cnp.incorpPorS, ");
-            sqlBuilder.append("cnp.incorpInvestment, ");
-            sqlBuilder.append("cnp.incorpTurnover, ");
-            sqlBuilder.append("cnp.incorpSof, ");
-            sqlBuilder.append("cnp.UboRoleInBusiness, ");
-            sqlBuilder.append("cnp.UboVotingOwnerShip, ");
-            sqlBuilder.append("cnp.UboSharePercentage, ");
-            sqlBuilder.append("cnp.incorpLa1, ");
-            sqlBuilder.append("cnp.incorpLa2, ");
-            sqlBuilder.append("cnp.incorpLa3, ");
-            sqlBuilder.append("cnp.incorpLa4, ");
-            sqlBuilder.append("cnp.incorpLa5, ");
-            sqlBuilder.append("cnp.incorpLa6, ");
-            sqlBuilder.append("cnp.incorpLa7, ");
-            sqlBuilder.append("cnp.incorpLa8, ");
-            sqlBuilder.append("cnp.incorpLaPosCode, ");
-            sqlBuilder.append("cnp.incorpLaEmail, ");
-            sqlBuilder.append("cnp.BaAddress1, ");
-            sqlBuilder.append("cnp.BaAddress2, ");
-            sqlBuilder.append("cnp.BaAddress3, ");
-            sqlBuilder.append("cnp.BaAddress4, ");
-            sqlBuilder.append("cnp.BaAddress5, ");
-            sqlBuilder.append("cnp.BaAddress6, ");
-            sqlBuilder.append("cnp.BaAddress7, ");
-            sqlBuilder.append("cnp.BaAddress8, ");
-            sqlBuilder.append("cnp.BaPostCode, ");
-            sqlBuilder.append("cnp.BaCity, ");
-            sqlBuilder.append("cnp.BaCountry, ");
-            sqlBuilder.append("cnp.CrAddress1, ");
-            sqlBuilder.append("cnp.CrAddress2, ");
-            sqlBuilder.append("cnp.CrAddress3, ");
-            sqlBuilder.append("cnp.CrAddress4, ");
-            sqlBuilder.append("cnp.CrAddress5, ");
-            sqlBuilder.append("cnp.CrAddress6, ");
-            sqlBuilder.append("cnp.CrAddress7, ");
-            sqlBuilder.append("cnp.CrAddress8, ");
-            sqlBuilder.append("cnp.CrAddress9, ");
-            sqlBuilder.append("cnp.CrAddress10, ");
-            sqlBuilder.append("cnp.name, ");
-            sqlBuilder.append("cnp.fullname, ");
-            sqlBuilder.append("cnp.address1, ");
-            sqlBuilder.append("cnp.address2, ");
-            sqlBuilder.append("cnp.address3, ");
-            sqlBuilder.append("cnp.address4, ");
-            sqlBuilder.append("cnp.address5, ");
-            sqlBuilder.append("cnp.address6, ");
-            sqlBuilder.append("cnp.address7, ");
-            sqlBuilder.append("cnp.address8, ");
-            sqlBuilder.append("cnp.address9, ");
-            sqlBuilder.append("cnp.address10, ");
-            sqlBuilder.append("cnp.cvd1, ");
-            sqlBuilder.append("cnp.cvd2, ");
-            sqlBuilder.append("cnp.cvd3, ");
-            sqlBuilder.append("cnp.cvd4, ");
-            sqlBuilder.append("cnp.cvd5, ");
-            sqlBuilder.append("cnp.cvd6, ");
-            sqlBuilder.append("cnp.cvd7, ");
-            sqlBuilder.append("cnp.cvd8, ");
-            sqlBuilder.append("cnp.cvd9, ");
-            sqlBuilder.append("cnp.cvd10, ");
-            sqlBuilder.append("cnp.cvd11, ");
-
-
-
-
-
-
+            sqlBuilder.append("cnp.companyNumber as companyNumber, ");
+            sqlBuilder.append("cnp.incorpDate as incorpDate, ");
+            sqlBuilder.append("cnp.incorpCountry as incorpCountry, ");
+            sqlBuilder.append("cnp.companyNumber as companyNumber, ");
+            sqlBuilder.append("cnp.incorpDate as incorpDate, ");
+            sqlBuilder.append("cnp.incorpName as incorpName, ");
+            sqlBuilder.append("cnp.incorpEntityType as incorpEntityType, ");
+            sqlBuilder.append("cnp.incorpTaxDec as incorpTaxDec, ");
+            sqlBuilder.append("cnp.incorpTradngS as incorpTradingS, ");
+            sqlBuilder.append("cnp.incorpBusinessActivity as incorpBusinessActivity, ");
+            sqlBuilder.append("cnp.incorpPorS as incorpPorS, ");
+            sqlBuilder.append("cnp.incorpInvestment as incorpInvestment, ");
+            sqlBuilder.append("cnp.incorpTurnover as incorpTurnover, ");
+            sqlBuilder.append("cnp.incorpSof as incorpSof, ");
+            sqlBuilder.append("cnp.UboRoleInBusiness as UboRoleInBusiness, ");
+            sqlBuilder.append("cnp.UboVotingOwnerShip as UboVotingOwnerShip, ");
+            sqlBuilder.append("cnp.UboSharePercentage as UboSharePercentage, ");
+            sqlBuilder.append("cnp.incorpLa1 as incorpLa1, ");
+            sqlBuilder.append("cnp.incorpLa2 as incorpLa2, ");
+            sqlBuilder.append("cnp.incorpLa3 as incorpLa3, ");
+            sqlBuilder.append("cnp.incorpLa4 as incorpLa4, ");
+            sqlBuilder.append("cnp.incorpLa5 as incorpLa5, ");
+            sqlBuilder.append("cnp.incorpLa6 as incorpLa6, ");
+            sqlBuilder.append("cnp.incorpLa7 as incorpLa7, ");
+            sqlBuilder.append("cnp.incorpLa8 as incorpLa8, ");
+            sqlBuilder.append("cnp.incorpLaPosCode as incorpLaPosCode, ");
+            sqlBuilder.append("cnp.incorpLaPhone as incorpLaPhone, ");
+            sqlBuilder.append("cnp.incorpLaEmail as incorpLaEmail, ");
+            sqlBuilder.append("cnp.BaAddress1 as BaAddress1, ");
+            sqlBuilder.append("cnp.BaAddress2 as BaAddress2, ");
+            sqlBuilder.append("cnp.BaAddress3 as BaAddress3, ");
+            sqlBuilder.append("cnp.BaAddress4 as BaAddress4, ");
+            sqlBuilder.append("cnp.BaAddress5 as BaAddress5, ");
+            sqlBuilder.append("cnp.BaAddress6 as BaAddress6, ");
+            sqlBuilder.append("cnp.BaAddress7 as BaAddress7, ");
+            sqlBuilder.append("cnp.BaAddress8 as BaAddress8, ");
+            sqlBuilder.append("cnp.BaPostCode as BaPostCode, ");
+            sqlBuilder.append("cnp.BaCity as BaCity, ");
+            sqlBuilder.append("cnp.BaCountry as BaCountry, ");
+            sqlBuilder.append("cnp.CrAddress1 as CrAddress1, ");
+            sqlBuilder.append("cnp.CrAddress2 as CrAddress2, ");
+            sqlBuilder.append("cnp.CrAddress3 as CrAddress3, ");
+            sqlBuilder.append("cnp.CrAddress4 as CrAddress4, ");
+            sqlBuilder.append("cnp.CrAddress5 as CrAddress5, ");
+            sqlBuilder.append("cnp.CrAddress6 as CrAddress6, ");
+            sqlBuilder.append("cnp.CrAddress7 as CrAddress7, ");
+            sqlBuilder.append("cnp.CrAddress8 as CrAddress8, ");
+            sqlBuilder.append("cnp.CrAddress9 as CrAddress9, ");
+            sqlBuilder.append("cnp.CrAddress10 as CrAddress10, ");
+            sqlBuilder.append("cnp.name as name, ");
+            sqlBuilder.append("cnp.fullname as fullname, ");
+            sqlBuilder.append("cnp.address1 as address1, ");
+            sqlBuilder.append("cnp.address2 as address2, ");
+            sqlBuilder.append("cnp.address3 as address3, ");
+            sqlBuilder.append("cnp.address4 as address4, ");
+            sqlBuilder.append("cnp.address5 as address5, ");
+            sqlBuilder.append("cnp.address6 as address6, ");
+            sqlBuilder.append("cnp.address7 as address7, ");
+            sqlBuilder.append("cnp.address8 as address8, ");
+            sqlBuilder.append("cnp.address9 as address9, ");
+            sqlBuilder.append("cnp.address10 as address10, ");
+            sqlBuilder.append("cnp.cvd1 as cvd1, ");
+            sqlBuilder.append("cnp.cvd2 as cvd2, ");
+            sqlBuilder.append("cnp.cvd3 as cvd3, ");
+            sqlBuilder.append("cnp.cvd4 as cvd4, ");
+            sqlBuilder.append("cnp.cvd5 as cvd5, ");
+            sqlBuilder.append("cnp.cvd6 as cvd6, ");
+            sqlBuilder.append("cnp.cvd7 as cvd7, ");
+            sqlBuilder.append("cnp.cvd8 as cvd8, ");
+            sqlBuilder.append("cnp.cvd9 as cvd9, ");
+            sqlBuilder.append("cnp.cvd10 as cvd10, ");
+            sqlBuilder.append("cnp.cvd11 as cvd11, ");
 
             sqlBuilder.append("from m_client c ");
             sqlBuilder.append("join m_office o on o.id = c.office_id ");
@@ -612,8 +607,88 @@ public class ClientReadPlatformServiceImpl implements ClientReadPlatformService 
             final String remarks = rs.getString("remarks");
             final String incorporationCountry = rs.getString("incorporationCountry");
 
+            final String companyNumber = rs.getString("companyNumber");
+            final String incorpDate = rs.getString("incorpDate");
+            final String incorpCountry = rs.getString("incorpCountry");
+            final String swx_companyNumber = rs.getString("companyNumber");
+            final String swx_incorpDate = rs.getString("incorpDate");
+            final String incorpName = rs.getString("incorpName");
+            final String incorpEntityType = rs.getString("incorpEntityType");
+            final String incorpTaxDec = rs.getString("incorpTaxDec");
+            final String incorpTradingS = rs.getString("incorpTradingS");
+            final String incorpBusinessActivity = rs.getString("incorpBusinessActivity");
+            final String incorpPorS = rs.getString("incorpPorS");
+            final String incorpInvestment = rs.getString("incorpInvestment");
+            final String incorpTurnover = rs.getString("incorpTurnover");
+            final String incorpSof = rs.getString("incorpSof");
+            final String UboRoleInBusiness = rs.getString("UboRoleInBusiness");
+            final String UboVotingOwnerShip = rs.getString("UboVotingOwnerShip");
+            final String UboSharePercentage = rs.getString("UboSharePercentage");
+            final String incorpLa1 = rs.getString("incorpLa1");
+            final String incorpLa2 = rs.getString("incorpLa2");
+            final String incorpLa3 = rs.getString("incorpLa3");
+            final String incorpLa4 = rs.getString("incorpLa4");
+            final String incorpLa5 = rs.getString("incorpLa5");
+            final String incorpLa6 = rs.getString("incorpLa6");
+            final String incorpLa7 = rs.getString("incorpLa7");
+            final String incorpLa8 = rs.getString("incorpLa8");
+            final String incorpLaPosCode = rs.getString("incorpLaPosCode");
+            final String incorpLaPhone = rs.getString("incorpLaPhone");
+            final String incorpLaEmail = rs.getString("incorpLaEmail");
+            final String BaAddress1 = rs.getString("BaAddress1");
+            final String BaAddress2 = rs.getString("BaAddress2");
+            final String BaAddress3 = rs.getString("BaAddress3");
+            final String BaAddress4 = rs.getString("BaAddress4");
+            final String BaAddress5 = rs.getString("BaAddress5");
+            final String BaAddress6 = rs.getString("BaAddress6");
+            final String BaAddress7 = rs.getString("BaAddress7");
+            final String BaAddress8 = rs.getString("BaAddress8");
+            final String BaPostCode = rs.getString("BaPostCode");
+            final String BaCity = rs.getString("BaCity");
+            final String BaCountry = rs.getString("BaCountry");
+            final String CrAddress1 = rs.getString("CrAddress1");
+            final String CrAddress2 = rs.getString("CrAddress2");
+            final String CrAddress3 = rs.getString("CrAddress3");
+            final String CrAddress4 = rs.getString("CrAddress4");
+            final String CrAddress5 = rs.getString("CrAddress5");
+            final String CrAddress6 = rs.getString("CrAddress6");
+            final String CrAddress7 = rs.getString("CrAddress7");
+            final String CrAddress8 = rs.getString("CrAddress8");
+            final String CrAddress9 = rs.getString("CrAddress9");
+            final String CrAddress10 = rs.getString("CrAddress10");
+            final String name = rs.getString("name");
+            final String swx_fullname = rs.getString("fullname");
+            final String address1 = rs.getString("address1");
+            final String address2 = rs.getString("address2");
+            final String address3 = rs.getString("address3");
+            final String address4 = rs.getString("address4");
+            final String address5 = rs.getString("address5");
+            final String address6 = rs.getString("address6");
+            final String address7 = rs.getString("address7");
+            final String address8 = rs.getString("address8");
+            final String address9 = rs.getString("address9");
+            final String address10 = rs.getString("address10");
+            final String cvd1 = rs.getString("cvd1");
+            final String cvd2 = rs.getString("cvd2");
+            final String cvd3 = rs.getString("cvd3");
+            final String cvd4 = rs.getString("cvd4");
+            final String cvd5 = rs.getString("cvd5");
+            final String cvd6 = rs.getString("cvd6");
+            final String cvd7 = rs.getString("cvd7");
+            final String cvd8 = rs.getString("cvd8");
+            final String cvd9 = rs.getString("cvd9");
+            final String cvd10 = rs.getString("cvd10");
+            final String cvd11 = rs.getString("cvd11");
+
             final ClientNonPersonData clientNonPerson = new ClientNonPersonData(constitution, incorpNo, incorpValidityTill,
-                    mainBusinessLine, remarks, incorporationCountry);
+                    mainBusinessLine, remarks, incorporationCountry, companyNumber, incorpDate, incorpCountry, swx_companyNumber,
+                    swx_incorpDate, incorpName, incorpEntityType, incorpTaxDec, incorpTradingS, incorpBusinessActivity, incorpPorS,
+                    incorpInvestment, incorpTurnover, incorpSof, UboRoleInBusiness, UboVotingOwnerShip, UboSharePercentage, incorpLa1,
+                    incorpLa2, incorpLa3, incorpLa4, incorpLa5, incorpLa6, incorpLa7, incorpLa8, incorpLaPosCode, incorpLaPhone,
+                    incorpLaEmail, BaAddress1, BaAddress2, BaAddress3, BaAddress4, BaAddress5, BaAddress6, BaAddress7, BaAddress8,
+                    BaPostCode, BaCity, BaCountry, CrAddress1, CrAddress2, CrAddress3, CrAddress4, CrAddress5, CrAddress6, CrAddress7,
+                    CrAddress8, CrAddress9, CrAddress10, name, swx_fullname, address1, address2, address3, address4, address5, address6,
+                    address7, address8, address9, address10, cvd1, cvd2, cvd3, cvd4, cvd5, cvd6, cvd7, cvd8, cvd9, cvd10, cvd11);
 
             final ClientTimelineData timeline = new ClientTimelineData(submittedOnDate, submittedByUsername, submittedByFirstname,
                     submittedByLastname, activationDate, activatedByUsername, activatedByFirstname, activatedByLastname, closedOnDate,
@@ -626,7 +701,6 @@ public class ClientReadPlatformServiceImpl implements ClientReadPlatformService 
 
         }
     }
-
 
     @Override
     public Collection<ClientData> retrieveActiveClientMembersOfCenter(final Long centerId) {
@@ -693,6 +767,87 @@ public class ClientReadPlatformServiceImpl implements ClientReadPlatformService 
             builder.append("cvMainBusinessLine.code_value as mainBusinessLineValue, ");
             builder.append("cnp.remarks as remarks, ");
             builder.append("cnp.incorpCountry as incorporationCountry, ");
+            builder.append("cnp.constitution_cv_id as constitutionId, ");
+            builder.append("cvConstitution.code_value as constitutionValue, ");
+            builder.append("cnp.incorp_no as incorpNo, ");
+            builder.append("cnp.incorp_validity_till as incorpValidityTill, ");
+            builder.append("cnp.main_business_line_cv_id as mainBusinessLineId, ");
+            builder.append("cvMainBusinessLine.code_value as mainBusinessLineValue, ");
+            builder.append("cnp.remarks as remarks, ");
+            // swx fields
+            builder.append("cnp.incorpCountry as incorporationCountry, ");
+            builder.append("cnp.companyNumber as companyNumber, ");
+            builder.append("cnp.incorpDate as incorpDate, ");
+            builder.append("cnp.incorpCountry as incorpCountry, ");
+            builder.append("cnp.companyNumber as companyNumber, ");
+            builder.append("cnp.incorpDate as incorpDate, ");
+            builder.append("cnp.incorpName as incorpName, ");
+            builder.append("cnp.incorpEntityType as incorpEntityType, ");
+            builder.append("cnp.incorpTaxDec as incorpTaxDec, ");
+            builder.append("cnp.incorpTradngS as incorpTradingS, ");
+            builder.append("cnp.incorpBusinessActivity as incorpBusinessActivity, ");
+            builder.append("cnp.incorpPorS as incorpPorS, ");
+            builder.append("cnp.incorpInvestment as incorpInvestment, ");
+            builder.append("cnp.incorpTurnover as incorpTurnover, ");
+            builder.append("cnp.incorpSof as incorpSof, ");
+            builder.append("cnp.UboRoleInBusiness as UboRoleInBusiness, ");
+            builder.append("cnp.UboVotingOwnerShip as UboVotingOwnerShip, ");
+            builder.append("cnp.UboSharePercentage as UboSharePercentage, ");
+            builder.append("cnp.incorpLa1 as incorpLa1, ");
+            builder.append("cnp.incorpLa2 as incorpLa2, ");
+            builder.append("cnp.incorpLa3 as incorpLa3, ");
+            builder.append("cnp.incorpLa4 as incorpLa4, ");
+            builder.append("cnp.incorpLa5 as incorpLa5, ");
+            builder.append("cnp.incorpLa6 as incorpLa6, ");
+            builder.append("cnp.incorpLa7 as incorpLa7, ");
+            builder.append("cnp.incorpLa8 as incorpLa8, ");
+            builder.append("cnp.incorpLaPosCode as incorpLaPosCode, ");
+            builder.append("cnp.incorpLaPhone as incorpLaPhone, ");
+            builder.append("cnp.incorpLaEmail as incorpLaEmail, ");
+            builder.append("cnp.BaAddress1 as BaAddress1, ");
+            builder.append("cnp.BaAddress2 as BaAddress2, ");
+            builder.append("cnp.BaAddress3 as BaAddress3, ");
+            builder.append("cnp.BaAddress4 as BaAddress4, ");
+            builder.append("cnp.BaAddress5 as BaAddress5, ");
+            builder.append("cnp.BaAddress6 as BaAddress6, ");
+            builder.append("cnp.BaAddress7 as BaAddress7, ");
+            builder.append("cnp.BaAddress8 as BaAddress8, ");
+            builder.append("cnp.BaPostCode as BaPostCode, ");
+            builder.append("cnp.BaCity as BaCity, ");
+            builder.append("cnp.BaCountry as BaCountry, ");
+            builder.append("cnp.CrAddress1 as CrAddress1, ");
+            builder.append("cnp.CrAddress2 as CrAddress2, ");
+            builder.append("cnp.CrAddress3 as CrAddress3, ");
+            builder.append("cnp.CrAddress4 as CrAddress4, ");
+            builder.append("cnp.CrAddress5 as CrAddress5, ");
+            builder.append("cnp.CrAddress6 as CrAddress6, ");
+            builder.append("cnp.CrAddress7 as CrAddress7, ");
+            builder.append("cnp.CrAddress8 as CrAddress8, ");
+            builder.append("cnp.CrAddress9 as CrAddress9, ");
+            builder.append("cnp.CrAddress10 as CrAddress10, ");
+            builder.append("cnp.name as name, ");
+            builder.append("cnp.fullname as fullname, ");
+            builder.append("cnp.address1 as address1, ");
+            builder.append("cnp.address2 as address2, ");
+            builder.append("cnp.address3 as address3, ");
+            builder.append("cnp.address4 as address4, ");
+            builder.append("cnp.address5 as address5, ");
+            builder.append("cnp.address6 as address6 , ");
+            builder.append("cnp.address7 as address7 , ");
+            builder.append("cnp.address8 as address8 , ");
+            builder.append("cnp.address9 as address9 , ");
+            builder.append("cnp.address10 as address10 , ");
+            builder.append("cnp.cvd1 as cvd1 , ");
+            builder.append("cnp.cvd2 as cvd2 , ");
+            builder.append("cnp.cvd3 as cvd3 , ");
+            builder.append("cnp.cvd4 as cvd4 , ");
+            builder.append("cnp.cvd5 as cvd5 , ");
+            builder.append("cnp.cvd6 as cvd6 , ");
+            builder.append("cnp.cvd7 as cvd7 , ");
+            builder.append("cnp.cvd8 as cvd8 , ");
+            builder.append("cnp.cvd9 as cvd9 , ");
+            builder.append("cnp.cvd10 as cvd10 , ");
+            builder.append("cnp.cvd11 as cvd11 , ");
 
             builder.append("c.activation_date as activationDate, c.image_id as imageId, ");
             builder.append("c.staff_id as staffId, s.display_name as staffName, ");
@@ -803,10 +958,90 @@ public class ClientReadPlatformServiceImpl implements ClientReadPlatformService 
             final String mainBusinessLineValue = rs.getString("mainBusinessLineValue");
             final CodeValueData mainBusinessLine = CodeValueData.instance(mainBusinessLineId, mainBusinessLineValue);
             final String remarks = rs.getString("remarks");
+            // swx fields
             final String incorporationCountry = rs.getString("incorporationCountry");
+            final String companyNumber = rs.getString("companyNumber");
+            final String incorpDate = rs.getString("incorpDate");
+            final String incorpCountry = rs.getString("incorpCountry");
+            final String swx_companyNumber = rs.getString("companyNumber");
+            final String swx_incorpDate = rs.getString("incorpDate");
+            final String incorpName = rs.getString("incorpName");
+            final String incorpEntityType = rs.getString("incorpEntityType");
+            final String incorpTaxDec = rs.getString("incorpTaxDec");
+            final String incorpTradingS = rs.getString("incorpTradingS");
+            final String incorpBusinessActivity = rs.getString("incorpBusinessActivity");
+            final String incorpPorS = rs.getString("incorpPorS");
+            final String incorpInvestment = rs.getString("incorpInvestment");
+            final String incorpTurnover = rs.getString("incorpTurnover");
+            final String incorpSof = rs.getString("incorpSof");
+            final String UboRoleInBusiness = rs.getString("UboRoleInBusiness");
+            final String UboVotingOwnerShip = rs.getString("UboVotingOwnerShip");
+            final String UboSharePercentage = rs.getString("UboSharePercentage");
+            final String incorpLa1 = rs.getString("incorpLa1");
+            final String incorpLa2 = rs.getString("incorpLa2");
+            final String incorpLa3 = rs.getString("incorpLa3");
+            final String incorpLa4 = rs.getString("incorpLa4");
+            final String incorpLa5 = rs.getString("incorpLa5");
+            final String incorpLa6 = rs.getString("incorpLa6");
+            final String incorpLa7 = rs.getString("incorpLa7");
+            final String incorpLa8 = rs.getString("incorpLa8");
+            final String incorpLaPosCode = rs.getString("incorpLaPosCode");
+            final String incorpLaPhone = rs.getString("incorpLaPhone");
+            final String incorpLaEmail = rs.getString("incorpLaEmail");
+            final String BaAddress1 = rs.getString("BaAddress1");
+            final String BaAddress2 = rs.getString("BaAddress2");
+            final String BaAddress3 = rs.getString("BaAddress3");
+            final String BaAddress4 = rs.getString("BaAddress4");
+            final String BaAddress5 = rs.getString("BaAddress5");
+            final String BaAddress6 = rs.getString("BaAddress6");
+            final String BaAddress7 = rs.getString("BaAddress7");
+            final String BaAddress8 = rs.getString("BaAddress8");
+            final String BaPostCode = rs.getString("BaPostCode");
+            final String BaCity = rs.getString("BaCity");
+            final String BaCountry = rs.getString("BaCountry");
+            final String CrAddress1 = rs.getString("CrAddress1");
+            final String CrAddress2 = rs.getString("CrAddress2");
+            final String CrAddress3 = rs.getString("CrAddress3");
+            final String CrAddress4 = rs.getString("CrAddress4");
+            final String CrAddress5 = rs.getString("CrAddress5");
+            final String CrAddress6 = rs.getString("CrAddress6");
+            final String CrAddress7 = rs.getString("CrAddress7");
+            final String CrAddress8 = rs.getString("CrAddress8");
+            final String CrAddress9 = rs.getString("CrAddress9");
+            final String CrAddress10 = rs.getString("CrAddress10");
+            final String name = rs.getString("name");
+            final String swx_fullname = rs.getString("fullname");
+            final String address1 = rs.getString("address1");
+            final String address2 = rs.getString("address2");
+            final String address3 = rs.getString("address3");
+            final String address4 = rs.getString("address4");
+            final String address5 = rs.getString("address5");
+            final String address6 = rs.getString("address6");
+            final String address7 = rs.getString("address7");
+            final String address8 = rs.getString("address8");
+            final String address9 = rs.getString("address9");
+            final String address10 = rs.getString("address10");
+            final String cvd1 = rs.getString("cvd1");
+            final String cvd2 = rs.getString("cvd2");
+            final String cvd3 = rs.getString("cvd3");
+            final String cvd4 = rs.getString("cvd4");
+            final String cvd5 = rs.getString("cvd5");
+            final String cvd6 = rs.getString("cvd6");
+            final String cvd7 = rs.getString("cvd7");
+            final String cvd8 = rs.getString("cvd8");
+            final String cvd9 = rs.getString("cvd9");
+            final String cvd10 = rs.getString("cvd10");
+            final String cvd11 = rs.getString("cvd11");
 
             final ClientNonPersonData clientNonPerson = new ClientNonPersonData(constitution, incorpNo, incorpValidityTill,
-                    mainBusinessLine, remarks, incorporationCountry);
+                    mainBusinessLine, remarks, incorporationCountry, companyNumber, incorpDate, incorpCountry, swx_companyNumber,
+                    swx_incorpDate, incorpName, incorpEntityType, incorpTaxDec, incorpTradingS, incorpBusinessActivity, incorpPorS,
+                    incorpInvestment, incorpTurnover, incorpSof, UboRoleInBusiness, UboVotingOwnerShip, UboSharePercentage, incorpLa1,
+                    incorpLa2, incorpLa3, incorpLa4, incorpLa5, incorpLa6, incorpLa7, incorpLa8, incorpLaPosCode, incorpLaPhone,
+                    incorpLaEmail, BaAddress1, BaAddress2, BaAddress3, BaAddress4, BaAddress5, BaAddress6, BaAddress7, BaAddress8,
+                    BaPostCode, BaCity, BaCountry, CrAddress1, CrAddress2, CrAddress3, CrAddress4, CrAddress5, CrAddress6, CrAddress7,
+                    CrAddress8, CrAddress9, CrAddress10, name, swx_fullname, address1, address2, address3, address4, address5, address6,
+                    address7, address8, address9, address10, cvd1, cvd2, cvd3, cvd4, cvd5, cvd6, cvd7, cvd8, cvd9, cvd10, cvd11);
 
             final ClientTimelineData timeline = new ClientTimelineData(submittedOnDate, submittedByUsername, submittedByFirstname,
                     submittedByLastname, activationDate, activatedByUsername, activatedByFirstname, activatedByLastname, closedOnDate,

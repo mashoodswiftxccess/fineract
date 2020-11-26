@@ -164,7 +164,6 @@ public class ClientApiConstants {
     public static final String BaAddress6 = "BaAddress6";
     public static final String BaAddress7 = "BaAddress7";
     public static final String BaAddress8 = "BaAddress8";
-    public static final String BaAddress9 = "BaAddress9";
     public static final String BaPostCode = "BaPostCode";
     public static final String BaCity = "BaCity";
     public static final String BaCountry = "BaCountry";

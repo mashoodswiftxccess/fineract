@@ -41,75 +41,75 @@ public class ClientNonPersonData implements Serializable {
     private String dateFormat;
 
     // swx_our_data
-    private String incorpCountry;
-    private String companyNumber;
-    private String incorpDate;
-    private String incorpName;
-    private String incorpEntityType;
-    private String incorpTaxDec;
-    private String incorpPorS;
-    private String incorpInvestment;
-    private String incorpTurnover;
-    private String incorpSof;
-    private String UboRoleInBusiness;
-    private String UbiVotingOwnerShip;
-    private String UboSharePersentage;
-    private String incorpLa1;
-    private String incorpLa2;
-    private String incorpLa3;
-    private String incorpLa4;
-    private String incorpLa5;
-    private String incorpLa6;
-    private String incorpLa7;
-    private String incorpLa8;
-    private String incorpLaPosCode;
-    private String incorpLaphone;
-    private String incorpLaEmail;
-    private String BaAddress1;
-    private String BaAddress2;
-    private String BaAddress3;
-    private String BaAddress4;
-    private String BaAddress5;
-    private String BaAddress6;
-    private String BaAddress7;
-    private String BaAddress8;
+    private final String incorpCountry;
+    private final String companyNumber;
+    private final String incorpDate;
+    private final String incorpName;
+    private final String incorpEntityType;
+    private final String incorpTaxDec;
+    private final String incorpPorS;
+    private final String incorpInvestment;
+    private final String incorpTurnover;
+    private final String incorpSof;
+    private final String UboRoleInBusiness;
+    private final String UbiVotingOwnerShip;
+    private final String UboSharePersentage;
+    private final String incorpLa1;
+    private final String incorpLa2;
+    private final String incorpLa3;
+    private final String incorpLa4;
+    private final String incorpLa5;
+    private final String incorpLa6;
+    private final String incorpLa7;
+    private final String incorpLa8;
+    private final String incorpLaPosCode;
+    private final String incorpLaphone;
+    private final String incorpLaEmail;
+    private final String BaAddress1;
+    private final String BaAddress2;
+    private final String BaAddress3;
+    private final String BaAddress4;
+    private final String BaAddress5;
+    private final String BaAddress6;
+    private final String BaAddress7;
+    private final String BaAddress8;
 
-    private String BaPostCode;
-    private String BaCity;
-    private String BaCountry;
-    private String CrAddress1;
-    private String CrAddress2;
-    private String CrAddress3;
-    private String CrAddress4;
-    private String CrAddress5;
-    private String CrAddress6;
-    private String CrAddress7;
-    private String CrAddress8;
-    private String CrAddress9;
-    private String CrAddress10;
-    private String name;
-    private String fullname;
-    private String address1;
-    private String address2;
-    private String address3;
-    private String address4;
-    private String address5;
-    private String address6;
-    private String address7;
-    private String address8;
-    private String address9;
-    private String address10;
-    private String cvd1;
-    private String cvd2;
-    private String cvd3;
-    private String cvd4;
-    private String cvd5;
-    private String cvd6;
-    private String cvd7;
-    private String cvd8;
-    private String cvd9;
-    private String cvd10;
-    private String cvd11;
+    private final String BaPostCode;
+    private final String BaCity;
+    private final String BaCountry;
+    private final String CrAddress1;
+    private final String CrAddress2;
+    private final String CrAddress3;
+    private final String CrAddress4;
+    private final String CrAddress5;
+    private final String CrAddress6;
+    private final String CrAddress7;
+    private final String CrAddress8;
+    private final String CrAddress9;
+    private final String CrAddress10;
+    private final String name;
+    private final String fullname;
+    private final String address1;
+    private final String address2;
+    private final String address3;
+    private final String address4;
+    private final String address5;
+    private final String address6;
+    private final String address7;
+    private final String address8;
+    private final String address9;
+    private final String address10;
+    private final String cvd1;
+    private final String cvd2;
+    private final String cvd3;
+    private final String cvd4;
+    private final String cvd5;
+    private final String cvd6;
+    private final String cvd7;
+    private final String cvd8;
+    private final String cvd9;
+    private final String cvd10;
+    private final String cvd11;
 
     public static ClientNonPersonData importInstance(String AincorporationNo, LocalDate AincorpValidityTillDate, String Aremarks,
             Long AmainBusinessLineId, Long AconstitutionId, String Alocale, String AdateFormat, String AincorpCountry,
@@ -230,7 +230,19 @@ public class ClientNonPersonData implements Serializable {
     }
 
     public ClientNonPersonData(CodeValueData constitution, String incorpNo, LocalDate incorpValidityTillDate,
-            CodeValueData mainBusinessLine, String remarks, String incorporationCountry) {
+            CodeValueData mainBusinessLine, String remarks, String incorporationCountry, String companyNumber, String incorpDate,
+            String incorpCountry, String swx_companyNumber, String swx_incorpDate, String incorpName, String incorpEntityType,
+            String incorpTaxDec, String incorpTradingS, String incorpBusinessActivity, String incorpPorS, String incorpInvestment,
+            String incorpTurnover, String incorpSof, String AuboRoleInBusiness, String AubiVotingOwnerShip, String AuboSharePersentage,
+            String AincorpLa1, String AincorpLa2, String AincorpLa3, String AincorpLa4, String AincorpLa5, String AincorpLa6,
+            String AincorpLa7, String AincorpLa8, String AincorpLaPosCode, String AincorpLaphone, String AincorpLaEmail, String AbaAddress1,
+            String AbaAddress2, String AbaAddress3, String AbaAddress4, String AbaAddress5, String AbaAddress6, String AbaAddress7,
+            String AbaAddress8, String AbaPostCode, String AbaCity, String AbaCountry, String AcrAddress1, String AcrAddress2,
+            String AcrAddress3, String AcrAddress4, String AcrAddress5, String AcrAddress6, String AcrAddress7, String AcrAddress8,
+            String AcrAddress9, String AcrAddress10, String Aname, String Afullname, String Aaddress1, String Aaddress2, String Aaddress3,
+            String Aaddress4, String Aaddress5, String Aaddress6, String Aaddress7, String Aaddress8, String Aaddress9, String Aaddress10,
+            String Acvd1, String Acvd2, String Acvd3, String Acvd4, String Acvd5, String Acvd6, String Acvd7, String Acvd8, String Acvd9,
+            String Acvd10, String Acvd11) {
 
         this.constitution = constitution;
         this.incorpNumber = incorpNo;
@@ -238,5 +250,74 @@ public class ClientNonPersonData implements Serializable {
         this.mainBusinessLine = mainBusinessLine;
         this.remarks = remarks;
         this.incorpCountry = incorporationCountry;
+        this.companyNumber = companyNumber;
+        this.incorpDate = incorpDate;
+        this.incorpName = incorpName;
+        this.incorpEntityType = incorpEntityType;
+        this.incorpTaxDec = incorpTaxDec;
+        this.incorpPorS = incorpPorS;
+        this.incorpInvestment = incorpInvestment;
+        this.incorpTurnover = incorpTurnover;
+        this.incorpSof = incorpSof;
+        this.UboRoleInBusiness = AuboRoleInBusiness;
+        this.UbiVotingOwnerShip = AubiVotingOwnerShip;
+        this.UboSharePersentage = AuboSharePersentage;
+        this.incorpLa1 = AincorpLa1;
+        this.incorpLa2 = AincorpLa2;
+        this.incorpLa3 = AincorpLa3;
+        this.incorpLa4 = AincorpLa4;
+        this.incorpLa5 = AincorpLa5;
+        this.incorpLa6 = AincorpLa6;
+        this.incorpLa7 = AincorpLa7;
+        this.incorpLa8 = AincorpLa8;
+        this.incorpLaPosCode = AincorpLaPosCode;
+        this.incorpLaphone = AincorpLaphone;
+        this.incorpLaEmail = AincorpLaEmail;
+        this.BaAddress1 = AbaAddress1;
+        this.BaAddress2 = AbaAddress2;
+        this.BaAddress3 = AbaAddress3;
+        this.BaAddress4 = AbaAddress4;
+        this.BaAddress5 = AbaAddress5;
+        this.BaAddress6 = AbaAddress6;
+        this.BaAddress7 = AbaAddress7;
+        this.BaAddress8 = AbaAddress8;
+
+        this.BaPostCode = AbaPostCode;
+        this.BaCity = AbaCity;
+        this.BaCountry = AbaCountry;
+        this.CrAddress1 = AcrAddress1;
+        this.CrAddress2 = AcrAddress2;
+        this.CrAddress3 = AcrAddress3;
+        this.CrAddress4 = AcrAddress4;
+        this.CrAddress5 = AcrAddress5;
+        this.CrAddress6 = AcrAddress6;
+        this.CrAddress7 = AcrAddress7;
+        this.CrAddress8 = AcrAddress8;
+        this.CrAddress9 = AcrAddress9;
+        this.CrAddress10 = AcrAddress10;
+        this.name = Aname;
+        this.fullname = Afullname;
+        this.address1 = Aaddress1;
+        this.address2 = Aaddress2;
+        this.address3 = Aaddress3;
+        this.address4 = Aaddress4;
+        this.address5 = Aaddress5;
+        this.address6 = Aaddress6;
+        this.address7 = Aaddress7;
+        this.address8 = Aaddress8;
+        this.address9 = Aaddress9;
+        this.address10 = Aaddress10;
+        this.cvd1 = Acvd1;
+        this.cvd2 = Acvd2;
+        this.cvd3 = Acvd3;
+        this.cvd4 = Acvd4;
+        this.cvd5 = Acvd5;
+        this.cvd6 = Acvd6;
+        this.cvd7 = Acvd7;
+        this.cvd8 = Acvd8;
+        this.cvd9 = Acvd9;
+        this.cvd10 = Acvd10;
+        this.cvd11 = Acvd11;
     }
+
 }
