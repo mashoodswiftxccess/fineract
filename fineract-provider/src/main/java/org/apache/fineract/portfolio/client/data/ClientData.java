@@ -117,23 +117,77 @@ public final class ClientData implements Comparable<ClientData>, Serializable {
     private Long legalFormId;
     private LocalDate submittedOnDate;
 
+    // swx_code
+    private final String vProfileId;
+    private final String vCorporateId;
+    private final String vManagedAccountId;
+    private final String teleno;
+    private final String vClientType;
+    private final String countryOfBirth;
+    private final String countryOfPr;
+    private final String occupation;
+    private final String employer;
+    private final String employerBusinessType;
+    private final String taxresIdency;
+    private final String paAddress1;
+    private final String paAddress2;
+    private final String paAddress3;
+    private final String paAddress4;
+    private final String paAddress5;
+    private final String paAddress6;
+    private final String paAddress7;
+    private final String paAddress8;
+    private final String paAddress9;
+    private final String paPostCode;
+    private final String paCountry;
+    private final String padateSince;
+    private final String caAddress1;
+    private final String caAddress2;
+    private final String caAddress3;
+    private final String caAddress4;
+    private final String caAddress5;
+    private final String caAddress6;
+    private final String caAddress7;
+    private final String caAddress8;
+    private final String caAddress9;
+    private final String caPostCode;
+    private final String caCountry;
+
     public static ClientData importClientEntityInstance(Long legalFormId, Integer rowIndex, String fullname, Long officeId,
             Long clientTypeId, Long clientClassificationId, Long staffId, Boolean active, LocalDate activationDate,
             LocalDate submittedOnDate, String externalId, LocalDate dateOfBirth, String mobileNo,
-            ClientNonPersonData clientNonPersonDetails, Collection<AddressData> address, String locale, String dateFormat) {
+            ClientNonPersonData clientNonPersonDetails, Collection<AddressData> address, String locale, String dateFormat,
+            String vProfileId, String vCorporateId, String vManagedAccountId, String teleno, String vClientType, String countryOfBirth,
+            String countryOfPr, String occupation, String employer, String employerBusinessType, String taxresIdency, String paAddress1,
+            String paAddress2, String paAddress3, String paAddress4, String paAddress5, String paAddress6, String paAddress7,
+            String paAddress8, String paAddress9, String paPostCode, String paCountry, String padateSince, String caAddress1,
+            String caAddress2, String caAddress3, String caAddress4, String caAddress5, String caAddress6, String caAddress7,
+            String caAddress8, String caAddress9, String caPostCode, String caCountry) {
         return new ClientData(legalFormId, rowIndex, fullname, null, null, null, submittedOnDate, activationDate, active, externalId,
                 officeId, staffId, mobileNo, dateOfBirth, clientTypeId, null, clientClassificationId, null, address, clientNonPersonDetails,
-                locale, dateFormat);
+                locale, dateFormat, vProfileId, vCorporateId, vManagedAccountId, teleno, vClientType, countryOfBirth, countryOfPr,
+                occupation, employer, employerBusinessType, taxresIdency, paAddress1, paAddress2, paAddress3, paAddress4, paAddress5,
+                paAddress6, paAddress7, paAddress8, paAddress9, paPostCode, paCountry, padateSince, caAddress1, caAddress2, caAddress3,
+                caAddress4, caAddress5, caAddress6, caAddress7, caAddress8, caAddress9, caPostCode, caCountry);
     }
 
     public static ClientData importClientPersonInstance(Long legalFormId, Integer rowIndex, String firstname, String lastname,
             String middlename, LocalDate submittedOn, LocalDate activationDate, Boolean active, String externalId, Long officeId,
             Long staffId, String mobileNo, LocalDate dob, Long clientTypeId, Long genderId, Long clientClassificationId, Boolean isStaff,
-            Collection<AddressData> address, String locale, String dateFormat) {
+            Collection<AddressData> address, String locale, String dateFormat, String vProfileId, String vCorporateId,
+            String vManagedAccountId, String teleno, String vClientType, String countryOfBirth, String countryOfPr, String occupation,
+            String employer, String employerBusinessType, String taxresIdency, String paAddress1, String paAddress2, String paAddress3,
+            String paAddress4, String paAddress5, String paAddress6, String paAddress7, String paAddress8, String paAddress9,
+            String paPostCode, String paCountry, String padateSince, String caAddress1, String caAddress2, String caAddress3,
+            String caAddress4, String caAddress5, String caAddress6, String caAddress7, String caAddress8, String caAddress9,
+            String caPostCode, String caCountry) {
 
         return new ClientData(legalFormId, rowIndex, null, firstname, lastname, middlename, submittedOn, activationDate, active, externalId,
                 officeId, staffId, mobileNo, dob, clientTypeId, genderId, clientClassificationId, isStaff, address, null, locale,
-                dateFormat);
+                dateFormat, vProfileId, vCorporateId, vManagedAccountId, teleno, vClientType, countryOfBirth, countryOfPr, occupation,
+                employer, employerBusinessType, taxresIdency, paAddress1, paAddress2, paAddress3, paAddress4, paAddress5, paAddress6,
+                paAddress7, paAddress8, paAddress9, paPostCode, paCountry, padateSince, caAddress1, caAddress2, caAddress3, caAddress4,
+                caAddress5, caAddress6, caAddress7, caAddress8, caAddress9, caPostCode, caCountry);
     }
 
     public static ClientData emptyInstance(Long clientId) {
@@ -143,7 +197,13 @@ public final class ClientData implements Comparable<ClientData>, Serializable {
     private ClientData(Long legalFormId, Integer rowIndex, String fullname, String firstname, String lastname, String middlename,
             LocalDate submittedOn, LocalDate activationDate, Boolean active, String externalId, Long officeId, Long staffId,
             String mobileNo, LocalDate dob, Long clientTypeId, Long genderId, Long clientClassificationId, Boolean isStaff,
-            Collection<AddressData> address, ClientNonPersonData clientNonPersonDetails, String locale, String dateFormat) {
+            Collection<AddressData> address, ClientNonPersonData clientNonPersonDetails, String locale, String dateFormat,
+            String vProfileId, String vCorporateId, String vManagedAccountId, String teleno, String vClientType, String countryOfBirth,
+            String countryOfPr, String occupation, String employer, String employerBusinessType, String taxresIdency, String paAddress1,
+            String paAddress2, String paAddress3, String paAddress4, String paAddress5, String paAddress6, String paAddress7,
+            String paAddress8, String paAddress9, String paPostCode, String paCountry, String padateSince, String caAddress1,
+            String caAddress2, String caAddress3, String caAddress4, String caAddress5, String caAddress6, String caAddress7,
+            String caAddress8, String caAddress9, String caPostCode, String caCountry) {
         this.rowIndex = rowIndex;
         this.dateFormat = dateFormat;
         this.locale = locale;
@@ -201,6 +261,40 @@ public final class ClientData implements Comparable<ClientData>, Serializable {
         this.datatables = null;
         this.familyMemberOptions = null;
         this.emailAddress = null;
+        this.vProfileId = vProfileId;
+        this.vCorporateId = vCorporateId;
+        this.vManagedAccountId = vManagedAccountId;
+        this.teleno = teleno;
+        this.vClientType = vClientType;
+        this.countryOfBirth = countryOfBirth;
+        this.countryOfPr = countryOfPr;
+        this.occupation = occupation;
+        this.employer = employer;
+        this.employerBusinessType = employerBusinessType;
+        this.taxresIdency = taxresIdency;
+        this.paAddress1 = paAddress1;
+        this.paAddress2 = paAddress2;
+        this.paAddress3 = paAddress3;
+        this.paAddress4 = paAddress4;
+        this.paAddress5 = paAddress5;
+        this.paAddress6 = paAddress6;
+        this.paAddress7 = paAddress7;
+        this.paAddress8 = paAddress8;
+        this.paAddress9 = paAddress9;
+        this.paPostCode = paPostCode;
+        this.paCountry = paCountry;
+        this.padateSince = padateSince;
+        this.caAddress1 = caAddress1;
+        this.caAddress2 = caAddress2;
+        this.caAddress3 = caAddress3;
+        this.caAddress4 = caAddress4;
+        this.caAddress5 = caAddress5;
+        this.caAddress6 = caAddress6;
+        this.caAddress7 = caAddress7;
+        this.caAddress8 = caAddress8;
+        this.caAddress9 = caAddress9;
+        this.caPostCode = caPostCode;
+        this.caCountry = caCountry;
     }
 
     public Integer getRowIndex() {
@@ -258,13 +352,50 @@ public final class ClientData implements Comparable<ClientData>, Serializable {
         final EnumOptionData legalForm = null;
         final Boolean isStaff = false;
         final ClientNonPersonData clientNonPersonDetails = null;
+        final String vProfileId = null;
+        final String vCorporateId = null;
+        final String vManagedAccountId = null;
+        final String teleno = null;
+        final String vClientType = null;
+        final String countryOfBirth = null;
+        final String countryOfPr = null;
+        final String occupation = null;
+        final String employer = null;
+        final String employerBusinessType = null;
+        final String taxresIdency = null;
+        final String paAddress1 = null;
+        final String paAddress2 = null;
+        final String paAddress3 = null;
+        final String paAddress4 = null;
+        final String paAddress5 = null;
+        final String paAddress6 = null;
+        final String paAddress7 = null;
+        final String paAddress8 = null;
+        final String paAddress9 = null;
+        final String paPostCode = null;
+        final String paCountry = null;
+        final String padateSince = null;
+        final String caAddress1 = null;
+        final String caAddress2 = null;
+        final String caAddress3 = null;
+        final String caAddress4 = null;
+        final String caAddress5 = null;
+        final String caAddress6 = null;
+        final String caAddress7 = null;
+        final String caAddress8 = null;
+        final String caAddress9 = null;
+        final String caPostCode = null;
+        final String caCountry = null;
         return new ClientData(accountNo, status, subStatus, officeId, officeName, transferToOfficeId, transferToOfficeName, id, firstname,
                 middlename, lastname, fullname, displayName, externalId, mobileNo, emailAddress, dateOfBirth, gender, joinedDate, imageId,
                 staffId, staffName, officeOptions, groups, staffOptions, narrations, genderOptions, timeline, savingProductOptions,
                 savingsProductId, savingsProductName, savingsAccountId, savingAccountOptions, clientType, clientClassification,
                 clientTypeOptions, clientClassificationOptions, clientNonPersonConstitutionOptions, clientNonPersonMainBusinessLineOptions,
                 clientNonPersonDetails, clientLegalFormOptions, familyMemberOptions, legalForm, address, isAddressEnabled, datatables,
-                isStaff);
+                isStaff, vProfileId, vCorporateId, vManagedAccountId, teleno, vClientType, countryOfBirth, countryOfPr, occupation,
+                employer, employerBusinessType, taxresIdency, paAddress1, paAddress2, paAddress3, paAddress4, paAddress5, paAddress6,
+                paAddress7, paAddress8, paAddress9, paPostCode, paCountry, padateSince, caAddress1, caAddress2, caAddress3, caAddress4,
+                caAddress5, caAddress6, caAddress7, caAddress8, caAddress9, caPostCode, caCountry);
 
     }
 
@@ -281,7 +412,14 @@ public final class ClientData implements Comparable<ClientData>, Serializable {
                 templateData.clientClassificationOptions, templateData.clientNonPersonConstitutionOptions,
                 templateData.clientNonPersonMainBusinessLineOptions, clientData.clientNonPersonDetails, templateData.clientLegalFormOptions,
                 templateData.familyMemberOptions, clientData.legalForm, clientData.address, clientData.isAddressEnabled, null,
-                clientData.isStaff);
+                clientData.isStaff, clientData.vProfileId, clientData.vCorporateId, clientData.vManagedAccountId, clientData.teleno,
+                clientData.vClientType, clientData.countryOfBirth, clientData.countryOfPr, clientData.occupation, clientData.employer,
+                clientData.employerBusinessType, clientData.taxresIdency, clientData.paAddress1, clientData.paAddress2,
+                clientData.paAddress3, clientData.paAddress4, clientData.paAddress5, clientData.paAddress6, clientData.paAddress7,
+                clientData.paAddress8, clientData.paAddress9, clientData.paPostCode, clientData.paCountry, clientData.padateSince,
+                clientData.caAddress1, clientData.caAddress2, clientData.caAddress3, clientData.caAddress4, clientData.caAddress5,
+                clientData.caAddress6, clientData.caAddress7, clientData.caAddress8, clientData.caAddress9, clientData.caPostCode,
+                clientData.caCountry);
 
     }
 
@@ -299,7 +437,14 @@ public final class ClientData implements Comparable<ClientData>, Serializable {
                 clientData.clientClassificationOptions, clientData.clientNonPersonConstitutionOptions,
                 clientData.clientNonPersonMainBusinessLineOptions, clientData.clientNonPersonDetails, clientData.clientLegalFormOptions,
                 clientData.familyMemberOptions, clientData.legalForm, clientData.address, clientData.isAddressEnabled, null,
-                clientData.isStaff);
+                clientData.isStaff, clientData.vProfileId, clientData.vCorporateId, clientData.vManagedAccountId, clientData.teleno,
+                clientData.vClientType, clientData.countryOfBirth, clientData.countryOfPr, clientData.occupation, clientData.employer,
+                clientData.employerBusinessType, clientData.taxresIdency, clientData.paAddress1, clientData.paAddress2,
+                clientData.paAddress3, clientData.paAddress4, clientData.paAddress5, clientData.paAddress6, clientData.paAddress7,
+                clientData.paAddress8, clientData.paAddress9, clientData.paPostCode, clientData.paCountry, clientData.padateSince,
+                clientData.caAddress1, clientData.caAddress2, clientData.caAddress3, clientData.caAddress4, clientData.caAddress5,
+                clientData.caAddress6, clientData.caAddress7, clientData.caAddress8, clientData.caAddress9, clientData.caPostCode,
+                clientData.caCountry);
 
     }
 
@@ -314,7 +459,14 @@ public final class ClientData implements Comparable<ClientData>, Serializable {
                 clientData.clientTypeOptions, clientData.clientClassificationOptions, clientData.clientNonPersonConstitutionOptions,
                 clientData.clientNonPersonMainBusinessLineOptions, clientData.clientNonPersonDetails, clientData.clientLegalFormOptions,
                 clientData.familyMemberOptions, clientData.legalForm, clientData.address, clientData.isAddressEnabled, null,
-                clientData.isStaff);
+                clientData.isStaff, clientData.vProfileId, clientData.vCorporateId, clientData.vManagedAccountId, clientData.teleno,
+                clientData.vClientType, clientData.countryOfBirth, clientData.countryOfPr, clientData.occupation, clientData.employer,
+                clientData.employerBusinessType, clientData.taxresIdency, clientData.paAddress1, clientData.paAddress2,
+                clientData.paAddress3, clientData.paAddress4, clientData.paAddress5, clientData.paAddress6, clientData.paAddress7,
+                clientData.paAddress8, clientData.paAddress9, clientData.paPostCode, clientData.paCountry, clientData.padateSince,
+                clientData.caAddress1, clientData.caAddress2, clientData.caAddress3, clientData.caAddress4, clientData.caAddress5,
+                clientData.caAddress6, clientData.caAddress7, clientData.caAddress8, clientData.caAddress9, clientData.caPostCode,
+                clientData.caCountry);
 
     }
 
@@ -356,13 +508,50 @@ public final class ClientData implements Comparable<ClientData>, Serializable {
         final EnumOptionData legalForm = null;
         final Boolean isStaff = false;
         final ClientNonPersonData clientNonPerson = null;
+        final String vProfileId = null;
+        final String vCorporateId = null;
+        final String vManagedAccountId = null;
+        final String teleno = null;
+        final String vClientType = null;
+        final String countryOfBirth = null;
+        final String countryOfPr = null;
+        final String occupation = null;
+        final String employer = null;
+        final String employerBusinessType = null;
+        final String taxresIdency = null;
+        final String paAddress1 = null;
+        final String paAddress2 = null;
+        final String paAddress3 = null;
+        final String paAddress4 = null;
+        final String paAddress5 = null;
+        final String paAddress6 = null;
+        final String paAddress7 = null;
+        final String paAddress8 = null;
+        final String paAddress9 = null;
+        final String paPostCode = null;
+        final String paCountry = null;
+        final String padateSince = null;
+        final String caAddress1 = null;
+        final String caAddress2 = null;
+        final String caAddress3 = null;
+        final String caAddress4 = null;
+        final String caAddress5 = null;
+        final String caAddress6 = null;
+        final String caAddress7 = null;
+        final String caAddress8 = null;
+        final String caAddress9 = null;
+        final String caPostCode = null;
+        final String caCountry = null;
         return new ClientData(accountNo, status, subStatus, officeId, officeName, transferToOfficeId, transferToOfficeName, id, firstname,
                 middlename, lastname, fullname, displayName, externalId, mobileNo, emailAddress, dateOfBirth, gender, activationDate,
                 imageId, staffId, staffName, allowedOffices, groups, staffOptions, closureReasons, genderOptions, timeline,
                 savingProductOptions, savingsProductId, savingsProductName, savingsAccountId, savingAccountOptions, clientType,
                 clientClassification, clientTypeOptions, clientClassificationOptions, clientNonPersonConstitutionOptions,
                 clientNonPersonMainBusinessLineOptions, clientNonPerson, clientLegalFormOptions, familyMemberOptions, legalForm, null, null,
-                null, isStaff);
+                null, isStaff, vProfileId, vCorporateId, vManagedAccountId, teleno, vClientType, countryOfBirth, countryOfPr, occupation,
+                employer, employerBusinessType, taxresIdency, paAddress1, paAddress2, paAddress3, paAddress4, paAddress5, paAddress6,
+                paAddress7, paAddress8, paAddress9, paPostCode, paCountry, padateSince, caAddress1, caAddress2, caAddress3, caAddress4,
+                caAddress5, caAddress6, caAddress7, caAddress8, caAddress9, caPostCode, caCountry);
     }
 
     public static ClientData lookup(final Long id, final String displayName, final Long officeId, final String officeName) {
@@ -406,13 +595,50 @@ public final class ClientData implements Comparable<ClientData>, Serializable {
         final EnumOptionData legalForm = null;
         final Boolean isStaff = false;
         final ClientNonPersonData clientNonPerson = null;
+        final String vProfileId = null;
+        final String vCorporateId = null;
+        final String vManagedAccountId = null;
+        final String teleno = null;
+        final String vClientType = null;
+        final String countryOfBirth = null;
+        final String countryOfPr = null;
+        final String occupation = null;
+        final String employer = null;
+        final String employerBusinessType = null;
+        final String taxresIdency = null;
+        final String paAddress1 = null;
+        final String paAddress2 = null;
+        final String paAddress3 = null;
+        final String paAddress4 = null;
+        final String paAddress5 = null;
+        final String paAddress6 = null;
+        final String paAddress7 = null;
+        final String paAddress8 = null;
+        final String paAddress9 = null;
+        final String paPostCode = null;
+        final String paCountry = null;
+        final String padateSince = null;
+        final String caAddress1 = null;
+        final String caAddress2 = null;
+        final String caAddress3 = null;
+        final String caAddress4 = null;
+        final String caAddress5 = null;
+        final String caAddress6 = null;
+        final String caAddress7 = null;
+        final String caAddress8 = null;
+        final String caAddress9 = null;
+        final String caPostCode = null;
+        final String caCountry = null;
         return new ClientData(accountNo, status, subStatus, officeId, officeName, transferToOfficeId, transferToOfficeName, id, firstname,
                 middlename, lastname, fullname, displayName, externalId, mobileNo, emailAddress, dateOfBirth, gender, activationDate,
                 imageId, staffId, staffName, allowedOffices, groups, staffOptions, closureReasons, genderOptions, timeline,
                 savingProductOptions, savingsProductId, savingsProductName, savingsAccountId, savingAccountOptions, clientType,
                 clientClassification, clientTypeOptions, clientClassificationOptions, clientNonPersonConstitutionOptions,
                 clientNonPersonMainBusinessLineOptions, clientNonPerson, clientLegalFormOptions, familyMemberOptions, legalForm, null, null,
-                null, isStaff);
+                null, isStaff, vProfileId, vCorporateId, vManagedAccountId, teleno, vClientType, countryOfBirth, countryOfPr, occupation,
+                employer, employerBusinessType, taxresIdency, paAddress1, paAddress2, paAddress3, paAddress4, paAddress5, paAddress6,
+                paAddress7, paAddress8, paAddress9, paPostCode, paCountry, padateSince, caAddress1, caAddress2, caAddress3, caAddress4,
+                caAddress5, caAddress6, caAddress7, caAddress8, caAddress9, caPostCode, caCountry);
 
     }
 
@@ -429,7 +655,13 @@ public final class ClientData implements Comparable<ClientData>, Serializable {
             final CodeValueData gender, final LocalDate activationDate, final Long imageId, final Long staffId, final String staffName,
             final ClientTimelineData timeline, final Long savingsProductId, final String savingsProductName, final Long savingsAccountId,
             final CodeValueData clientType, final CodeValueData clientClassification, final EnumOptionData legalForm,
-            final ClientNonPersonData clientNonPerson, final Boolean isStaff) {
+            final ClientNonPersonData clientNonPerson, final Boolean isStaff, String vProfileId, String vCorporateId,
+            String vManagedAccountId, String teleno, String vClientType, String countryOfBirth, String countryOfPr, String occupation,
+            String employer, String employerBusinessType, String taxresIdency, String paAddress1, String paAddress2, String paAddress3,
+            String paAddress4, String paAddress5, String paAddress6, String paAddress7, String paAddress8, String paAddress9,
+            String paPostCode, String paCountry, String padateSince, String caAddress1, String caAddress2, String caAddress3,
+            String caAddress4, String caAddress5, String caAddress6, String caAddress7, String caAddress8, String caAddress9,
+            String caPostCode, String caCountry) {
 
         final Collection<OfficeData> allowedOffices = null;
         final Collection<GroupGeneralData> groups = null;
@@ -448,7 +680,11 @@ public final class ClientData implements Comparable<ClientData>, Serializable {
                 imageId, staffId, staffName, allowedOffices, groups, staffOptions, closureReasons, genderOptions, timeline,
                 savingProductOptions, savingsProductId, savingsProductName, savingsAccountId, null, clientType, clientClassification,
                 clientTypeOptions, clientClassificationOptions, clientNonPersonConstitutionOptions, clientNonPersonMainBusinessLineOptions,
-                clientNonPerson, clientLegalFormOptions, familyMemberOptions, legalForm, null, null, null, isStaff);
+                clientNonPerson, clientLegalFormOptions, familyMemberOptions, legalForm, null, null, null, isStaff, vProfileId,
+                vCorporateId, vManagedAccountId, teleno, vClientType, countryOfBirth, countryOfPr, occupation, employer,
+                employerBusinessType, taxresIdency, paAddress1, paAddress2, paAddress3, paAddress4, paAddress5, paAddress6, paAddress7,
+                paAddress8, paAddress9, paPostCode, paCountry, padateSince, caAddress1, caAddress2, caAddress3, caAddress4, caAddress5,
+                caAddress6, caAddress7, caAddress8, caAddress9, caPostCode, caCountry);
 
     }
 
@@ -467,7 +703,13 @@ public final class ClientData implements Comparable<ClientData>, Serializable {
             final Collection<CodeValueData> clientNonPersonMainBusinessLineOptions, final ClientNonPersonData clientNonPerson,
             final List<EnumOptionData> clientLegalFormOptions, final ClientFamilyMembersData familyMemberOptions,
             final EnumOptionData legalForm, final Collection<AddressData> address, final Boolean isAddressEnabled,
-            final List<DatatableData> datatables, final Boolean isStaff) {
+            final List<DatatableData> datatables, final Boolean isStaff, String vProfileId, String vCorporateId, String vManagedAccountId,
+            String teleno, String vClientType, String countryOfBirth, String countryOfPr, String occupation, String employer,
+            String employerBusinessType, String taxresIdency, String paAddress1, String paAddress2, String paAddress3, String paAddress4,
+            String paAddress5, String paAddress6, String paAddress7, String paAddress8, String paAddress9, String paPostCode,
+            String paCountry, String padateSince, String caAddress1, String caAddress2, String caAddress3, String caAddress4,
+            String caAddress5, String caAddress6, String caAddress7, String caAddress8, String caAddress9, String caPostCode,
+            String caCountry) {
         this.accountNo = accountNo;
         this.status = status;
         if (status != null) {
@@ -533,6 +775,40 @@ public final class ClientData implements Comparable<ClientData>, Serializable {
         this.address = address;
         this.isAddressEnabled = isAddressEnabled;
         this.datatables = datatables;
+        this.vProfileId = vProfileId;
+        this.vCorporateId = vCorporateId;
+        this.vManagedAccountId = vManagedAccountId;
+        this.teleno = teleno;
+        this.vClientType = vClientType;
+        this.countryOfBirth = countryOfBirth;
+        this.countryOfPr = countryOfPr;
+        this.occupation = occupation;
+        this.employer = employer;
+        this.employerBusinessType = employerBusinessType;
+        this.taxresIdency = taxresIdency;
+        this.paAddress1 = paAddress1;
+        this.paAddress2 = paAddress2;
+        this.paAddress3 = paAddress3;
+        this.paAddress4 = paAddress4;
+        this.paAddress5 = paAddress5;
+        this.paAddress6 = paAddress6;
+        this.paAddress7 = paAddress7;
+        this.paAddress8 = paAddress8;
+        this.paAddress9 = paAddress9;
+        this.paPostCode = paPostCode;
+        this.paCountry = paCountry;
+        this.padateSince = padateSince;
+        this.caAddress1 = caAddress1;
+        this.caAddress2 = caAddress2;
+        this.caAddress3 = caAddress3;
+        this.caAddress4 = caAddress4;
+        this.caAddress5 = caAddress5;
+        this.caAddress6 = caAddress6;
+        this.caAddress7 = caAddress7;
+        this.caAddress8 = caAddress8;
+        this.caAddress9 = caAddress9;
+        this.caPostCode = caPostCode;
+        this.caCountry = caCountry;
 
     }
 

@@ -28,6 +28,7 @@ import java.util.List;
 import org.apache.fineract.commands.domain.CommandWrapper;
 import org.apache.fineract.commands.service.CommandWrapperBuilder;
 import org.apache.fineract.commands.service.PortfolioCommandSourceWritePlatformService;
+import org.apache.fineract.infrastructure.bulkimport.constants.ClientEntityConstants;
 import org.apache.fineract.infrastructure.bulkimport.constants.ClientPersonConstants;
 import org.apache.fineract.infrastructure.bulkimport.constants.TemplatePopulateImportConstants;
 import org.apache.fineract.infrastructure.bulkimport.data.Count;
@@ -93,6 +94,40 @@ public class ClientPersonImportHandler implements ImportHandler {
         LocalDate submittedOn = ImportHandlerUtils.readAsDate(ClientPersonConstants.SUBMITTED_ON_COL, row);
         LocalDate activationDate = ImportHandlerUtils.readAsDate(ClientPersonConstants.ACTIVATION_DATE_COL, row);
         Boolean active = ImportHandlerUtils.readAsBoolean(ClientPersonConstants.ACTIVE_COL, row);
+        String v_ProfileId = ImportHandlerUtils.readAsString(ClientEntityConstants.v_ProfileId, row);
+        String v_CorporateId = ImportHandlerUtils.readAsString(ClientEntityConstants.v_CorporateId, row);
+        String v_ManagedAccountId = ImportHandlerUtils.readAsString(ClientEntityConstants.v_ManagedAccountId, row);
+        String v_teleno = ImportHandlerUtils.readAsString(ClientEntityConstants.v_teleno, row);
+        String v_ClientType = ImportHandlerUtils.readAsString(ClientEntityConstants.v_ClientType, row);
+        String v_countryOfBirth = ImportHandlerUtils.readAsString(ClientEntityConstants.v_countryOfBirth, row);
+        String v_countryOfPr = ImportHandlerUtils.readAsString(ClientEntityConstants.v_countryOfPr, row);
+        String v_occupation = ImportHandlerUtils.readAsString(ClientEntityConstants.v_occupation, row);
+        String v_employer = ImportHandlerUtils.readAsString(ClientEntityConstants.v_employer, row);
+        String v_employerBusinessType = ImportHandlerUtils.readAsString(ClientEntityConstants.v_employerBusinessType, row);
+        String t_axresIdency = ImportHandlerUtils.readAsString(ClientEntityConstants.t_axresIdency, row);
+        String p_aAddress1 = ImportHandlerUtils.readAsString(ClientEntityConstants.p_aAddress1, row);
+        String p_aAddress2 = ImportHandlerUtils.readAsString(ClientEntityConstants.p_aAddress2, row);
+        String p_aAddress3 = ImportHandlerUtils.readAsString(ClientEntityConstants.p_aAddress3, row);
+        String p_aAddress4 = ImportHandlerUtils.readAsString(ClientEntityConstants.p_aAddress4, row);
+        String p_aAddress5 = ImportHandlerUtils.readAsString(ClientEntityConstants.p_aAddress5, row);
+        String p_aAddress6 = ImportHandlerUtils.readAsString(ClientEntityConstants.p_aAddress6, row);
+        String p_aAddress7 = ImportHandlerUtils.readAsString(ClientEntityConstants.p_aAddress7, row);
+        String p_aAddress8 = ImportHandlerUtils.readAsString(ClientEntityConstants.p_aAddress8, row);
+        String p_aAddress9 = ImportHandlerUtils.readAsString(ClientEntityConstants.p_aAddress9, row);
+        String p_aPostCode = ImportHandlerUtils.readAsString(ClientEntityConstants.p_aPostCode, row);
+        String p_aCountry = ImportHandlerUtils.readAsString(ClientEntityConstants.p_aCountry, row);
+        String p_adateSince = ImportHandlerUtils.readAsString(ClientEntityConstants.p_adateSince, row);
+        String c_aAddress1 = ImportHandlerUtils.readAsString(ClientEntityConstants.c_aAddress1, row);
+        String c_aAddress2 = ImportHandlerUtils.readAsString(ClientEntityConstants.c_aAddress2, row);
+        String c_aAddress3 = ImportHandlerUtils.readAsString(ClientEntityConstants.c_aAddress3, row);
+        String c_aAddress4 = ImportHandlerUtils.readAsString(ClientEntityConstants.c_aAddress4, row);
+        String c_aAddress5 = ImportHandlerUtils.readAsString(ClientEntityConstants.c_aAddress5, row);
+        String c_aAddress6 = ImportHandlerUtils.readAsString(ClientEntityConstants.c_aAddress6, row);
+        String c_aAddress7 = ImportHandlerUtils.readAsString(ClientEntityConstants.c_aAddress7, row);
+        String c_aAddress8 = ImportHandlerUtils.readAsString(ClientEntityConstants.c_aAddress8, row);
+        String c_aAddress9 = ImportHandlerUtils.readAsString(ClientEntityConstants.c_aAddress9, row);
+        String c_aPostCode = ImportHandlerUtils.readAsString(ClientEntityConstants.c_aPostCode, row);
+        String c_aCountry = ImportHandlerUtils.readAsString(ClientEntityConstants.c_aCountry, row);
         if (!active) {
             activationDate = submittedOn;
         }
@@ -174,7 +209,11 @@ public class ClientPersonImportHandler implements ImportHandler {
         }
         return ClientData.importClientPersonInstance(legalFormId, row.getRowNum(), firstName, lastName, middleName, submittedOn,
                 activationDate, active, externalId, officeId, staffId, mobileNo, dob, clientTypeId, genderId, clientClassificationId,
-                isStaff, addressList, locale, dateFormat);
+                isStaff, addressList, locale, dateFormat, v_ProfileId, v_CorporateId, v_ManagedAccountId, v_teleno, v_ClientType,
+                v_countryOfBirth, v_countryOfPr, v_occupation, v_employer, v_employerBusinessType, t_axresIdency, p_aAddress1, p_aAddress2,
+                p_aAddress3, p_aAddress4, p_aAddress5, p_aAddress6, p_aAddress7, p_aAddress8, p_aAddress9, p_aPostCode, p_aCountry,
+                p_adateSince, c_aAddress1, c_aAddress2, c_aAddress3, c_aAddress4, c_aAddress5, c_aAddress6, c_aAddress7, c_aAddress8,
+                c_aAddress9, c_aPostCode, c_aCountry);
 
     }
 

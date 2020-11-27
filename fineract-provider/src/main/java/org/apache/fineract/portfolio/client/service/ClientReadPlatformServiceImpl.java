@@ -377,7 +377,7 @@ public class ClientReadPlatformServiceImpl implements ClientReadPlatformService 
         private final String schema;
 
         ClientMembersOfGroupMapper() {
-            final StringBuilder sqlBuilder = new StringBuilder(600);
+            final StringBuilder sqlBuilder = new StringBuilder(1000);
 
             sqlBuilder.append(
                     "c.id as id, c.account_no as accountNo, c.external_id as externalId, c.status_enum as statusEnum,c.sub_status as subStatus, ");
@@ -401,6 +401,43 @@ public class ClientReadPlatformServiceImpl implements ClientReadPlatformService 
             sqlBuilder.append("c.staff_id as staffId, s.display_name as staffName,");
             sqlBuilder.append("c.default_savings_product as savingsProductId, sp.name as savingsProductName, ");
             sqlBuilder.append("c.default_savings_account as savingsAccountId, ");
+
+            // swx table stuff
+
+            sqlBuilder.append("c.v_profile_id as v_profile_id, ");
+            sqlBuilder.append("c.v_corporate_id as v_corporate_id, ");
+            sqlBuilder.append("c.v_managed_account_id as v_managed_account_id, ");
+            sqlBuilder.append("c.tele_no as tele_no, ");
+            sqlBuilder.append("c.client_type as client_type, ");
+            sqlBuilder.append("c.country_of_birth as country_of_birth, ");
+            sqlBuilder.append("c.country_of_pr as country_of_pr, ");
+            sqlBuilder.append("c.occupation as occupation, ");
+            sqlBuilder.append("c.employer as employer, ");
+            sqlBuilder.append("c.employer_business_type as employer_business_type, ");
+            sqlBuilder.append("c.tax_residency as tax_residency, ");
+            sqlBuilder.append("c.PA_Address_1 as PA_Address_1, ");
+            sqlBuilder.append("c.PA_Address_2 as PA_Address_2, ");
+            sqlBuilder.append("c.PA_Address_3 as PA_Address_3, ");
+            sqlBuilder.append("c.PA_Address_4 as PA_Address_4, ");
+            sqlBuilder.append("c.PA_Address_5 as PA_Address_5, ");
+            sqlBuilder.append("c.PA_Address_6 as PA_Address_6, ");
+            sqlBuilder.append("c.PA_Address_7 as PA_Address_7, ");
+            sqlBuilder.append("c.PA_Address_8 as PA_Address_8, ");
+            sqlBuilder.append("c.PA_Address_9 as PA_Address_9, ");
+            sqlBuilder.append("c.PA_PostCode as PA_PostCode, ");
+            sqlBuilder.append("c.PA_Country as PA_Country, ");
+            sqlBuilder.append("c.PA_date_Since as PA_date_Since, ");
+            sqlBuilder.append("c.CA_Address_1 as CA_Address_1, ");
+            sqlBuilder.append("c.CA_Address_2 as CA_Address_2, ");
+            sqlBuilder.append("c.CA_Address_3 as CA_Address_3, ");
+            sqlBuilder.append("c.CA_Address_4 as CA_Address_4, ");
+            sqlBuilder.append("c.CA_Address_5 as CA_Address_5, ");
+            sqlBuilder.append("c.CA_Address_6 as CA_Address_6, ");
+            sqlBuilder.append("c.CA_Address_7 as CA_Address_7, ");
+            sqlBuilder.append("c.CA_Address_8 as CA_Address_8, ");
+            sqlBuilder.append("c.CA_Address_9 as CA_Address_9, ");
+            sqlBuilder.append("c.CA_PostCode as CA_PostCode, ");
+            sqlBuilder.append("c.CA_Country as CA_Country, ");
 
             sqlBuilder.append("c.submittedon_date as submittedOnDate, ");
             sqlBuilder.append("sbu.username as submittedByUsername, ");
@@ -680,6 +717,43 @@ public class ClientReadPlatformServiceImpl implements ClientReadPlatformService 
             final String cvd10 = rs.getString("cvd10");
             final String cvd11 = rs.getString("cvd11");
 
+            // swx client table
+
+            final String v_profile_id = rs.getString("v_profile_id");
+            final String v_corporate_id = rs.getString("v_corporate_id");
+            final String v_managed_account_id = rs.getString("v_managed_account_id");
+            final String tele_no = rs.getString("tele_no");
+            final String client_type = rs.getString("client_type");
+            final String country_of_birth = rs.getString("country_of_birth");
+            final String country_of_pr = rs.getString("country_of_pr");
+            final String occupation = rs.getString("occupation");
+            final String employer = rs.getString("employer");
+            final String employer_business_type = rs.getString("employer_business_type");
+            final String tax_residency = rs.getString("tax_residency");
+            final String PA_Address_1 = rs.getString("PA_Address_1");
+            final String PA_Address_2 = rs.getString("PA_Address_2");
+            final String PA_Address_3 = rs.getString("PA_Address_3");
+            final String PA_Address_4 = rs.getString("PA_Address_4");
+            final String PA_Address_5 = rs.getString("PA_Address_5");
+            final String PA_Address_6 = rs.getString("PA_Address_6");
+            final String PA_Address_7 = rs.getString("PA_Address_7");
+            final String PA_Address_8 = rs.getString("PA_Address_8");
+            final String PA_Address_9 = rs.getString("PA_Address_9");
+            final String PA_PostCode = rs.getString("PA_PostCode");
+            final String PA_Country = rs.getString("PA_Country");
+            final String PA_date_Since = rs.getString("PA_date_Since");
+            final String CA_Address_1 = rs.getString("CA_Address_1");
+            final String CA_Address_2 = rs.getString("CA_Address_2");
+            final String CA_Address_3 = rs.getString("CA_Address_3");
+            final String CA_Address_4 = rs.getString("CA_Address_4");
+            final String CA_Address_5 = rs.getString("CA_Address_5");
+            final String CA_Address_6 = rs.getString("CA_Address_6");
+            final String CA_Address_7 = rs.getString("CA_Address_7");
+            final String CA_Address_8 = rs.getString("CA_Address_8");
+            final String CA_Address_9 = rs.getString("CA_Address_9");
+            final String CA_PostCode = rs.getString("CA_PostCode");
+            final String CA_Country = rs.getString("CA_Country");
+
             final ClientNonPersonData clientNonPerson = new ClientNonPersonData(constitution, incorpNo, incorpValidityTill,
                     mainBusinessLine, remarks, incorporationCountry, companyNumber, incorpDate, incorpCountry, swx_companyNumber,
                     swx_incorpDate, incorpName, incorpEntityType, incorpTaxDec, incorpTradingS, incorpBusinessActivity, incorpPorS,
@@ -697,7 +771,11 @@ public class ClientReadPlatformServiceImpl implements ClientReadPlatformService 
             return ClientData.instance(accountNo, status, subStatus, officeId, officeName, transferToOfficeId, transferToOfficeName, id,
                     firstname, middlename, lastname, fullname, displayName, externalId, mobileNo, emailAddress, dateOfBirth, gender,
                     activationDate, imageId, staffId, staffName, timeline, savingsProductId, savingsProductName, savingsAccountId,
-                    clienttype, classification, legalForm, clientNonPerson, isStaff);
+                    clienttype, classification, legalForm, clientNonPerson, isStaff, v_profile_id, v_corporate_id, v_managed_account_id,
+                    tele_no, client_type, country_of_birth, country_of_pr, occupation, employer, employer_business_type, tax_residency,
+                    PA_Address_1, PA_Address_2, PA_Address_3, PA_Address_4, PA_Address_5, PA_Address_6, PA_Address_7, PA_Address_8,
+                    PA_Address_9, PA_PostCode, PA_Country, PA_date_Since, CA_Address_1, CA_Address_2, CA_Address_3, CA_Address_4,
+                    CA_Address_5, CA_Address_6, CA_Address_7, CA_Address_8, CA_Address_9, CA_PostCode, CA_Country);
 
         }
     }
@@ -742,6 +820,43 @@ public class ClientReadPlatformServiceImpl implements ClientReadPlatformService 
             builder.append("c.client_classification_cv_id as classificationId, ");
             builder.append("cvclassification.code_value as classificationValue, ");
             builder.append("c.legal_form_enum as legalFormEnum, ");
+
+            // swx table stuff
+
+            builder.append("c.v_profile_id as v_profile_id, ");
+            builder.append("c.v_corporate_id as v_corporate_id, ");
+            builder.append("c.v_managed_account_id as v_managed_account_id, ");
+            builder.append("c.tele_no as tele_no, ");
+            builder.append("c.client_type as client_type, ");
+            builder.append("c.country_of_birth as country_of_birth, ");
+            builder.append("c.country_of_pr as country_of_pr, ");
+            builder.append("c.occupation as occupation, ");
+            builder.append("c.employer as employer, ");
+            builder.append("c.employer_business_type as employer_business_type, ");
+            builder.append("c.tax_residency as tax_residency, ");
+            builder.append("c.PA_Address_1 as PA_Address_1, ");
+            builder.append("c.PA_Address_2 as PA_Address_2, ");
+            builder.append("c.PA_Address_3 as PA_Address_3, ");
+            builder.append("c.PA_Address_4 as PA_Address_4, ");
+            builder.append("c.PA_Address_5 as PA_Address_5, ");
+            builder.append("c.PA_Address_6 as PA_Address_6, ");
+            builder.append("c.PA_Address_7 as PA_Address_7, ");
+            builder.append("c.PA_Address_8 as PA_Address_8, ");
+            builder.append("c.PA_Address_9 as PA_Address_9, ");
+            builder.append("c.PA_PostCode as PA_PostCode, ");
+            builder.append("c.PA_Country as PA_Country, ");
+            builder.append("c.PA_date_Since as PA_date_Since, ");
+            builder.append("c.CA_Address_1 as CA_Address_1, ");
+            builder.append("c.CA_Address_2 as CA_Address_2, ");
+            builder.append("c.CA_Address_3 as CA_Address_3, ");
+            builder.append("c.CA_Address_4 as CA_Address_4, ");
+            builder.append("c.CA_Address_5 as CA_Address_5, ");
+            builder.append("c.CA_Address_6 as CA_Address_6, ");
+            builder.append("c.CA_Address_7 as CA_Address_7, ");
+            builder.append("c.CA_Address_8 as CA_Address_8, ");
+            builder.append("c.CA_Address_9 as CA_Address_9, ");
+            builder.append("c.CA_PostCode as CA_PostCode, ");
+            builder.append("c.CA_Country as CA_Country, ");
 
             builder.append("c.submittedon_date as submittedOnDate, ");
             builder.append("sbu.username as submittedByUsername, ");
@@ -1033,6 +1148,41 @@ public class ClientReadPlatformServiceImpl implements ClientReadPlatformService 
             final String cvd10 = rs.getString("cvd10");
             final String cvd11 = rs.getString("cvd11");
 
+            final String v_profile_id = rs.getString("v_profile_id");
+            final String v_corporate_id = rs.getString("v_corporate_id");
+            final String v_managed_account_id = rs.getString("v_managed_account_id");
+            final String tele_no = rs.getString("tele_no");
+            final String client_type = rs.getString("client_type");
+            final String country_of_birth = rs.getString("country_of_birth");
+            final String country_of_pr = rs.getString("country_of_pr");
+            final String occupation = rs.getString("occupation");
+            final String employer = rs.getString("employer");
+            final String employer_business_type = rs.getString("employer_business_type");
+            final String tax_residency = rs.getString("tax_residency");
+            final String PA_Address_1 = rs.getString("PA_Address_1");
+            final String PA_Address_2 = rs.getString("PA_Address_2");
+            final String PA_Address_3 = rs.getString("PA_Address_3");
+            final String PA_Address_4 = rs.getString("PA_Address_4");
+            final String PA_Address_5 = rs.getString("PA_Address_5");
+            final String PA_Address_6 = rs.getString("PA_Address_6");
+            final String PA_Address_7 = rs.getString("PA_Address_7");
+            final String PA_Address_8 = rs.getString("PA_Address_8");
+            final String PA_Address_9 = rs.getString("PA_Address_9");
+            final String PA_PostCode = rs.getString("PA_PostCode");
+            final String PA_Country = rs.getString("PA_Country");
+            final String PA_date_Since = rs.getString("PA_date_Since");
+            final String CA_Address_1 = rs.getString("CA_Address_1");
+            final String CA_Address_2 = rs.getString("CA_Address_2");
+            final String CA_Address_3 = rs.getString("CA_Address_3");
+            final String CA_Address_4 = rs.getString("CA_Address_4");
+            final String CA_Address_5 = rs.getString("CA_Address_5");
+            final String CA_Address_6 = rs.getString("CA_Address_6");
+            final String CA_Address_7 = rs.getString("CA_Address_7");
+            final String CA_Address_8 = rs.getString("CA_Address_8");
+            final String CA_Address_9 = rs.getString("CA_Address_9");
+            final String CA_PostCode = rs.getString("CA_PostCode");
+            final String CA_Country = rs.getString("CA_Country");
+
             final ClientNonPersonData clientNonPerson = new ClientNonPersonData(constitution, incorpNo, incorpValidityTill,
                     mainBusinessLine, remarks, incorporationCountry, companyNumber, incorpDate, incorpCountry, swx_companyNumber,
                     swx_incorpDate, incorpName, incorpEntityType, incorpTaxDec, incorpTradingS, incorpBusinessActivity, incorpPorS,
@@ -1050,7 +1200,11 @@ public class ClientReadPlatformServiceImpl implements ClientReadPlatformService 
             return ClientData.instance(accountNo, status, subStatus, officeId, officeName, transferToOfficeId, transferToOfficeName, id,
                     firstname, middlename, lastname, fullname, displayName, externalId, mobileNo, emailAddress, dateOfBirth, gender,
                     activationDate, imageId, staffId, staffName, timeline, savingsProductId, savingsProductName, savingsAccountId,
-                    clienttype, classification, legalForm, clientNonPerson, isStaff);
+                    clienttype, classification, legalForm, clientNonPerson, isStaff, v_profile_id, v_corporate_id, v_managed_account_id,
+                    tele_no, client_type, country_of_birth, country_of_pr, occupation, employer, employer_business_type, tax_residency,
+                    PA_Address_1, PA_Address_2, PA_Address_3, PA_Address_4, PA_Address_5, PA_Address_6, PA_Address_7, PA_Address_8,
+                    PA_Address_9, PA_PostCode, PA_Country, PA_date_Since, CA_Address_1, CA_Address_2, CA_Address_3, CA_Address_4,
+                    CA_Address_5, CA_Address_6, CA_Address_7, CA_Address_8, CA_Address_9, CA_PostCode, CA_Country);
 
         }
     }

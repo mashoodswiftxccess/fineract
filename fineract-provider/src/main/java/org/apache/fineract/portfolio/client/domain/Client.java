@@ -239,92 +239,80 @@ public final class Client extends AbstractPersistableCustom {
     @Temporal(TemporalType.DATE)
     private Date proposedTransferDate;
 
-
-    //swx_code
-    @Column( name = "v_profile_id" , nullable = true , length = 200)
+    // swx_code
+    @Column(name = "v_profile_id", nullable = true, length = 200)
     private String vProfileId;
-    @Column( name = "v_corporate_id" , nullable = true , length = 200)
+    @Column(name = "v_corporate_id", nullable = true, length = 200)
     private String vCorporateId;
-    @Column( name = "v_managed_account_id" , nullable = true , length = 200)
+    @Column(name = "v_managed_account_id", nullable = true, length = 200)
     private String vManagedAccountId;
-    @Column( name = "tele_no" , nullable = true , length = 200)
+    @Column(name = "tele_no", nullable = true, length = 200)
     private String teleno;
-    @Column( name = "client_type" , nullable = true , length = 200)
+    @Column(name = "client_type", nullable = true, length = 200)
     private String vClientType;
-    @Column( name = "country_of_birth" , nullable = true , length = 200)
+    @Column(name = "country_of_birth", nullable = true, length = 200)
     private String countryOfBirth;
-    @Column( name = "country_of_pr" , nullable = true , length = 200)
+    @Column(name = "country_of_pr", nullable = true, length = 200)
     private String countryOfPr;
-    @Column( name = "occupation" , nullable = true , length = 200)
+    @Column(name = "occupation", nullable = true, length = 200)
     private String occupation;
-    @Column( name = "employer" , nullable = true , length = 200)
+    @Column(name = "employer", nullable = true, length = 200)
     private String employer;
-    @Column( name = "employer_business_type" , nullable = true , length = 200)
+    @Column(name = "employer_business_type", nullable = true, length = 200)
     private String employerBusinessType;
-    @Column( name = "tax_residency" , nullable = true , length = 400)
+    @Column(name = "tax_residency", nullable = true, length = 400)
     private String taxresIdency;
-    @Column( name = "PA_Address_1" , nullable = true , length = 400)
+    @Column(name = "PA_Address_1", nullable = true, length = 400)
     private String paAddress1;
-    @Column( name = "PA_Address_2" , nullable = true , length = 400)
+    @Column(name = "PA_Address_2", nullable = true, length = 400)
     private String paAddress2;
-    @Column( name = "PA_Address_3" , nullable = true , length = 400)
+    @Column(name = "PA_Address_3", nullable = true, length = 400)
     private String paAddress3;
-    @Column( name = "PA_Address_4" , nullable = true , length = 400)
+    @Column(name = "PA_Address_4", nullable = true, length = 400)
     private String paAddress4;
-    @Column( name = "PA_Address_5" , nullable = true , length = 400)
+    @Column(name = "PA_Address_5", nullable = true, length = 400)
     private String paAddress5;
-    @Column( name = "PA_Address_6" , nullable = true , length = 400)
+    @Column(name = "PA_Address_6", nullable = true, length = 400)
     private String paAddress6;
-    @Column( name = "PA_Address_7" , nullable = true , length = 400)
+    @Column(name = "PA_Address_7", nullable = true, length = 400)
     private String paAddress7;
-    @Column( name = "PA_Address_8" , nullable = true , length = 400)
+    @Column(name = "PA_Address_8", nullable = true, length = 400)
     private String paAddress8;
-    @Column( name = "PA_Address_9" , nullable = true , length = 400)
+    @Column(name = "PA_Address_9", nullable = true, length = 400)
     private String paAddress9;
-    @Column( name = "PA_PostCode" , nullable = true , length = 400)
+    @Column(name = "PA_PostCode", nullable = true, length = 400)
     private String paPostCode;
-    @Column( name = "PA_Country" , nullable = true , length = 200)
+    @Column(name = "PA_Country", nullable = true, length = 200)
     private String paCountry;
-    @Column( name = "PA_date_Since" , nullable = true , length = 200)
+    @Column(name = "PA_date_Since", nullable = true, length = 200)
     private String padateSince;
-    @Column( name = "CA_Address_1" , nullable = true , length = 200)
+    @Column(name = "CA_Address_1", nullable = true, length = 200)
     private String caAddress1;
-    @Column( name = "CA_Address_2" , nullable = true , length = 400)
+    @Column(name = "CA_Address_2", nullable = true, length = 400)
     private String caAddress2;
-    @Column( name = "CA_Address_3" , nullable = true , length = 400)
+    @Column(name = "CA_Address_3", nullable = true, length = 400)
     private String caAddress3;
-    @Column( name = "CA_Address_4" , nullable = true , length = 400)
+    @Column(name = "CA_Address_4", nullable = true, length = 400)
     private String caAddress4;
-    @Column( name = "CA_Address_5" , nullable = true , length = 400)
+    @Column(name = "CA_Address_5", nullable = true, length = 400)
     private String caAddress5;
-    @Column( name = "CA_Address_6" , nullable = true , length = 400)
+    @Column(name = "CA_Address_6", nullable = true, length = 400)
     private String caAddress6;
-    @Column( name = "CA_Address_7" , nullable = true , length = 400)
+    @Column(name = "CA_Address_7", nullable = true, length = 400)
     private String caAddress7;
-    @Column( name = "CA_Address_8" , nullable = true , length = 400)
+    @Column(name = "CA_Address_8", nullable = true, length = 400)
     private String caAddress8;
-    @Column( name = "CA_Address_9" , nullable = true , length = 400)
+    @Column(name = "CA_Address_9", nullable = true, length = 400)
     private String caAddress9;
-    @Column( name = "CA_PostCode" , nullable = true , length = 400)
+    @Column(name = "CA_PostCode", nullable = true, length = 400)
     private String caPostCode;
-    @Column( name = "CA_Country" , nullable = true , length = 200)
+    @Column(name = "CA_Country", nullable = true, length = 200)
     private String caCountry;
 
-
-
-
-
     // here i have to put new fields
-    public static Client createNew(final AppUser currentUser,
-                                   final Office clientOffice,
-                                   final Group clientParentGroup,
-                                   final Staff staff,
-                                   final Long savingsProductId,
-                                   final CodeValue gender,
-                                   final CodeValue clientType,
-                                   final CodeValue clientClassification,
-                                   final Integer legalForm,
-                                   final JsonCommand command) {
+    public static Client createNew(final AppUser currentUser, final Office clientOffice, final Group clientParentGroup, final Staff staff,
+            final Long savingsProductId, final CodeValue gender, final CodeValue clientType, final CodeValue clientClassification,
+            final Integer legalForm, final JsonCommand command) {
 
         final String accountNo = command.stringValueOfParameterNamed(ClientApiConstants.accountNoParamName);
         final String externalId = command.stringValueOfParameterNamed(ClientApiConstants.externalIdParamName);
@@ -340,10 +328,7 @@ public final class Client extends AbstractPersistableCustom {
 
         final LocalDate dataOfBirth = command.localDateValueOfParameterNamed(ClientApiConstants.dateOfBirthParamName);
 
-        //swx fields according to our table.
-
-
-
+        // swx fields according to our table.
 
         final String swVProfileId = command.stringValueOfParameterNamed(ClientApiConstants.swVProfileId);
         final String swVCorporateId = command.stringValueOfParameterNamed(ClientApiConstants.swVCorporateId);
@@ -380,12 +365,6 @@ public final class Client extends AbstractPersistableCustom {
         final String swCaPostCode = command.stringValueOfParameterNamed(ClientApiConstants.swCaPostCode);
         final String swCaCountry = command.stringValueOfParameterNamed(ClientApiConstants.swCaCountry);
 
-
-
-
-
-
-
         ClientStatus status = ClientStatus.PENDING;
         boolean active = false;
         if (command.hasParameter("active")) {
@@ -408,34 +387,35 @@ public final class Client extends AbstractPersistableCustom {
             submittedOnDate = command.localDateValueOfParameterNamed(ClientApiConstants.submittedOnDateParamName);
         }
         final Long savingsAccountId = null;
-        return new Client(currentUser, status, clientOffice, clientParentGroup, accountNo, firstname, middlename, lastname, fullname, activationDate,
-                officeJoiningDate, externalId, mobileNo, emailAddress, staff, submittedOnDate, savingsProductId, savingsAccountId, dataOfBirth, gender,
-                clientType, clientClassification, legalForm, isStaff,swVProfileId, swVCorporateId, swVManagedAccountId, swTeleno, swVClientType,
-                swCountryOfBirth, swOuntryOfPr, swOccupation, swEmployer, swEmployerBusinessType, swTaxresIdency, swPaAddress1, swPaAddress2,
-                swPaAddress3, swPaAddress4, swPaAddress5, swPaAddress6, swPaAddress7, swPaAddress8, swPaAddress9, swPaPostCode, swPaCountry,
-                swPadateSince, swCaAddress1, swCaAddress2, swCaAddress3, swCaAddress4, swCaAddress5, swCaAddress6, swCaAddress7, swCaAddress8,
-                swCaAddress9, swCaPostCode, swCaCountry);
+        return new Client(currentUser, status, clientOffice, clientParentGroup, accountNo, firstname, middlename, lastname, fullname,
+                activationDate, officeJoiningDate, externalId, mobileNo, emailAddress, staff, submittedOnDate, savingsProductId,
+                savingsAccountId, dataOfBirth, gender, clientType, clientClassification, legalForm, isStaff, swVProfileId, swVCorporateId,
+                swVManagedAccountId, swTeleno, swVClientType, swCountryOfBirth, swOuntryOfPr, swOccupation, swEmployer,
+                swEmployerBusinessType, swTaxresIdency, swPaAddress1, swPaAddress2, swPaAddress3, swPaAddress4, swPaAddress5, swPaAddress6,
+                swPaAddress7, swPaAddress8, swPaAddress9, swPaPostCode, swPaCountry, swPadateSince, swCaAddress1, swCaAddress2,
+                swCaAddress3, swCaAddress4, swCaAddress5, swCaAddress6, swCaAddress7, swCaAddress8, swCaAddress9, swCaPostCode,
+                swCaCountry);
     }
 
     Client() {
         this.setLegalForm(null);
     }
 
-    private Client(final AppUser currentUser, final ClientStatus status, final Office office, final Group clientParentGroup, final String accountNo,
-                   final String firstname, final String middlename, final String lastname, final String fullname, final LocalDate activationDate,
-                   final LocalDate officeJoiningDate, final String externalId, final String mobileNo, final String emailAddress, final Staff staff,
-                   final LocalDate submittedOnDate, final Long savingsProductId, final Long savingsAccountId, final LocalDate dateOfBirth,
-                   final CodeValue gender, final CodeValue clientType, final CodeValue clientClassification, final Integer legalForm,
-                   final Boolean isStaff,final String swVProfileId, final String swVCorporateId, final String swVManagedAccountId,
-                   final String swTeleno, final String swVClientType, final String swCountryOfBirth, final String swOuntryOfPr,
-                   final String swOccupation, final String swEmployer, final String swEmployerBusinessType, final String swTaxresIdency,
-                   final String swPaAddress1, final String swPaAddress2, final String swPaAddress3, final String swPaAddress4,
-                   final String swPaAddress5, final String swPaAddress6, final String swPaAddress7, final String swPaAddress8,
-                   final String swPaAddress9, final String swPaPostCode, final String swPaCountry, final String swPadateSince,
-                   final String swCaAddress1, final String swCaAddress2, final String swCaAddress3, final String swCaAddress4,
-                   final String swCaAddress5, final String swCaAddress6, final String swCaAddress7, final String swCaAddress8,
-                   final String swCaAddress9, final String swCaPostCode, final String swCaCountry) {
-
+    private Client(final AppUser currentUser, final ClientStatus status, final Office office, final Group clientParentGroup,
+            final String accountNo, final String firstname, final String middlename, final String lastname, final String fullname,
+            final LocalDate activationDate, final LocalDate officeJoiningDate, final String externalId, final String mobileNo,
+            final String emailAddress, final Staff staff, final LocalDate submittedOnDate, final Long savingsProductId,
+            final Long savingsAccountId, final LocalDate dateOfBirth, final CodeValue gender, final CodeValue clientType,
+            final CodeValue clientClassification, final Integer legalForm, final Boolean isStaff, final String swVProfileId,
+            final String swVCorporateId, final String swVManagedAccountId, final String swTeleno, final String swVClientType,
+            final String swCountryOfBirth, final String swOuntryOfPr, final String swOccupation, final String swEmployer,
+            final String swEmployerBusinessType, final String swTaxresIdency, final String swPaAddress1, final String swPaAddress2,
+            final String swPaAddress3, final String swPaAddress4, final String swPaAddress5, final String swPaAddress6,
+            final String swPaAddress7, final String swPaAddress8, final String swPaAddress9, final String swPaPostCode,
+            final String swPaCountry, final String swPadateSince, final String swCaAddress1, final String swCaAddress2,
+            final String swCaAddress3, final String swCaAddress4, final String swCaAddress5, final String swCaAddress6,
+            final String swCaAddress7, final String swCaAddress8, final String swCaAddress9, final String swCaPostCode,
+            final String swCaCountry) {
 
         if (StringUtils.isBlank(accountNo)) {
             this.accountNumber = new RandomPasswordGenerator(19).generate();
@@ -514,15 +494,209 @@ public final class Client extends AbstractPersistableCustom {
             this.dateOfBirth = Date.from(dateOfBirth.atStartOfDay(DateUtils.getDateTimeZoneOfTenant()).toInstant());
         }
 
-
-        if (StringUtils.isNotBlank(||)) {
-            ""
+        if (StringUtils.isNotBlank(swVProfileId)) {
+            this.vProfileId = swVProfileId;
         } else {
-            ""
+            this.vProfileId = null;
         }
-        
 
+        if (StringUtils.isNotBlank(swVCorporateId)) {
+            this.vCorporateId = swVCorporateId;
+        } else {
+            this.vCorporateId = null;
+        }
 
+        if (StringUtils.isNotBlank(swVManagedAccountId)) {
+            this.vManagedAccountId = swVManagedAccountId;
+        } else {
+            this.vManagedAccountId = null;
+        }
+
+        if (StringUtils.isNotBlank(swTeleno)) {
+            this.teleno = swTeleno;
+        } else {
+            this.teleno = null;
+        }
+
+        if (StringUtils.isNotBlank(swVClientType)) {
+            this.vClientType = swVClientType;
+        } else {
+            this.vClientType = null;
+        }
+
+        if (StringUtils.isNotBlank(swCountryOfBirth)) {
+            this.countryOfBirth = swCountryOfBirth;
+        } else {
+            this.countryOfBirth = null;
+        }
+
+        if (StringUtils.isNotBlank(swOuntryOfPr)) {
+            this.countryOfPr = swOuntryOfPr;
+        } else {
+            this.countryOfPr = null;
+        }
+
+        if (StringUtils.isNotBlank(swOccupation)) {
+            this.occupation = swOccupation;
+        } else {
+            this.occupation = null;
+        }
+
+        if (StringUtils.isNotBlank(swEmployer)) {
+            this.employer = swEmployer;
+        } else {
+            this.employer = null;
+        }
+
+        if (StringUtils.isNotBlank(swEmployerBusinessType)) {
+            this.employerBusinessType = swEmployerBusinessType;
+        } else {
+            this.employerBusinessType = null;
+        }
+
+        if (StringUtils.isNotBlank(swTaxresIdency)) {
+            this.taxresIdency = swTaxresIdency;
+        } else {
+            this.taxresIdency = null;
+        }
+
+        if (StringUtils.isNotBlank(swPaAddress1)) {
+            this.paAddress1 = swPaAddress1;
+        } else {
+            this.paAddress1 = null;
+        }
+
+        if (StringUtils.isNotBlank(swPaAddress2)) {
+            this.paAddress2 = swPaAddress2;
+        } else {
+            this.paAddress2 = null;
+        }
+
+        if (StringUtils.isNotBlank(swPaAddress3)) {
+            this.paAddress3 = swPaAddress3;
+        } else {
+            this.paAddress3 = null;
+        }
+
+        if (StringUtils.isNotBlank(swPaAddress4)) {
+            this.paAddress4 = swPaAddress4;
+        } else {
+            this.paAddress4 = null;
+        }
+
+        if (StringUtils.isNotBlank(swPaAddress5)) {
+            this.paAddress5 = swPaAddress5;
+        } else {
+            this.paAddress5 = null;
+        }
+
+        if (StringUtils.isNotBlank(swPaAddress6)) {
+            this.paAddress6 = swPaAddress6;
+        } else {
+            this.paAddress6 = null;
+        }
+
+        if (StringUtils.isNotBlank(swPaAddress7)) {
+            this.paAddress7 = swPaAddress7;
+        } else {
+            this.paAddress7 = null;
+        }
+
+        if (StringUtils.isNotBlank(swPaAddress8)) {
+            this.paAddress8 = swPaAddress8;
+        } else {
+            this.paAddress8 = null;
+        }
+
+        if (StringUtils.isNotBlank(swPaAddress9)) {
+            this.paAddress9 = swPaAddress9;
+        } else {
+            this.paAddress9 = null;
+        }
+
+        if (StringUtils.isNotBlank(swPaPostCode)) {
+            this.paPostCode = swPaPostCode;
+        } else {
+            this.paPostCode = null;
+        }
+
+        if (StringUtils.isNotBlank(swPaCountry)) {
+            this.paCountry = swPaCountry;
+        } else {
+            this.paCountry = null;
+        }
+
+        if (StringUtils.isNotBlank(swPadateSince)) {
+            this.padateSince = swPadateSince;
+        } else {
+            this.padateSince = null;
+        }
+
+        if (StringUtils.isNotBlank(swCaAddress1)) {
+            this.caAddress1 = swCaAddress1;
+        } else {
+            this.caAddress1 = null;
+        }
+
+        if (StringUtils.isNotBlank(swCaAddress2)) {
+            this.caAddress2 = swCaAddress2;
+        } else {
+            this.caAddress2 = null;
+        }
+
+        if (StringUtils.isNotBlank(swCaAddress3)) {
+            this.caAddress3 = swCaAddress3;
+        } else {
+            this.caAddress3 = null;
+        }
+
+        if (StringUtils.isNotBlank(swCaAddress4)) {
+            this.caAddress4 = swCaAddress4;
+        } else {
+            this.caAddress4 = null;
+        }
+
+        if (StringUtils.isNotBlank(swCaAddress5)) {
+            this.caAddress5 = swCaAddress5;
+        } else {
+            this.caAddress5 = null;
+        }
+
+        if (StringUtils.isNotBlank(swCaAddress6)) {
+            this.caAddress6 = swCaAddress6;
+        } else {
+            this.caAddress6 = null;
+        }
+
+        if (StringUtils.isNotBlank(swCaAddress7)) {
+            this.caAddress7 = swCaAddress7;
+        } else {
+            this.caAddress7 = null;
+        }
+
+        if (StringUtils.isNotBlank(swCaAddress8)) {
+            this.caAddress8 = swCaAddress8;
+        } else {
+            this.caAddress8 = null;
+        }
+
+        if (StringUtils.isNotBlank(swCaAddress9)) {
+            this.caAddress9 = swCaAddress9;
+        } else {
+            this.caAddress9 = null;
+        }
+
+        if (StringUtils.isNotBlank(swCaPostCode)) {
+            this.caPostCode = swCaPostCode;
+        } else {
+            this.caPostCode = null;
+        }
+
+        if (StringUtils.isNotBlank(swCaCountry)) {
+            this.caCountry = swCaCountry;
+        } else {
+            this.caCountry = null;
+        }
 
         this.clientType = clientType;
         this.clientClassification = clientClassification;

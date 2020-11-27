@@ -30,7 +30,11 @@ public class ClientApiCollectionConstants extends ClientApiConstants {
             emailAddressParamName, firstnameParamName, middlenameParamName, lastnameParamName, fullnameParamName, officeIdParamName,
             activeParamName, activationDateParamName, staffIdParamName, submittedOnDateParamName, savingsProductIdParamName,
             dateOfBirthParamName, genderIdParamName, clientTypeIdParamName, clientClassificationIdParamName,
-            clientNonPersonDetailsParamName, displaynameParamName, legalFormIdParamName, datatables, isStaffParamName));
+            clientNonPersonDetailsParamName, displaynameParamName, legalFormIdParamName, datatables, isStaffParamName, swVProfileId,
+            swVCorporateId, swVManagedAccountId, swTeleno, swVClientType, swCountryOfBirth, swOuntryOfPr, swOccupation, swEmployer,
+            swEmployerBusinessType, swTaxresIdency, swPaAddress1, swPaAddress2, swPaAddress3, swPaAddress4, swPaAddress5, swPaAddress6,
+            swPaAddress7, swPaAddress8, swPaAddress9, swPaPostCode, swPaCountry, swPadateSince, swCaAddress1, swCaAddress2, swCaAddress3,
+            swCaAddress4, swCaAddress5, swCaAddress6, swCaAddress7, swCaAddress8, swCaAddress9, swCaPostCode, swCaCountry));
 
     protected static final Set<String> CLIENT_NON_PERSON_CREATE_REQUEST_DATA_PARAMETERS = new HashSet<>(Arrays.asList(familyMembers,
             address, localeParamName, dateFormatParamName, incorpNumberParamName, remarksParamName, incorpValidityTillParamName,

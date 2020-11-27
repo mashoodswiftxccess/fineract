@@ -201,7 +201,7 @@ public class ClientApiConstants {
     public static final String cvd10 = "cvd10";
     public static final String cvd11 = "cvd11";
 
-    //swx client additionals fields
+    // swx client additionals fields
     public static final String swVProfileId = "swVProfileId";
     public static final String swVCorporateId = "swVCorporateId";
     public static final String swVManagedAccountId = "swVManagedAccountId";
