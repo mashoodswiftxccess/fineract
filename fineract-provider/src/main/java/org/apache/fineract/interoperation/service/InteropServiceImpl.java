@@ -256,7 +256,7 @@ public class InteropServiceImpl implements InteropService {
     @NotNull
     @Transactional(propagation = Propagation.MANDATORY)
     @Override
-    public InteropIdentifierAccountResponseData registerAccountIdentifier(@NotNull InteropIdentifierType idType, @NotNull String idValue,
+    public InteropIdentifierAccountResponseData  createTransactionRequest(@NotNull InteropIdentifierType idType, @NotNull String idValue,
             String subIdOrType, @NotNull JsonCommand command) {
         InteropIdentifierRequestData request = dataValidator.validateAndParseCreateIdentifier(idType, idValue, subIdOrType, command);
         // TODO: error handling
