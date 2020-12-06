@@ -382,6 +382,187 @@ public final class ClientDataValidator {
             baseDataValidator.reset().parameter(ClientApiConstants.accountNoParamName).value(accountNo).notBlank().notExceedingLengthOf(20);
         }
 
+        // MASHOOD UPDATE VALUES
+
+        if (this.fromApiJsonHelper.parameterExists(ClientApiConstants.swVProfileId, element)) {
+            atLeastOneParameterPassedForUpdate = true;
+            final String swVProfileId = this.fromApiJsonHelper.extractStringNamed(ClientApiConstants.swVProfileId, element);
+            baseDataValidator.reset().parameter(ClientApiConstants.swVProfileId).value(swVProfileId).notBlank().notExceedingLengthOf(20);
+        }
+        if (this.fromApiJsonHelper.parameterExists(ClientApiConstants.swVCorporateId, element)) {
+            atLeastOneParameterPassedForUpdate = true;
+            final String swVCorporateId = this.fromApiJsonHelper.extractStringNamed(ClientApiConstants.swVCorporateId, element);
+            baseDataValidator.reset().parameter(ClientApiConstants.swVCorporateId).value(swVCorporateId).notBlank()
+                    .notExceedingLengthOf(20);
+        }
+        if (this.fromApiJsonHelper.parameterExists(ClientApiConstants.swVManagedAccountId, element)) {
+            atLeastOneParameterPassedForUpdate = true;
+            final String swVManagedAccountId = this.fromApiJsonHelper.extractStringNamed(ClientApiConstants.swVManagedAccountId, element);
+            baseDataValidator.reset().parameter(ClientApiConstants.swVManagedAccountId).value(swVManagedAccountId).notBlank()
+                    .notExceedingLengthOf(20);
+        }
+        if (this.fromApiJsonHelper.parameterExists(ClientApiConstants.swTeleno, element)) {
+            atLeastOneParameterPassedForUpdate = true;
+            final String swTeleno = this.fromApiJsonHelper.extractStringNamed(ClientApiConstants.swTeleno, element);
+            baseDataValidator.reset().parameter(ClientApiConstants.swTeleno).value(swTeleno).notBlank().notExceedingLengthOf(20);
+        }
+        if (this.fromApiJsonHelper.parameterExists(ClientApiConstants.swVClientType, element)) {
+            atLeastOneParameterPassedForUpdate = true;
+            final String swVClientType = this.fromApiJsonHelper.extractStringNamed(ClientApiConstants.swVClientType, element);
+            baseDataValidator.reset().parameter(ClientApiConstants.swVClientType).value(swVClientType).notBlank().notExceedingLengthOf(20);
+        }
+        if (this.fromApiJsonHelper.parameterExists(ClientApiConstants.swCountryOfBirth, element)) {
+            atLeastOneParameterPassedForUpdate = true;
+            final String swCountryOfBirth = this.fromApiJsonHelper.extractStringNamed(ClientApiConstants.swCountryOfBirth, element);
+            baseDataValidator.reset().parameter(ClientApiConstants.swCountryOfBirth).value(swCountryOfBirth).notBlank()
+                    .notExceedingLengthOf(20);
+        }
+        if (this.fromApiJsonHelper.parameterExists(ClientApiConstants.swOuntryOfPr, element)) {
+            atLeastOneParameterPassedForUpdate = true;
+            final String swOuntryOfPr = this.fromApiJsonHelper.extractStringNamed(ClientApiConstants.swOuntryOfPr, element);
+            baseDataValidator.reset().parameter(ClientApiConstants.swOuntryOfPr).value(swOuntryOfPr).notBlank().notExceedingLengthOf(20);
+        }
+        if (this.fromApiJsonHelper.parameterExists(ClientApiConstants.swOccupation, element)) {
+            atLeastOneParameterPassedForUpdate = true;
+            final String swOccupation = this.fromApiJsonHelper.extractStringNamed(ClientApiConstants.swOccupation, element);
+            baseDataValidator.reset().parameter(ClientApiConstants.swOccupation).value(swOccupation).notBlank().notExceedingLengthOf(20);
+        }
+        if (this.fromApiJsonHelper.parameterExists(ClientApiConstants.swEmployer, element)) {
+            atLeastOneParameterPassedForUpdate = true;
+            final String swEmployer = this.fromApiJsonHelper.extractStringNamed(ClientApiConstants.swEmployer, element);
+            baseDataValidator.reset().parameter(ClientApiConstants.swEmployer).value(swEmployer).notBlank().notExceedingLengthOf(20);
+        }
+        if (this.fromApiJsonHelper.parameterExists(ClientApiConstants.swEmployerBusinessType, element)) {
+            atLeastOneParameterPassedForUpdate = true;
+            final String swEmployerBusinessType = this.fromApiJsonHelper.extractStringNamed(ClientApiConstants.swEmployerBusinessType,
+                    element);
+            baseDataValidator.reset().parameter(ClientApiConstants.swEmployerBusinessType).value(swEmployerBusinessType).notBlank()
+                    .notExceedingLengthOf(20);
+        }
+        if (this.fromApiJsonHelper.parameterExists(ClientApiConstants.swTaxresIdency, element)) {
+            atLeastOneParameterPassedForUpdate = true;
+            final String swTaxresIdency = this.fromApiJsonHelper.extractStringNamed(ClientApiConstants.swTaxresIdency, element);
+            baseDataValidator.reset().parameter(ClientApiConstants.swTaxresIdency).value(swTaxresIdency).notBlank()
+                    .notExceedingLengthOf(20);
+        }
+        if (this.fromApiJsonHelper.parameterExists(ClientApiConstants.swPaAddress1, element)) {
+            atLeastOneParameterPassedForUpdate = true;
+            final String swPaAddress1 = this.fromApiJsonHelper.extractStringNamed(ClientApiConstants.swPaAddress1, element);
+            baseDataValidator.reset().parameter(ClientApiConstants.swPaAddress1).value(swPaAddress1).notBlank().notExceedingLengthOf(20);
+        }
+        if (this.fromApiJsonHelper.parameterExists(ClientApiConstants.swPaAddress2, element)) {
+            atLeastOneParameterPassedForUpdate = true;
+            final String swPaAddress2 = this.fromApiJsonHelper.extractStringNamed(ClientApiConstants.swPaAddress2, element);
+            baseDataValidator.reset().parameter(ClientApiConstants.swPaAddress2).value(swPaAddress2).notBlank().notExceedingLengthOf(20);
+        }
+        if (this.fromApiJsonHelper.parameterExists(ClientApiConstants.swPaAddress3, element)) {
+            atLeastOneParameterPassedForUpdate = true;
+            final String swPaAddress3 = this.fromApiJsonHelper.extractStringNamed(ClientApiConstants.swPaAddress3, element);
+            baseDataValidator.reset().parameter(ClientApiConstants.swPaAddress3).value(swPaAddress3).notBlank().notExceedingLengthOf(20);
+        }
+        if (this.fromApiJsonHelper.parameterExists(ClientApiConstants.swPaAddress4, element)) {
+            atLeastOneParameterPassedForUpdate = true;
+            final String swPaAddress4 = this.fromApiJsonHelper.extractStringNamed(ClientApiConstants.swPaAddress4, element);
+            baseDataValidator.reset().parameter(ClientApiConstants.swPaAddress4).value(swPaAddress4).notBlank().notExceedingLengthOf(20);
+        }
+        if (this.fromApiJsonHelper.parameterExists(ClientApiConstants.swPaAddress5, element)) {
+            atLeastOneParameterPassedForUpdate = true;
+            final String swPaAddress5 = this.fromApiJsonHelper.extractStringNamed(ClientApiConstants.swPaAddress5, element);
+            baseDataValidator.reset().parameter(ClientApiConstants.swPaAddress5).value(swPaAddress5).notBlank().notExceedingLengthOf(20);
+        }
+        if (this.fromApiJsonHelper.parameterExists(ClientApiConstants.swPaAddress6, element)) {
+            atLeastOneParameterPassedForUpdate = true;
+            final String swPaAddress6 = this.fromApiJsonHelper.extractStringNamed(ClientApiConstants.swPaAddress6, element);
+            baseDataValidator.reset().parameter(ClientApiConstants.swPaAddress6).value(swPaAddress6).notBlank().notExceedingLengthOf(20);
+        }
+        if (this.fromApiJsonHelper.parameterExists(ClientApiConstants.swPaAddress7, element)) {
+            atLeastOneParameterPassedForUpdate = true;
+            final String swPaAddress7 = this.fromApiJsonHelper.extractStringNamed(ClientApiConstants.swPaAddress7, element);
+            baseDataValidator.reset().parameter(ClientApiConstants.swPaAddress7).value(swPaAddress7).notBlank().notExceedingLengthOf(20);
+        }
+        if (this.fromApiJsonHelper.parameterExists(ClientApiConstants.swPaAddress8, element)) {
+            atLeastOneParameterPassedForUpdate = true;
+            final String swPaAddress8 = this.fromApiJsonHelper.extractStringNamed(ClientApiConstants.swPaAddress8, element);
+            baseDataValidator.reset().parameter(ClientApiConstants.swPaAddress8).value(swPaAddress8).notBlank().notExceedingLengthOf(20);
+        }
+        if (this.fromApiJsonHelper.parameterExists(ClientApiConstants.swPaAddress9, element)) {
+            atLeastOneParameterPassedForUpdate = true;
+            final String swPaAddress9 = this.fromApiJsonHelper.extractStringNamed(ClientApiConstants.swPaAddress9, element);
+            baseDataValidator.reset().parameter(ClientApiConstants.swPaAddress9).value(swPaAddress9).notBlank().notExceedingLengthOf(20);
+        }
+        if (this.fromApiJsonHelper.parameterExists(ClientApiConstants.swPaPostCode, element)) {
+            atLeastOneParameterPassedForUpdate = true;
+            final String swPaPostCode = this.fromApiJsonHelper.extractStringNamed(ClientApiConstants.swPaPostCode, element);
+            baseDataValidator.reset().parameter(ClientApiConstants.swPaPostCode).value(swPaPostCode).notBlank().notExceedingLengthOf(20);
+        }
+        if (this.fromApiJsonHelper.parameterExists(ClientApiConstants.swPaCountry, element)) {
+            atLeastOneParameterPassedForUpdate = true;
+            final String swPaCountry = this.fromApiJsonHelper.extractStringNamed(ClientApiConstants.swPaCountry, element);
+            baseDataValidator.reset().parameter(ClientApiConstants.swPaCountry).value(swPaCountry).notBlank().notExceedingLengthOf(20);
+        }
+        if (this.fromApiJsonHelper.parameterExists(ClientApiConstants.swPadateSince, element)) {
+            atLeastOneParameterPassedForUpdate = true;
+            final String swPadateSince = this.fromApiJsonHelper.extractStringNamed(ClientApiConstants.swPadateSince, element);
+            baseDataValidator.reset().parameter(ClientApiConstants.swPadateSince).value(swPadateSince).notBlank().notExceedingLengthOf(20);
+        }
+        if (this.fromApiJsonHelper.parameterExists(ClientApiConstants.swCaAddress1, element)) {
+            atLeastOneParameterPassedForUpdate = true;
+            final String swCaAddress1 = this.fromApiJsonHelper.extractStringNamed(ClientApiConstants.swCaAddress1, element);
+            baseDataValidator.reset().parameter(ClientApiConstants.swCaAddress1).value(swCaAddress1).notBlank().notExceedingLengthOf(20);
+        }
+        if (this.fromApiJsonHelper.parameterExists(ClientApiConstants.swCaAddress2, element)) {
+            atLeastOneParameterPassedForUpdate = true;
+            final String swCaAddress2 = this.fromApiJsonHelper.extractStringNamed(ClientApiConstants.swCaAddress2, element);
+            baseDataValidator.reset().parameter(ClientApiConstants.swCaAddress2).value(swCaAddress2).notBlank().notExceedingLengthOf(20);
+        }
+        if (this.fromApiJsonHelper.parameterExists(ClientApiConstants.swCaAddress3, element)) {
+            atLeastOneParameterPassedForUpdate = true;
+            final String swCaAddress3 = this.fromApiJsonHelper.extractStringNamed(ClientApiConstants.swCaAddress3, element);
+            baseDataValidator.reset().parameter(ClientApiConstants.swCaAddress3).value(swCaAddress3).notBlank().notExceedingLengthOf(20);
+        }
+        if (this.fromApiJsonHelper.parameterExists(ClientApiConstants.swCaAddress4, element)) {
+            atLeastOneParameterPassedForUpdate = true;
+            final String swCaAddress4 = this.fromApiJsonHelper.extractStringNamed(ClientApiConstants.swCaAddress4, element);
+            baseDataValidator.reset().parameter(ClientApiConstants.swCaAddress4).value(swCaAddress4).notBlank().notExceedingLengthOf(20);
+        }
+        if (this.fromApiJsonHelper.parameterExists(ClientApiConstants.swCaAddress5, element)) {
+            atLeastOneParameterPassedForUpdate = true;
+            final String swCaAddress5 = this.fromApiJsonHelper.extractStringNamed(ClientApiConstants.swCaAddress5, element);
+            baseDataValidator.reset().parameter(ClientApiConstants.swCaAddress5).value(swCaAddress5).notBlank().notExceedingLengthOf(20);
+        }
+        if (this.fromApiJsonHelper.parameterExists(ClientApiConstants.swCaAddress6, element)) {
+            atLeastOneParameterPassedForUpdate = true;
+            final String swCaAddress6 = this.fromApiJsonHelper.extractStringNamed(ClientApiConstants.swCaAddress6, element);
+            baseDataValidator.reset().parameter(ClientApiConstants.swCaAddress6).value(swCaAddress6).notBlank().notExceedingLengthOf(20);
+        }
+        if (this.fromApiJsonHelper.parameterExists(ClientApiConstants.swCaAddress7, element)) {
+            atLeastOneParameterPassedForUpdate = true;
+            final String swCaAddress7 = this.fromApiJsonHelper.extractStringNamed(ClientApiConstants.swCaAddress7, element);
+            baseDataValidator.reset().parameter(ClientApiConstants.swCaAddress7).value(swCaAddress7).notBlank().notExceedingLengthOf(20);
+        }
+        if (this.fromApiJsonHelper.parameterExists(ClientApiConstants.swCaAddress8, element)) {
+            atLeastOneParameterPassedForUpdate = true;
+            final String swCaAddress8 = this.fromApiJsonHelper.extractStringNamed(ClientApiConstants.swCaAddress8, element);
+            baseDataValidator.reset().parameter(ClientApiConstants.swCaAddress8).value(swCaAddress8).notBlank().notExceedingLengthOf(20);
+        }
+        if (this.fromApiJsonHelper.parameterExists(ClientApiConstants.swCaAddress9, element)) {
+            atLeastOneParameterPassedForUpdate = true;
+            final String swCaAddress9 = this.fromApiJsonHelper.extractStringNamed(ClientApiConstants.swCaAddress9, element);
+            baseDataValidator.reset().parameter(ClientApiConstants.swCaAddress9).value(swCaAddress9).notBlank().notExceedingLengthOf(20);
+        }
+        if (this.fromApiJsonHelper.parameterExists(ClientApiConstants.swCaPostCode, element)) {
+            atLeastOneParameterPassedForUpdate = true;
+            final String swCaPostCode = this.fromApiJsonHelper.extractStringNamed(ClientApiConstants.swCaPostCode, element);
+            baseDataValidator.reset().parameter(ClientApiConstants.swCaPostCode).value(swCaPostCode).notBlank().notExceedingLengthOf(20);
+        }
+        if (this.fromApiJsonHelper.parameterExists(ClientApiConstants.swCaCountry, element)) {
+            atLeastOneParameterPassedForUpdate = true;
+            final String swCaCountry = this.fromApiJsonHelper.extractStringNamed(ClientApiConstants.swCaCountry, element);
+            baseDataValidator.reset().parameter(ClientApiConstants.swCaCountry).value(swCaCountry).notBlank().notExceedingLengthOf(20);
+        }
+
+        // MASHOOD UPDATE VALUES
+
         if (isFullnameProvided(element) || isIndividualNameProvided(element)) {
 
             // 1. No individual name part provided and fullname provided
@@ -539,7 +720,7 @@ public final class ClientDataValidator {
     Map<String, Object> getParameterUpdateStatusAndDataValidationErrorsForUpdateOnClientNonPerson(JsonElement element) {
         boolean atLeastOneParameterPassedForUpdate = false;
         final List<ApiParameterError> dataValidationErrors = new ArrayList<>();
-
+        // MASHOOD company changes
         final DataValidatorBuilder baseDataValidator = new DataValidatorBuilder(dataValidationErrors)
                 .resource(ClientApiCollectionConstants.CLIENT_RESOURCE_NAME);
 
@@ -578,6 +759,357 @@ public final class ClientDataValidator {
             baseDataValidator.reset().parameter(ClientApiConstants.mainBusinessLineIdParamName).value(mainBusinessLineId)
                     .integerGreaterThanZero();
         }
+
+        // MASHOOD new points for pass the
+
+        if (this.fromApiJsonHelper.parameterExists(ClientApiConstants.incorpCountry, element)) {
+            atLeastOneParameterPassedForUpdate = true;
+            final String incorpNo = this.fromApiJsonHelper.extractStringNamed(ClientApiConstants.incorpCountry, element);
+            baseDataValidator.reset().parameter(ClientApiConstants.incorpCountry).value(incorpNo).ignoreIfNull().notExceedingLengthOf(200);
+        }
+        if (this.fromApiJsonHelper.parameterExists(ClientApiConstants.companyNumber, element)) {
+            atLeastOneParameterPassedForUpdate = true;
+            final String incorpNo = this.fromApiJsonHelper.extractStringNamed(ClientApiConstants.companyNumber, element);
+            baseDataValidator.reset().parameter(ClientApiConstants.companyNumber).value(incorpNo).ignoreIfNull().notExceedingLengthOf(200);
+        }
+        if (this.fromApiJsonHelper.parameterExists(ClientApiConstants.incorpDate, element)) {
+            atLeastOneParameterPassedForUpdate = true;
+            final String incorpNo = this.fromApiJsonHelper.extractStringNamed(ClientApiConstants.incorpDate, element);
+            baseDataValidator.reset().parameter(ClientApiConstants.incorpDate).value(incorpNo).ignoreIfNull().notExceedingLengthOf(200);
+        }
+        if (this.fromApiJsonHelper.parameterExists(ClientApiConstants.incorpName, element)) {
+            atLeastOneParameterPassedForUpdate = true;
+            final String incorpNo = this.fromApiJsonHelper.extractStringNamed(ClientApiConstants.incorpName, element);
+            baseDataValidator.reset().parameter(ClientApiConstants.incorpName).value(incorpNo).ignoreIfNull().notExceedingLengthOf(200);
+        }
+        if (this.fromApiJsonHelper.parameterExists(ClientApiConstants.incorpEntityType, element)) {
+            atLeastOneParameterPassedForUpdate = true;
+            final String incorpNo = this.fromApiJsonHelper.extractStringNamed(ClientApiConstants.incorpEntityType, element);
+            baseDataValidator.reset().parameter(ClientApiConstants.incorpEntityType).value(incorpNo).ignoreIfNull()
+                    .notExceedingLengthOf(200);
+        }
+        if (this.fromApiJsonHelper.parameterExists(ClientApiConstants.incorpTaxDec, element)) {
+            atLeastOneParameterPassedForUpdate = true;
+            final String incorpNo = this.fromApiJsonHelper.extractStringNamed(ClientApiConstants.incorpTaxDec, element);
+            baseDataValidator.reset().parameter(ClientApiConstants.incorpTaxDec).value(incorpNo).ignoreIfNull().notExceedingLengthOf(200);
+        }
+        if (this.fromApiJsonHelper.parameterExists(ClientApiConstants.incorpPorS, element)) {
+            atLeastOneParameterPassedForUpdate = true;
+            final String incorpNo = this.fromApiJsonHelper.extractStringNamed(ClientApiConstants.incorpPorS, element);
+            baseDataValidator.reset().parameter(ClientApiConstants.incorpPorS).value(incorpNo).ignoreIfNull().notExceedingLengthOf(200);
+        }
+        if (this.fromApiJsonHelper.parameterExists(ClientApiConstants.incorpInvestment, element)) {
+            atLeastOneParameterPassedForUpdate = true;
+            final String incorpNo = this.fromApiJsonHelper.extractStringNamed(ClientApiConstants.incorpInvestment, element);
+            baseDataValidator.reset().parameter(ClientApiConstants.incorpInvestment).value(incorpNo).ignoreIfNull()
+                    .notExceedingLengthOf(200);
+        }
+        if (this.fromApiJsonHelper.parameterExists(ClientApiConstants.incorpTurnover, element)) {
+            atLeastOneParameterPassedForUpdate = true;
+            final String incorpNo = this.fromApiJsonHelper.extractStringNamed(ClientApiConstants.incorpTurnover, element);
+            baseDataValidator.reset().parameter(ClientApiConstants.incorpTurnover).value(incorpNo).ignoreIfNull().notExceedingLengthOf(200);
+        }
+        if (this.fromApiJsonHelper.parameterExists(ClientApiConstants.incorpSof, element)) {
+            atLeastOneParameterPassedForUpdate = true;
+            final String incorpNo = this.fromApiJsonHelper.extractStringNamed(ClientApiConstants.incorpSof, element);
+            baseDataValidator.reset().parameter(ClientApiConstants.incorpSof).value(incorpNo).ignoreIfNull().notExceedingLengthOf(200);
+        }
+        if (this.fromApiJsonHelper.parameterExists(ClientApiConstants.UboRoleInBusiness, element)) {
+            atLeastOneParameterPassedForUpdate = true;
+            final String incorpNo = this.fromApiJsonHelper.extractStringNamed(ClientApiConstants.UboRoleInBusiness, element);
+            baseDataValidator.reset().parameter(ClientApiConstants.UboRoleInBusiness).value(incorpNo).ignoreIfNull()
+                    .notExceedingLengthOf(200);
+        }
+        if (this.fromApiJsonHelper.parameterExists(ClientApiConstants.UbiVotingOwnerShip, element)) {
+            atLeastOneParameterPassedForUpdate = true;
+            final String incorpNo = this.fromApiJsonHelper.extractStringNamed(ClientApiConstants.UbiVotingOwnerShip, element);
+            baseDataValidator.reset().parameter(ClientApiConstants.UbiVotingOwnerShip).value(incorpNo).ignoreIfNull()
+                    .notExceedingLengthOf(200);
+        }
+        if (this.fromApiJsonHelper.parameterExists(ClientApiConstants.UboSharePersentage, element)) {
+            atLeastOneParameterPassedForUpdate = true;
+            final String incorpNo = this.fromApiJsonHelper.extractStringNamed(ClientApiConstants.UboSharePersentage, element);
+            baseDataValidator.reset().parameter(ClientApiConstants.UboSharePersentage).value(incorpNo).ignoreIfNull()
+                    .notExceedingLengthOf(200);
+        }
+        if (this.fromApiJsonHelper.parameterExists(ClientApiConstants.incorpLa1, element)) {
+            atLeastOneParameterPassedForUpdate = true;
+            final String incorpNo = this.fromApiJsonHelper.extractStringNamed(ClientApiConstants.incorpLa1, element);
+            baseDataValidator.reset().parameter(ClientApiConstants.incorpLa1).value(incorpNo).ignoreIfNull().notExceedingLengthOf(200);
+        }
+        if (this.fromApiJsonHelper.parameterExists(ClientApiConstants.incorpLa2, element)) {
+            atLeastOneParameterPassedForUpdate = true;
+            final String incorpNo = this.fromApiJsonHelper.extractStringNamed(ClientApiConstants.incorpLa2, element);
+            baseDataValidator.reset().parameter(ClientApiConstants.incorpLa2).value(incorpNo).ignoreIfNull().notExceedingLengthOf(200);
+        }
+        if (this.fromApiJsonHelper.parameterExists(ClientApiConstants.incorpLa3, element)) {
+            atLeastOneParameterPassedForUpdate = true;
+            final String incorpNo = this.fromApiJsonHelper.extractStringNamed(ClientApiConstants.incorpLa3, element);
+            baseDataValidator.reset().parameter(ClientApiConstants.incorpLa3).value(incorpNo).ignoreIfNull().notExceedingLengthOf(200);
+        }
+        if (this.fromApiJsonHelper.parameterExists(ClientApiConstants.incorpLa4, element)) {
+            atLeastOneParameterPassedForUpdate = true;
+            final String incorpNo = this.fromApiJsonHelper.extractStringNamed(ClientApiConstants.incorpLa4, element);
+            baseDataValidator.reset().parameter(ClientApiConstants.incorpLa4).value(incorpNo).ignoreIfNull().notExceedingLengthOf(200);
+        }
+        if (this.fromApiJsonHelper.parameterExists(ClientApiConstants.incorpLa5, element)) {
+            atLeastOneParameterPassedForUpdate = true;
+            final String incorpNo = this.fromApiJsonHelper.extractStringNamed(ClientApiConstants.incorpLa5, element);
+            baseDataValidator.reset().parameter(ClientApiConstants.incorpLa5).value(incorpNo).ignoreIfNull().notExceedingLengthOf(200);
+        }
+        if (this.fromApiJsonHelper.parameterExists(ClientApiConstants.incorpLa6, element)) {
+            atLeastOneParameterPassedForUpdate = true;
+            final String incorpNo = this.fromApiJsonHelper.extractStringNamed(ClientApiConstants.incorpLa6, element);
+            baseDataValidator.reset().parameter(ClientApiConstants.incorpLa6).value(incorpNo).ignoreIfNull().notExceedingLengthOf(200);
+        }
+        if (this.fromApiJsonHelper.parameterExists(ClientApiConstants.incorpLa7, element)) {
+            atLeastOneParameterPassedForUpdate = true;
+            final String incorpNo = this.fromApiJsonHelper.extractStringNamed(ClientApiConstants.incorpLa7, element);
+            baseDataValidator.reset().parameter(ClientApiConstants.incorpLa7).value(incorpNo).ignoreIfNull().notExceedingLengthOf(200);
+        }
+        if (this.fromApiJsonHelper.parameterExists(ClientApiConstants.incorpLa8, element)) {
+            atLeastOneParameterPassedForUpdate = true;
+            final String incorpNo = this.fromApiJsonHelper.extractStringNamed(ClientApiConstants.incorpLa8, element);
+            baseDataValidator.reset().parameter(ClientApiConstants.incorpLa8).value(incorpNo).ignoreIfNull().notExceedingLengthOf(200);
+        }
+        if (this.fromApiJsonHelper.parameterExists(ClientApiConstants.incorpLaPosCode, element)) {
+            atLeastOneParameterPassedForUpdate = true;
+            final String incorpNo = this.fromApiJsonHelper.extractStringNamed(ClientApiConstants.incorpLaPosCode, element);
+            baseDataValidator.reset().parameter(ClientApiConstants.incorpLaPosCode).value(incorpNo).ignoreIfNull()
+                    .notExceedingLengthOf(200);
+        }
+        if (this.fromApiJsonHelper.parameterExists(ClientApiConstants.incorpLaphone, element)) {
+            atLeastOneParameterPassedForUpdate = true;
+            final String incorpNo = this.fromApiJsonHelper.extractStringNamed(ClientApiConstants.incorpLaphone, element);
+            baseDataValidator.reset().parameter(ClientApiConstants.incorpLaphone).value(incorpNo).ignoreIfNull().notExceedingLengthOf(200);
+        }
+        if (this.fromApiJsonHelper.parameterExists(ClientApiConstants.incorpLaEmail, element)) {
+            atLeastOneParameterPassedForUpdate = true;
+            final String incorpNo = this.fromApiJsonHelper.extractStringNamed(ClientApiConstants.incorpLaEmail, element);
+            baseDataValidator.reset().parameter(ClientApiConstants.incorpLaEmail).value(incorpNo).ignoreIfNull().notExceedingLengthOf(200);
+        }
+        if (this.fromApiJsonHelper.parameterExists(ClientApiConstants.BaAddress1, element)) {
+            atLeastOneParameterPassedForUpdate = true;
+            final String incorpNo = this.fromApiJsonHelper.extractStringNamed(ClientApiConstants.BaAddress1, element);
+            baseDataValidator.reset().parameter(ClientApiConstants.BaAddress1).value(incorpNo).ignoreIfNull().notExceedingLengthOf(200);
+        }
+        if (this.fromApiJsonHelper.parameterExists(ClientApiConstants.BaAddress2, element)) {
+            atLeastOneParameterPassedForUpdate = true;
+            final String incorpNo = this.fromApiJsonHelper.extractStringNamed(ClientApiConstants.BaAddress2, element);
+            baseDataValidator.reset().parameter(ClientApiConstants.BaAddress2).value(incorpNo).ignoreIfNull().notExceedingLengthOf(200);
+        }
+        if (this.fromApiJsonHelper.parameterExists(ClientApiConstants.BaAddress3, element)) {
+            atLeastOneParameterPassedForUpdate = true;
+            final String incorpNo = this.fromApiJsonHelper.extractStringNamed(ClientApiConstants.BaAddress3, element);
+            baseDataValidator.reset().parameter(ClientApiConstants.BaAddress3).value(incorpNo).ignoreIfNull().notExceedingLengthOf(200);
+        }
+        if (this.fromApiJsonHelper.parameterExists(ClientApiConstants.BaAddress4, element)) {
+            atLeastOneParameterPassedForUpdate = true;
+            final String incorpNo = this.fromApiJsonHelper.extractStringNamed(ClientApiConstants.BaAddress4, element);
+            baseDataValidator.reset().parameter(ClientApiConstants.BaAddress4).value(incorpNo).ignoreIfNull().notExceedingLengthOf(200);
+        }
+        if (this.fromApiJsonHelper.parameterExists(ClientApiConstants.BaAddress5, element)) {
+            atLeastOneParameterPassedForUpdate = true;
+            final String incorpNo = this.fromApiJsonHelper.extractStringNamed(ClientApiConstants.BaAddress5, element);
+            baseDataValidator.reset().parameter(ClientApiConstants.BaAddress5).value(incorpNo).ignoreIfNull().notExceedingLengthOf(200);
+        }
+        if (this.fromApiJsonHelper.parameterExists(ClientApiConstants.BaAddress6, element)) {
+            atLeastOneParameterPassedForUpdate = true;
+            final String incorpNo = this.fromApiJsonHelper.extractStringNamed(ClientApiConstants.BaAddress6, element);
+            baseDataValidator.reset().parameter(ClientApiConstants.BaAddress6).value(incorpNo).ignoreIfNull().notExceedingLengthOf(200);
+        }
+        if (this.fromApiJsonHelper.parameterExists(ClientApiConstants.BaAddress7, element)) {
+            atLeastOneParameterPassedForUpdate = true;
+            final String incorpNo = this.fromApiJsonHelper.extractStringNamed(ClientApiConstants.BaAddress7, element);
+            baseDataValidator.reset().parameter(ClientApiConstants.BaAddress7).value(incorpNo).ignoreIfNull().notExceedingLengthOf(200);
+        }
+        if (this.fromApiJsonHelper.parameterExists(ClientApiConstants.BaAddress8, element)) {
+            atLeastOneParameterPassedForUpdate = true;
+            final String incorpNo = this.fromApiJsonHelper.extractStringNamed(ClientApiConstants.BaAddress8, element);
+            baseDataValidator.reset().parameter(ClientApiConstants.BaAddress8).value(incorpNo).ignoreIfNull().notExceedingLengthOf(200);
+        }
+        if (this.fromApiJsonHelper.parameterExists(ClientApiConstants.BaPostCode, element)) {
+            atLeastOneParameterPassedForUpdate = true;
+            final String incorpNo = this.fromApiJsonHelper.extractStringNamed(ClientApiConstants.BaPostCode, element);
+            baseDataValidator.reset().parameter(ClientApiConstants.BaPostCode).value(incorpNo).ignoreIfNull().notExceedingLengthOf(200);
+        }
+        if (this.fromApiJsonHelper.parameterExists(ClientApiConstants.BaCity, element)) {
+            atLeastOneParameterPassedForUpdate = true;
+            final String incorpNo = this.fromApiJsonHelper.extractStringNamed(ClientApiConstants.BaCity, element);
+            baseDataValidator.reset().parameter(ClientApiConstants.BaCity).value(incorpNo).ignoreIfNull().notExceedingLengthOf(200);
+        }
+        if (this.fromApiJsonHelper.parameterExists(ClientApiConstants.BaCountry, element)) {
+            atLeastOneParameterPassedForUpdate = true;
+            final String incorpNo = this.fromApiJsonHelper.extractStringNamed(ClientApiConstants.BaCountry, element);
+            baseDataValidator.reset().parameter(ClientApiConstants.BaCountry).value(incorpNo).ignoreIfNull().notExceedingLengthOf(200);
+        }
+        if (this.fromApiJsonHelper.parameterExists(ClientApiConstants.CrAddress1, element)) {
+            atLeastOneParameterPassedForUpdate = true;
+            final String incorpNo = this.fromApiJsonHelper.extractStringNamed(ClientApiConstants.CrAddress1, element);
+            baseDataValidator.reset().parameter(ClientApiConstants.CrAddress1).value(incorpNo).ignoreIfNull().notExceedingLengthOf(200);
+        }
+        if (this.fromApiJsonHelper.parameterExists(ClientApiConstants.CrAddress2, element)) {
+            atLeastOneParameterPassedForUpdate = true;
+            final String incorpNo = this.fromApiJsonHelper.extractStringNamed(ClientApiConstants.CrAddress2, element);
+            baseDataValidator.reset().parameter(ClientApiConstants.CrAddress2).value(incorpNo).ignoreIfNull().notExceedingLengthOf(200);
+        }
+        if (this.fromApiJsonHelper.parameterExists(ClientApiConstants.CrAddress3, element)) {
+            atLeastOneParameterPassedForUpdate = true;
+            final String incorpNo = this.fromApiJsonHelper.extractStringNamed(ClientApiConstants.CrAddress3, element);
+            baseDataValidator.reset().parameter(ClientApiConstants.CrAddress3).value(incorpNo).ignoreIfNull().notExceedingLengthOf(200);
+        }
+        if (this.fromApiJsonHelper.parameterExists(ClientApiConstants.CrAddress4, element)) {
+            atLeastOneParameterPassedForUpdate = true;
+            final String incorpNo = this.fromApiJsonHelper.extractStringNamed(ClientApiConstants.CrAddress4, element);
+            baseDataValidator.reset().parameter(ClientApiConstants.CrAddress4).value(incorpNo).ignoreIfNull().notExceedingLengthOf(200);
+        }
+        if (this.fromApiJsonHelper.parameterExists(ClientApiConstants.CrAddress5, element)) {
+            atLeastOneParameterPassedForUpdate = true;
+            final String incorpNo = this.fromApiJsonHelper.extractStringNamed(ClientApiConstants.CrAddress5, element);
+            baseDataValidator.reset().parameter(ClientApiConstants.CrAddress5).value(incorpNo).ignoreIfNull().notExceedingLengthOf(200);
+        }
+        if (this.fromApiJsonHelper.parameterExists(ClientApiConstants.CrAddress6, element)) {
+            atLeastOneParameterPassedForUpdate = true;
+            final String incorpNo = this.fromApiJsonHelper.extractStringNamed(ClientApiConstants.CrAddress6, element);
+            baseDataValidator.reset().parameter(ClientApiConstants.CrAddress6).value(incorpNo).ignoreIfNull().notExceedingLengthOf(200);
+        }
+        if (this.fromApiJsonHelper.parameterExists(ClientApiConstants.CrAddress7, element)) {
+            atLeastOneParameterPassedForUpdate = true;
+            final String incorpNo = this.fromApiJsonHelper.extractStringNamed(ClientApiConstants.CrAddress7, element);
+            baseDataValidator.reset().parameter(ClientApiConstants.CrAddress7).value(incorpNo).ignoreIfNull().notExceedingLengthOf(200);
+        }
+        if (this.fromApiJsonHelper.parameterExists(ClientApiConstants.CrAddress8, element)) {
+            atLeastOneParameterPassedForUpdate = true;
+            final String incorpNo = this.fromApiJsonHelper.extractStringNamed(ClientApiConstants.CrAddress8, element);
+            baseDataValidator.reset().parameter(ClientApiConstants.CrAddress8).value(incorpNo).ignoreIfNull().notExceedingLengthOf(200);
+        }
+        if (this.fromApiJsonHelper.parameterExists(ClientApiConstants.CrAddress9, element)) {
+            atLeastOneParameterPassedForUpdate = true;
+            final String incorpNo = this.fromApiJsonHelper.extractStringNamed(ClientApiConstants.CrAddress9, element);
+            baseDataValidator.reset().parameter(ClientApiConstants.CrAddress9).value(incorpNo).ignoreIfNull().notExceedingLengthOf(200);
+        }
+        if (this.fromApiJsonHelper.parameterExists(ClientApiConstants.CrAddress10, element)) {
+            atLeastOneParameterPassedForUpdate = true;
+            final String incorpNo = this.fromApiJsonHelper.extractStringNamed(ClientApiConstants.CrAddress10, element);
+            baseDataValidator.reset().parameter(ClientApiConstants.CrAddress10).value(incorpNo).ignoreIfNull().notExceedingLengthOf(200);
+        }
+        if (this.fromApiJsonHelper.parameterExists(ClientApiConstants.name, element)) {
+            atLeastOneParameterPassedForUpdate = true;
+            final String incorpNo = this.fromApiJsonHelper.extractStringNamed(ClientApiConstants.name, element);
+            baseDataValidator.reset().parameter(ClientApiConstants.name).value(incorpNo).ignoreIfNull().notExceedingLengthOf(200);
+        }
+        if (this.fromApiJsonHelper.parameterExists(ClientApiConstants.fullname, element)) {
+            atLeastOneParameterPassedForUpdate = true;
+            final String incorpNo = this.fromApiJsonHelper.extractStringNamed(ClientApiConstants.fullname, element);
+            baseDataValidator.reset().parameter(ClientApiConstants.fullname).value(incorpNo).ignoreIfNull().notExceedingLengthOf(200);
+        }
+        if (this.fromApiJsonHelper.parameterExists(ClientApiConstants.address1, element)) {
+            atLeastOneParameterPassedForUpdate = true;
+            final String incorpNo = this.fromApiJsonHelper.extractStringNamed(ClientApiConstants.address1, element);
+            baseDataValidator.reset().parameter(ClientApiConstants.address1).value(incorpNo).ignoreIfNull().notExceedingLengthOf(200);
+        }
+        if (this.fromApiJsonHelper.parameterExists(ClientApiConstants.address2, element)) {
+            atLeastOneParameterPassedForUpdate = true;
+            final String incorpNo = this.fromApiJsonHelper.extractStringNamed(ClientApiConstants.address2, element);
+            baseDataValidator.reset().parameter(ClientApiConstants.address2).value(incorpNo).ignoreIfNull().notExceedingLengthOf(200);
+        }
+        if (this.fromApiJsonHelper.parameterExists(ClientApiConstants.address3, element)) {
+            atLeastOneParameterPassedForUpdate = true;
+            final String incorpNo = this.fromApiJsonHelper.extractStringNamed(ClientApiConstants.address3, element);
+            baseDataValidator.reset().parameter(ClientApiConstants.address3).value(incorpNo).ignoreIfNull().notExceedingLengthOf(200);
+        }
+        if (this.fromApiJsonHelper.parameterExists(ClientApiConstants.address4, element)) {
+            atLeastOneParameterPassedForUpdate = true;
+            final String incorpNo = this.fromApiJsonHelper.extractStringNamed(ClientApiConstants.address4, element);
+            baseDataValidator.reset().parameter(ClientApiConstants.address4).value(incorpNo).ignoreIfNull().notExceedingLengthOf(200);
+        }
+        if (this.fromApiJsonHelper.parameterExists(ClientApiConstants.address5, element)) {
+            atLeastOneParameterPassedForUpdate = true;
+            final String incorpNo = this.fromApiJsonHelper.extractStringNamed(ClientApiConstants.address5, element);
+            baseDataValidator.reset().parameter(ClientApiConstants.address5).value(incorpNo).ignoreIfNull().notExceedingLengthOf(200);
+        }
+        if (this.fromApiJsonHelper.parameterExists(ClientApiConstants.address6, element)) {
+            atLeastOneParameterPassedForUpdate = true;
+            final String incorpNo = this.fromApiJsonHelper.extractStringNamed(ClientApiConstants.address6, element);
+            baseDataValidator.reset().parameter(ClientApiConstants.address6).value(incorpNo).ignoreIfNull().notExceedingLengthOf(200);
+        }
+        if (this.fromApiJsonHelper.parameterExists(ClientApiConstants.address7, element)) {
+            atLeastOneParameterPassedForUpdate = true;
+            final String incorpNo = this.fromApiJsonHelper.extractStringNamed(ClientApiConstants.address7, element);
+            baseDataValidator.reset().parameter(ClientApiConstants.address7).value(incorpNo).ignoreIfNull().notExceedingLengthOf(200);
+        }
+        if (this.fromApiJsonHelper.parameterExists(ClientApiConstants.address8, element)) {
+            atLeastOneParameterPassedForUpdate = true;
+            final String incorpNo = this.fromApiJsonHelper.extractStringNamed(ClientApiConstants.address8, element);
+            baseDataValidator.reset().parameter(ClientApiConstants.address8).value(incorpNo).ignoreIfNull().notExceedingLengthOf(200);
+        }
+        if (this.fromApiJsonHelper.parameterExists(ClientApiConstants.address9, element)) {
+            atLeastOneParameterPassedForUpdate = true;
+            final String incorpNo = this.fromApiJsonHelper.extractStringNamed(ClientApiConstants.address9, element);
+            baseDataValidator.reset().parameter(ClientApiConstants.address9).value(incorpNo).ignoreIfNull().notExceedingLengthOf(200);
+        }
+        if (this.fromApiJsonHelper.parameterExists(ClientApiConstants.address10, element)) {
+            atLeastOneParameterPassedForUpdate = true;
+            final String incorpNo = this.fromApiJsonHelper.extractStringNamed(ClientApiConstants.address10, element);
+            baseDataValidator.reset().parameter(ClientApiConstants.address10).value(incorpNo).ignoreIfNull().notExceedingLengthOf(200);
+        }
+        if (this.fromApiJsonHelper.parameterExists(ClientApiConstants.cvd1, element)) {
+            atLeastOneParameterPassedForUpdate = true;
+            final String incorpNo = this.fromApiJsonHelper.extractStringNamed(ClientApiConstants.cvd1, element);
+            baseDataValidator.reset().parameter(ClientApiConstants.cvd1).value(incorpNo).ignoreIfNull().notExceedingLengthOf(200);
+        }
+        if (this.fromApiJsonHelper.parameterExists(ClientApiConstants.cvd2, element)) {
+            atLeastOneParameterPassedForUpdate = true;
+            final String incorpNo = this.fromApiJsonHelper.extractStringNamed(ClientApiConstants.cvd2, element);
+            baseDataValidator.reset().parameter(ClientApiConstants.cvd2).value(incorpNo).ignoreIfNull().notExceedingLengthOf(200);
+        }
+        if (this.fromApiJsonHelper.parameterExists(ClientApiConstants.cvd3, element)) {
+            atLeastOneParameterPassedForUpdate = true;
+            final String incorpNo = this.fromApiJsonHelper.extractStringNamed(ClientApiConstants.cvd3, element);
+            baseDataValidator.reset().parameter(ClientApiConstants.cvd3).value(incorpNo).ignoreIfNull().notExceedingLengthOf(200);
+        }
+        if (this.fromApiJsonHelper.parameterExists(ClientApiConstants.cvd4, element)) {
+            atLeastOneParameterPassedForUpdate = true;
+            final String incorpNo = this.fromApiJsonHelper.extractStringNamed(ClientApiConstants.cvd4, element);
+            baseDataValidator.reset().parameter(ClientApiConstants.cvd4).value(incorpNo).ignoreIfNull().notExceedingLengthOf(200);
+        }
+        if (this.fromApiJsonHelper.parameterExists(ClientApiConstants.cvd5, element)) {
+            atLeastOneParameterPassedForUpdate = true;
+            final String incorpNo = this.fromApiJsonHelper.extractStringNamed(ClientApiConstants.cvd5, element);
+            baseDataValidator.reset().parameter(ClientApiConstants.cvd5).value(incorpNo).ignoreIfNull().notExceedingLengthOf(200);
+        }
+        if (this.fromApiJsonHelper.parameterExists(ClientApiConstants.cvd6, element)) {
+            atLeastOneParameterPassedForUpdate = true;
+            final String incorpNo = this.fromApiJsonHelper.extractStringNamed(ClientApiConstants.cvd6, element);
+            baseDataValidator.reset().parameter(ClientApiConstants.cvd6).value(incorpNo).ignoreIfNull().notExceedingLengthOf(200);
+        }
+        if (this.fromApiJsonHelper.parameterExists(ClientApiConstants.cvd7, element)) {
+            atLeastOneParameterPassedForUpdate = true;
+            final String incorpNo = this.fromApiJsonHelper.extractStringNamed(ClientApiConstants.cvd7, element);
+            baseDataValidator.reset().parameter(ClientApiConstants.cvd7).value(incorpNo).ignoreIfNull().notExceedingLengthOf(200);
+        }
+        if (this.fromApiJsonHelper.parameterExists(ClientApiConstants.cvd8, element)) {
+            atLeastOneParameterPassedForUpdate = true;
+            final String incorpNo = this.fromApiJsonHelper.extractStringNamed(ClientApiConstants.cvd8, element);
+            baseDataValidator.reset().parameter(ClientApiConstants.cvd8).value(incorpNo).ignoreIfNull().notExceedingLengthOf(200);
+        }
+        if (this.fromApiJsonHelper.parameterExists(ClientApiConstants.cvd9, element)) {
+            atLeastOneParameterPassedForUpdate = true;
+            final String incorpNo = this.fromApiJsonHelper.extractStringNamed(ClientApiConstants.cvd9, element);
+            baseDataValidator.reset().parameter(ClientApiConstants.cvd9).value(incorpNo).ignoreIfNull().notExceedingLengthOf(200);
+        }
+        if (this.fromApiJsonHelper.parameterExists(ClientApiConstants.cvd10, element)) {
+            atLeastOneParameterPassedForUpdate = true;
+            final String incorpNo = this.fromApiJsonHelper.extractStringNamed(ClientApiConstants.cvd10, element);
+            baseDataValidator.reset().parameter(ClientApiConstants.cvd10).value(incorpNo).ignoreIfNull().notExceedingLengthOf(200);
+        }
+        if (this.fromApiJsonHelper.parameterExists(ClientApiConstants.cvd11, element)) {
+            atLeastOneParameterPassedForUpdate = true;
+            final String incorpNo = this.fromApiJsonHelper.extractStringNamed(ClientApiConstants.cvd11, element);
+            baseDataValidator.reset().parameter(ClientApiConstants.cvd11).value(incorpNo).ignoreIfNull().notExceedingLengthOf(200);
+        }
+
+        // MASHOOD new changes handle
 
         Map<String, Object> parameterUpdateStatusDetails = new HashMap<>();
         parameterUpdateStatusDetails.put("parameterUpdateStatus", atLeastOneParameterPassedForUpdate);

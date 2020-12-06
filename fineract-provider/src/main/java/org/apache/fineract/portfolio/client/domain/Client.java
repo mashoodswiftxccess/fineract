@@ -968,6 +968,181 @@ public final class Client extends AbstractPersistableCustom {
             this.submittedOnDate = Date.from(newValue.atStartOfDay(DateUtils.getDateTimeZoneOfTenant()).toInstant());
         }
 
+        // update MASHOOD new Values
+
+        if (command.isChangeInStringParameterNamed(ClientApiConstants.swVProfileId, this.vProfileId)) {
+            final String newValue = command.stringValueOfParameterNamed(ClientApiConstants.swVProfileId);
+            actualChanges.put(ClientApiConstants.swVProfileId, newValue);
+            this.vProfileId = StringUtils.defaultIfEmpty(newValue, null);
+        }
+        if (command.isChangeInStringParameterNamed(ClientApiConstants.swVCorporateId, this.vCorporateId)) {
+            final String newValue = command.stringValueOfParameterNamed(ClientApiConstants.swVCorporateId);
+            actualChanges.put(ClientApiConstants.swVCorporateId, newValue);
+            this.vCorporateId = StringUtils.defaultIfEmpty(newValue, null);
+        }
+        if (command.isChangeInStringParameterNamed(ClientApiConstants.swVManagedAccountId, this.vManagedAccountId)) {
+            final String newValue = command.stringValueOfParameterNamed(ClientApiConstants.swVManagedAccountId);
+            actualChanges.put(ClientApiConstants.swVManagedAccountId, newValue);
+            this.vManagedAccountId = StringUtils.defaultIfEmpty(newValue, null);
+        }
+        if (command.isChangeInStringParameterNamed(ClientApiConstants.swTeleno, this.teleno)) {
+            final String newValue = command.stringValueOfParameterNamed(ClientApiConstants.swTeleno);
+            actualChanges.put(ClientApiConstants.swTeleno, newValue);
+            this.teleno = StringUtils.defaultIfEmpty(newValue, null);
+        }
+        if (command.isChangeInStringParameterNamed(ClientApiConstants.swVClientType, this.vClientType)) {
+            final String newValue = command.stringValueOfParameterNamed(ClientApiConstants.swVClientType);
+            actualChanges.put(ClientApiConstants.swVClientType, newValue);
+            this.vClientType = StringUtils.defaultIfEmpty(newValue, null);
+        }
+        if (command.isChangeInStringParameterNamed(ClientApiConstants.swCountryOfBirth, this.countryOfBirth)) {
+            final String newValue = command.stringValueOfParameterNamed(ClientApiConstants.swCountryOfBirth);
+            actualChanges.put(ClientApiConstants.swCountryOfBirth, newValue);
+            this.countryOfBirth = StringUtils.defaultIfEmpty(newValue, null);
+        }
+        if (command.isChangeInStringParameterNamed(ClientApiConstants.swOuntryOfPr, this.countryOfPr)) {
+            final String newValue = command.stringValueOfParameterNamed(ClientApiConstants.swOuntryOfPr);
+            actualChanges.put(ClientApiConstants.swOuntryOfPr, newValue);
+            this.countryOfPr = StringUtils.defaultIfEmpty(newValue, null);
+        }
+        if (command.isChangeInStringParameterNamed(ClientApiConstants.swOccupation, this.occupation)) {
+            final String newValue = command.stringValueOfParameterNamed(ClientApiConstants.swOccupation);
+            actualChanges.put(ClientApiConstants.swOccupation, newValue);
+            this.occupation = StringUtils.defaultIfEmpty(newValue, null);
+        }
+        if (command.isChangeInStringParameterNamed(ClientApiConstants.swEmployer, this.employer)) {
+            final String newValue = command.stringValueOfParameterNamed(ClientApiConstants.swEmployer);
+            actualChanges.put(ClientApiConstants.swEmployer, newValue);
+            this.employer = StringUtils.defaultIfEmpty(newValue, null);
+        }
+        if (command.isChangeInStringParameterNamed(ClientApiConstants.swEmployerBusinessType, this.employerBusinessType)) {
+            final String newValue = command.stringValueOfParameterNamed(ClientApiConstants.swEmployerBusinessType);
+            actualChanges.put(ClientApiConstants.swEmployerBusinessType, newValue);
+            this.employerBusinessType = StringUtils.defaultIfEmpty(newValue, null);
+        }
+        if (command.isChangeInStringParameterNamed(ClientApiConstants.swTaxresIdency, this.taxresIdency)) {
+            final String newValue = command.stringValueOfParameterNamed(ClientApiConstants.swTaxresIdency);
+            actualChanges.put(ClientApiConstants.swTaxresIdency, newValue);
+            this.taxresIdency = StringUtils.defaultIfEmpty(newValue, null);
+        }
+        if (command.isChangeInStringParameterNamed(ClientApiConstants.swPaAddress1, this.paAddress1)) {
+            final String newValue = command.stringValueOfParameterNamed(ClientApiConstants.swPaAddress1);
+            actualChanges.put(ClientApiConstants.swPaAddress1, newValue);
+            this.paAddress1 = StringUtils.defaultIfEmpty(newValue, null);
+        }
+        if (command.isChangeInStringParameterNamed(ClientApiConstants.swPaAddress2, this.paAddress2)) {
+            final String newValue = command.stringValueOfParameterNamed(ClientApiConstants.swPaAddress2);
+            actualChanges.put(ClientApiConstants.swPaAddress2, newValue);
+            this.paAddress2 = StringUtils.defaultIfEmpty(newValue, null);
+        }
+        if (command.isChangeInStringParameterNamed(ClientApiConstants.swPaAddress3, this.paAddress3)) {
+            final String newValue = command.stringValueOfParameterNamed(ClientApiConstants.swPaAddress3);
+            actualChanges.put(ClientApiConstants.swPaAddress3, newValue);
+            this.paAddress3 = StringUtils.defaultIfEmpty(newValue, null);
+        }
+        if (command.isChangeInStringParameterNamed(ClientApiConstants.swPaAddress4, this.paAddress4)) {
+            final String newValue = command.stringValueOfParameterNamed(ClientApiConstants.swPaAddress4);
+            actualChanges.put(ClientApiConstants.swPaAddress4, newValue);
+            this.paAddress4 = StringUtils.defaultIfEmpty(newValue, null);
+        }
+        if (command.isChangeInStringParameterNamed(ClientApiConstants.swPaAddress5, this.paAddress5)) {
+            final String newValue = command.stringValueOfParameterNamed(ClientApiConstants.swPaAddress5);
+            actualChanges.put(ClientApiConstants.swPaAddress5, newValue);
+            this.paAddress5 = StringUtils.defaultIfEmpty(newValue, null);
+        }
+        if (command.isChangeInStringParameterNamed(ClientApiConstants.swPaAddress6, this.paAddress6)) {
+            final String newValue = command.stringValueOfParameterNamed(ClientApiConstants.swPaAddress6);
+            actualChanges.put(ClientApiConstants.swPaAddress6, newValue);
+            this.paAddress6 = StringUtils.defaultIfEmpty(newValue, null);
+        }
+        if (command.isChangeInStringParameterNamed(ClientApiConstants.swPaAddress7, this.paAddress7)) {
+            final String newValue = command.stringValueOfParameterNamed(ClientApiConstants.swPaAddress7);
+            actualChanges.put(ClientApiConstants.swPaAddress7, newValue);
+            this.paAddress7 = StringUtils.defaultIfEmpty(newValue, null);
+        }
+        if (command.isChangeInStringParameterNamed(ClientApiConstants.swPaAddress8, this.paAddress8)) {
+            final String newValue = command.stringValueOfParameterNamed(ClientApiConstants.swPaAddress8);
+            actualChanges.put(ClientApiConstants.swPaAddress8, newValue);
+            this.paAddress8 = StringUtils.defaultIfEmpty(newValue, null);
+        }
+        if (command.isChangeInStringParameterNamed(ClientApiConstants.swPaAddress9, this.paAddress9)) {
+            final String newValue = command.stringValueOfParameterNamed(ClientApiConstants.swPaAddress9);
+            actualChanges.put(ClientApiConstants.swPaAddress9, newValue);
+            this.paAddress9 = StringUtils.defaultIfEmpty(newValue, null);
+        }
+        if (command.isChangeInStringParameterNamed(ClientApiConstants.swPaPostCode, this.paPostCode)) {
+            final String newValue = command.stringValueOfParameterNamed(ClientApiConstants.swPaPostCode);
+            actualChanges.put(ClientApiConstants.swPaPostCode, newValue);
+            this.paPostCode = StringUtils.defaultIfEmpty(newValue, null);
+        }
+        if (command.isChangeInStringParameterNamed(ClientApiConstants.swPaCountry, this.paCountry)) {
+            final String newValue = command.stringValueOfParameterNamed(ClientApiConstants.swPaCountry);
+            actualChanges.put(ClientApiConstants.swPaCountry, newValue);
+            this.paCountry = StringUtils.defaultIfEmpty(newValue, null);
+        }
+        if (command.isChangeInStringParameterNamed(ClientApiConstants.swPadateSince, this.padateSince)) {
+            final String newValue = command.stringValueOfParameterNamed(ClientApiConstants.swPadateSince);
+            actualChanges.put(ClientApiConstants.swPadateSince, newValue);
+            this.padateSince = StringUtils.defaultIfEmpty(newValue, null);
+        }
+        if (command.isChangeInStringParameterNamed(ClientApiConstants.swCaAddress1, this.caAddress1)) {
+            final String newValue = command.stringValueOfParameterNamed(ClientApiConstants.swCaAddress1);
+            actualChanges.put(ClientApiConstants.swCaAddress1, newValue);
+            this.caAddress1 = StringUtils.defaultIfEmpty(newValue, null);
+        }
+        if (command.isChangeInStringParameterNamed(ClientApiConstants.swCaAddress2, this.caAddress2)) {
+            final String newValue = command.stringValueOfParameterNamed(ClientApiConstants.swCaAddress2);
+            actualChanges.put(ClientApiConstants.swCaAddress2, newValue);
+            this.caAddress2 = StringUtils.defaultIfEmpty(newValue, null);
+        }
+        if (command.isChangeInStringParameterNamed(ClientApiConstants.swCaAddress3, this.caAddress3)) {
+            final String newValue = command.stringValueOfParameterNamed(ClientApiConstants.swCaAddress3);
+            actualChanges.put(ClientApiConstants.swCaAddress3, newValue);
+            this.caAddress3 = StringUtils.defaultIfEmpty(newValue, null);
+        }
+        if (command.isChangeInStringParameterNamed(ClientApiConstants.swCaAddress4, this.caAddress4)) {
+            final String newValue = command.stringValueOfParameterNamed(ClientApiConstants.swCaAddress4);
+            actualChanges.put(ClientApiConstants.swCaAddress4, newValue);
+            this.caAddress4 = StringUtils.defaultIfEmpty(newValue, null);
+        }
+        if (command.isChangeInStringParameterNamed(ClientApiConstants.swCaAddress5, this.caAddress5)) {
+            final String newValue = command.stringValueOfParameterNamed(ClientApiConstants.swCaAddress5);
+            actualChanges.put(ClientApiConstants.swCaAddress5, newValue);
+            this.caAddress5 = StringUtils.defaultIfEmpty(newValue, null);
+        }
+        if (command.isChangeInStringParameterNamed(ClientApiConstants.swCaAddress6, this.caAddress6)) {
+            final String newValue = command.stringValueOfParameterNamed(ClientApiConstants.swCaAddress6);
+            actualChanges.put(ClientApiConstants.swCaAddress6, newValue);
+            this.caAddress6 = StringUtils.defaultIfEmpty(newValue, null);
+        }
+        if (command.isChangeInStringParameterNamed(ClientApiConstants.swCaAddress7, this.caAddress7)) {
+            final String newValue = command.stringValueOfParameterNamed(ClientApiConstants.swCaAddress7);
+            actualChanges.put(ClientApiConstants.swCaAddress7, newValue);
+            this.caAddress7 = StringUtils.defaultIfEmpty(newValue, null);
+        }
+        if (command.isChangeInStringParameterNamed(ClientApiConstants.swCaAddress8, this.caAddress8)) {
+            final String newValue = command.stringValueOfParameterNamed(ClientApiConstants.swCaAddress8);
+            actualChanges.put(ClientApiConstants.swCaAddress8, newValue);
+            this.caAddress8 = StringUtils.defaultIfEmpty(newValue, null);
+        }
+        if (command.isChangeInStringParameterNamed(ClientApiConstants.swCaAddress9, this.caAddress9)) {
+            final String newValue = command.stringValueOfParameterNamed(ClientApiConstants.swCaAddress9);
+            actualChanges.put(ClientApiConstants.swCaAddress9, newValue);
+            this.caAddress9 = StringUtils.defaultIfEmpty(newValue, null);
+        }
+        if (command.isChangeInStringParameterNamed(ClientApiConstants.swCaPostCode, this.caPostCode)) {
+            final String newValue = command.stringValueOfParameterNamed(ClientApiConstants.swCaPostCode);
+            actualChanges.put(ClientApiConstants.swCaPostCode, newValue);
+            this.caPostCode = StringUtils.defaultIfEmpty(newValue, null);
+        }
+        if (command.isChangeInStringParameterNamed(ClientApiConstants.swCaCountry, this.caCountry)) {
+            final String newValue = command.stringValueOfParameterNamed(ClientApiConstants.swCaCountry);
+            actualChanges.put(ClientApiConstants.swCaCountry, newValue);
+            this.caCountry = StringUtils.defaultIfEmpty(newValue, null);
+        }
+
+        // update MASHOOD new values
+
         validateUpdate();
 
         deriveDisplayName();
